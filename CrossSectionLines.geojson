@@ -1,0 +1,18 @@
+{
+"type": "FeatureCollection",
+"name": "CrossSectionLines",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Id": 0, "Name": "Mooresville Till Plain" }, "geometry": { "type": "LineString", "coordinates": [ [ -86.462090230239752, 39.626388620467075 ], [ -86.356681913770473, 39.611869275468777 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "Name": "Waverly Outwash" }, "geometry": { "type": "LineString", "coordinates": [ [ -86.346525678678901, 39.606979019425765 ], [ -86.255610616618426, 39.560775184253018 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "Name": "Tipton Till Plain" }, "geometry": { "type": "LineString", "coordinates": [ [ -86.598159444639052, 39.598641424520494 ], [ -86.53898848180593, 39.534557699061111 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "Name": "Morgan Hills" }, "geometry": { "type": "LineString", "coordinates": [ [ -86.563498296674211, 39.509373856468926 ], [ -86.438990091671982, 39.475649250237076 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "Name": "Cope Till Plain" }, "geometry": { "type": "LineString", "coordinates": [ [ -86.336973889193061, 39.501507461055986 ], [ -86.253290861115275, 39.455347632699841 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "Name": "Martinsville Outwash 3" }, "geometry": { "type": "LineString", "coordinates": [ [ -86.410300701505165, 39.527336106742858 ], [ -86.341335766948731, 39.467218050407865 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "Name": "Martinsville Outwash 2" }, "geometry": { "type": "LineString", "coordinates": [ [ -86.449299424408139, 39.466204072753811 ], [ -86.353179905818777, 39.429626069102923 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "Name": "Martinsville Outwash 1" }, "geometry": { "type": "LineString", "coordinates": [ [ -86.459899910351083, 39.442066053500497 ], [ -86.377773330310234, 39.396961795564899 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "Name": "Paragon Outwash" }, "geometry": { "type": "LineString", "coordinates": [ [ -86.571470006898281, 39.420789851262334 ], [ -86.555259979081143, 39.36515769513241 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "Name": "Norman Upland" }, "geometry": { "type": "LineString", "coordinates": [ [ -86.435199777807227, 39.402284337163309 ], [ -86.426128006085591, 39.343631854846599 ] ] } },
+{ "type": "Feature", "properties": { "Id": 0, "Name": "Morgantown Hills" }, "geometry": { "type": "LineString", "coordinates": [ [ -86.313264249262403, 39.425184657488899 ], [ -86.319185589183661, 39.350012686804185 ] ] } }
+]
+}
