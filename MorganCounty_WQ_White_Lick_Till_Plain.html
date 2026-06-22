@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f6d6bd99805eefb3d633fabc25c73e02 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+        position: fixed;
+        bottom: 25px;
+        left: 25px;
+        width: 340px;
+        z-index: 9999;
+        background: white;
+        padding: 12px 14px;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+        font-family: Segoe UI, Arial;
+        font-size: 12px;">
+        <b>White Lick Till Plain</b><br>
+        <hr style="margin:6px 0;">
+        <b>Sites:</b> 14<br>
+        <b>Total Records:</b> 2935<br>
+        <b>Sources:</b> EPA, IDEM, USGS<br>
+    </div>
+    
+    
+            <div class="folium-map" id="map_f6d6bd99805eefb3d633fabc25c73e02" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f6d6bd99805eefb3d633fabc25c73e02 = L.map(
+                "map_f6d6bd99805eefb3d633fabc25c73e02",
+                {
+                    center: [39.610955928571435, -86.37634192857142],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_f6d6bd99805eefb3d633fabc25c73e02);
+
+            
+
+        
+    
+            var tile_layer_648bfff74e4a2e33aabd6f210f5b7c43 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_648bfff74e4a2e33aabd6f210f5b7c43.addTo(map_f6d6bd99805eefb3d633fabc25c73e02);
+        
+    
+        function geo_json_14dfd114a8808903813570922dd18edf_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#333333", "fillColor": "#f2f2f2", "fillOpacity": 0.25, "weight": 2};
+            }
+        }
+
+        function geo_json_14dfd114a8808903813570922dd18edf_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_14dfd114a8808903813570922dd18edf = L.geoJson(null, {
+                onEachFeature: geo_json_14dfd114a8808903813570922dd18edf_onEachFeature,
+            
+                style: geo_json_14dfd114a8808903813570922dd18edf_styler,
+        });
+
+        function geo_json_14dfd114a8808903813570922dd18edf_add (data) {
+            geo_json_14dfd114a8808903813570922dd18edf
+                .addData(data);
+        }
+            geo_json_14dfd114a8808903813570922dd18edf_add({"bbox": [-86.52176991442772, 39.54957161170317, -86.33559669098697, 39.63180452710269], "features": [{"bbox": [-86.52176991442772, 39.54957161170317, -86.33559669098697, 39.63180452710269], "geometry": {"coordinates": [[[-86.3696336523561, 39.55131293050457], [-86.38010010588293, 39.55022639367686], [-86.37943751122947, 39.55546767086585], [-86.3881456834094, 39.56682991034105], [-86.39083446268792, 39.5693233961313], [-86.39858635521148, 39.5697751549906], [-86.40346801506311, 39.56949821517357], [-86.41101799493676, 39.57678713747016], [-86.41590010399148, 39.57650967903237], [-86.41627399791992, 39.57847521004664], [-86.42305078875424, 39.57859230305495], [-86.4363606486082, 39.5784669030437], [-86.435911033133, 39.57312455861167], [-86.44133252016955, 39.573150748373294], [-86.44212784577151, 39.56385695082471], [-86.46011664013369, 39.563727348879446], [-86.46935842224237, 39.56353151294103], [-86.47397479410054, 39.564029301113614], [-86.48444505953664, 39.56431462121099], [-86.48428261256839, 39.557117213338614], [-86.49813904724539, 39.55687577062801], [-86.4983417934266, 39.55581928813668], [-86.50185840018925, 39.555230209116914], [-86.51220111234545, 39.55512302697312], [-86.51243218851805, 39.549988253318354], [-86.52121530446823, 39.54957161170317], [-86.52176991442772, 39.54991430043091], [-86.52165395810019, 39.54991322827239], [-86.52161049801535, 39.55718996927948], [-86.51695628973224, 39.55715436479806], [-86.5169238615952, 39.564438032881085], [-86.51231188715094, 39.56444521653067], [-86.51232883578852, 39.5790170990883], [-86.5024394855035, 39.60076483713287], [-86.48433570968443, 39.60079596121182], [-86.48408311290356, 39.60079483987681], [-86.46555561023096, 39.60079218779902], [-86.46571596175659, 39.61525902487168], [-86.46570906408195, 39.61549326167484], [-86.46590221576264, 39.62967638845897], [-86.46592645901822, 39.63002790183764], [-86.45607376880609, 39.63010382562685], [-86.43696981269873, 39.63026509270623], [-86.41782556364056, 39.630445541412136], [-86.39882409537165, 39.630695655891984], [-86.37971052908344, 39.63068076503137], [-86.36084718962958, 39.63109659907868], [-86.36085269507528, 39.63144802995905], [-86.34787839063661, 39.631745340412614], [-86.34560836846877, 39.63180452710269], [-86.3360804361134, 39.62459482626382], [-86.33559669098697, 39.61715406045281], [-86.33584860661803, 39.61014660744364], [-86.34535353441365, 39.602333416170445], [-86.35729788825273, 39.58691982562407], [-86.36302584872159, 39.58723744518794], [-86.3653222235668, 39.588823444441864], [-86.36555907448233, 39.59325895782072], [-86.3665465715364, 39.59648272901147], [-86.3711544222437, 39.59808119039254], [-86.37244798908561, 39.59815970387989], [-86.37494075945595, 39.598530738892855], [-86.37531888894253, 39.59760301747834], [-86.37312023924396, 39.59537406741144], [-86.37155457330994, 39.594721932973464], [-86.37148540089645, 39.59214685097601], [-86.37426812782965, 39.59108907452193], [-86.37438757801898, 39.58808588961392], [-86.3721815103269, 39.5867151160763], [-86.3718752509002, 39.58480388344428], [-86.37142733559305, 39.583228026253124], [-86.36728711901175, 39.58113148271848], [-86.36720770576683, 39.579700654093415], [-86.36088284430558, 39.579373592274735], [-86.36033366917957, 39.55867747057688], [-86.36205830518108, 39.55868695007663], [-86.37027188181298, 39.55823899256998], [-86.37030227552201, 39.55487771212719], [-86.36994696365916, 39.55330234345476], [-86.3696336523561, 39.55131293050457]]], "type": "Polygon"}, "id": "8", "properties": {"Alt_Name": "Mooresville Till Plain", "Id": 8, "Name": "White Lick Till Plain", "Region_Description": "This region is bounded on the southeast side by White Lick Creek, including the entirety of Mooresville. Till, alluvium, and outwash is deposited along the creek to the east of the region. 17 high-capacity wells operate in the outwash system, ranging from 100-1000 GPM. This region also includes the township of Monrovia.", "longitude": null}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_14dfd114a8808903813570922dd18edf.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Name", "Alt_Name", "Region_Description"];
+    let aliases = ["Region:", "Alt Name:", "Description:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_14dfd114a8808903813570922dd18edf.addTo(map_f6d6bd99805eefb3d633fabc25c73e02);
+        
+    
+            var marker_cluster_e3762391276479b18d1944dda11a4a1b = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var circle_marker_2cad9934716d6d9f56c16b58625557b4 = L.circleMarker(
+                [39.59338, -86.421661],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_e3762391276479b18d1944dda11a4a1b);
+        
+    
+        var popup_9120aae0d39d331929fe4d6454e9fd4f = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_05aeb159c5cd5efa9d3711b5a4c85602 = $(`<div id="html_05aeb159c5cd5efa9d3711b5a4c85602" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 IN033-393536086251801             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> White Lick Till Plain<br>                 <b>Alt Name:</b> Mooresville Till Plain<br>                 <b>Source:</b> EPA<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 1<br>                 <b>Period:</b> 1989-09-18 – 1989-09-18<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>TKN</b></td>                     <td>0.51</td>                     <td>1989-09-18</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_9120aae0d39d331929fe4d6454e9fd4f.setContent(html_05aeb159c5cd5efa9d3711b5a4c85602);
+            
+        
+
+        circle_marker_2cad9934716d6d9f56c16b58625557b4.bindPopup(popup_9120aae0d39d331929fe4d6454e9fd4f)
+        ;
+
+        
+    
+    
+            circle_marker_2cad9934716d6d9f56c16b58625557b4.bindTooltip(
+                `<div>
+                     IN033-393536086251801 | EPA | White Lick Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ceced1ad0325fa09feda05f944955f65 = L.circleMarker(
+                [39.608769, -86.382028],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_e3762391276479b18d1944dda11a4a1b);
+        
+    
+        var popup_00697e6a5db2f1963afa032fcdbc12b2 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_a6e4c99a82c0d65f50b1853d6ed256ec = $(`<div id="html_a6e4c99a82c0d65f50b1853d6ed256ec" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-03353800             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> White Lick Till Plain<br>                 <b>Alt Name:</b> Mooresville Till Plain<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 3<br>                 <b>Period:</b> 1964-10-30 – 1964-10-30<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>6.00</td>                     <td>1964-10-30</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>654.00</td>                     <td>1964-10-30</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_00697e6a5db2f1963afa032fcdbc12b2.setContent(html_a6e4c99a82c0d65f50b1853d6ed256ec);
+            
+        
+
+        circle_marker_ceced1ad0325fa09feda05f944955f65.bindPopup(popup_00697e6a5db2f1963afa032fcdbc12b2)
+        ;
+
+        
+    
+    
+            circle_marker_ceced1ad0325fa09feda05f944955f65.bindTooltip(
+                `<div>
+                     USGS-03353800 | USGS | White Lick Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2a33ba54067035d08fc282d3979096af = L.circleMarker(
+                [39.598658, -86.375549],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_e3762391276479b18d1944dda11a4a1b);
+        
+    
+        var popup_0cf6c0199fb47d283a930bf1fb602a1e = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_9d480bd33c1da46db2ab9587f60333f4 = $(`<div id="html_9d480bd33c1da46db2ab9587f60333f4" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-393555086223200             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> White Lick Till Plain<br>                 <b>Alt Name:</b> Mooresville Till Plain<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 3<br>                 <b>Period:</b> 1972-10-26 – 1972-10-26<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>12.60</td>                     <td>1972-10-26</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>800.00</td>                     <td>1972-10-26</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_0cf6c0199fb47d283a930bf1fb602a1e.setContent(html_9d480bd33c1da46db2ab9587f60333f4);
+            
+        
+
+        circle_marker_2a33ba54067035d08fc282d3979096af.bindPopup(popup_0cf6c0199fb47d283a930bf1fb602a1e)
+        ;
+
+        
+    
+    
+            circle_marker_2a33ba54067035d08fc282d3979096af.bindTooltip(
+                `<div>
+                     USGS-393555086223200 | USGS | White Lick Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_fc6cddcdab79fc97eb6b10423f1380ba = L.circleMarker(
+                [39.600324, -86.374716],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_e3762391276479b18d1944dda11a4a1b);
+        
+    
+        var popup_0de5b199b6c3fafa3eee1a8054af7507 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_f1324e967568848e5ca252de59709150 = $(`<div id="html_f1324e967568848e5ca252de59709150" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-393601086222901             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> White Lick Till Plain<br>                 <b>Alt Name:</b> Mooresville Till Plain<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1979-10-30 – 1980-10-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>0.00</td>                     <td>1980-10-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>875.00</td>                     <td>1980-10-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_0de5b199b6c3fafa3eee1a8054af7507.setContent(html_f1324e967568848e5ca252de59709150);
+            
+        
+
+        circle_marker_fc6cddcdab79fc97eb6b10423f1380ba.bindPopup(popup_0de5b199b6c3fafa3eee1a8054af7507)
+        ;
+
+        
+    
+    
+            circle_marker_fc6cddcdab79fc97eb6b10423f1380ba.bindTooltip(
+                `<div>
+                     USGS-393601086222901 | USGS | White Lick Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b18ca5dc120c5ed42f51ff641d10450a = L.circleMarker(
+                [39.619277, -86.392393],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_e3762391276479b18d1944dda11a4a1b);
+        
+    
+        var popup_8a1de545d30bd120bf6fee13f50024ca = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_0c47e54dc32a626acf38a88a9abcd5cc = $(`<div id="html_0c47e54dc32a626acf38a88a9abcd5cc" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-13-0009             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> White Lick Till Plain<br>                 <b>Alt Name:</b> Mooresville Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 212<br>                 <b>Period:</b> 2020-05-26 – 2020-11-03<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>11.18</td>                     <td>2020-11-03</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.03</td>                     <td>2020-11-03</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>587.00</td>                     <td>2020-11-03</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.50</td>                     <td>2020-09-15</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.05</td>                     <td>2020-09-15</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>0.34</td>                     <td>2020-09-15</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>2.50</td>                     <td>2020-09-15</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_8a1de545d30bd120bf6fee13f50024ca.setContent(html_0c47e54dc32a626acf38a88a9abcd5cc);
+            
+        
+
+        circle_marker_b18ca5dc120c5ed42f51ff641d10450a.bindPopup(popup_8a1de545d30bd120bf6fee13f50024ca)
+        ;
+
+        
+    
+    
+            circle_marker_b18ca5dc120c5ed42f51ff641d10450a.bindTooltip(
+                `<div>
+                     WWU-13-0009 | IDEM | White Lick Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_87aa3eed6bd9d5e9b210fa7707874101 = L.circleMarker(
+                [39.61321, -86.38533],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_e3762391276479b18d1944dda11a4a1b);
+        
+    
+        var popup_95cf0707c7b1bdbb4d7c604c0a2b3404 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_83d4132930022cb05d65e00be8800f04 = $(`<div id="html_83d4132930022cb05d65e00be8800f04" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-13-0016             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> White Lick Till Plain<br>                 <b>Alt Name:</b> Mooresville Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 66<br>                 <b>Period:</b> 2023-07-11 – 2024-12-18<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.32</td>                     <td>2024-12-18</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.43</td>                     <td>2024-12-18</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>671.00</td>                     <td>2023-07-11</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_95cf0707c7b1bdbb4d7c604c0a2b3404.setContent(html_83d4132930022cb05d65e00be8800f04);
+            
+        
+
+        circle_marker_87aa3eed6bd9d5e9b210fa7707874101.bindPopup(popup_95cf0707c7b1bdbb4d7c604c0a2b3404)
+        ;
+
+        
+    
+    
+            circle_marker_87aa3eed6bd9d5e9b210fa7707874101.bindTooltip(
+                `<div>
+                     WWU-13-0016 | IDEM | White Lick Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ed72d9e8cc7736e7210d1341fc00b8fb = L.circleMarker(
+                [39.62396, -86.35722],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_e3762391276479b18d1944dda11a4a1b);
+        
+    
+        var popup_0d8b98184fef76fb3e82801efd34ea09 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_3b839f01127b8b7be114bda68fa0b216 = $(`<div id="html_3b839f01127b8b7be114bda68fa0b216" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-13-0019             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> White Lick Till Plain<br>                 <b>Alt Name:</b> Mooresville Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 66<br>                 <b>Period:</b> 2023-07-11 – 2024-12-18<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.25</td>                     <td>2024-12-18</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.32</td>                     <td>2024-12-18</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>643.00</td>                     <td>2023-07-11</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_0d8b98184fef76fb3e82801efd34ea09.setContent(html_3b839f01127b8b7be114bda68fa0b216);
+            
+        
+
+        circle_marker_ed72d9e8cc7736e7210d1341fc00b8fb.bindPopup(popup_0d8b98184fef76fb3e82801efd34ea09)
+        ;
+
+        
+    
+    
+            circle_marker_ed72d9e8cc7736e7210d1341fc00b8fb.bindTooltip(
+                `<div>
+                     WWU-13-0019 | IDEM | White Lick Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_54b03dafc9a4cf71b51f06fceacb2381 = L.circleMarker(
+                [39.616389, -86.360833],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_e3762391276479b18d1944dda11a4a1b);
+        
+    
+        var popup_b72bef4685c04e957053c2b24345a0c0 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_b62ad2dded51ceaf43b88d103143c755 = $(`<div id="html_b62ad2dded51ceaf43b88d103143c755" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU150-0006             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> White Lick Till Plain<br>                 <b>Alt Name:</b> Mooresville Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 130<br>                 <b>Period:</b> 1996-02-22 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>10.58</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.06</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>738.00</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.47</td>                     <td>1996-11-14</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.06</td>                     <td>1996-11-14</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>6.00</td>                     <td>1996-11-14</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_b72bef4685c04e957053c2b24345a0c0.setContent(html_b62ad2dded51ceaf43b88d103143c755);
+            
+        
+
+        circle_marker_54b03dafc9a4cf71b51f06fceacb2381.bindPopup(popup_b72bef4685c04e957053c2b24345a0c0)
+        ;
+
+        
+    
+    
+            circle_marker_54b03dafc9a4cf71b51f06fceacb2381.bindTooltip(
+                `<div>
+                     WWU150-0006 | IDEM | White Lick Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a4d8394872fe657b1d4033072f02fbed = L.circleMarker(
+                [39.620034, -86.358622],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_e3762391276479b18d1944dda11a4a1b);
+        
+    
+        var popup_23c9de662e60b6db97b74aced9a0f3e1 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_b3bcfd379a20ddb1a3889a2aa8f8a53a = $(`<div id="html_b3bcfd379a20ddb1a3889a2aa8f8a53a" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU150-0013             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> White Lick Till Plain<br>                 <b>Alt Name:</b> Mooresville Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 104<br>                 <b>Period:</b> 2001-05-30 – 2001-09-06<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>6.90</td>                     <td>2001-09-06</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.71</td>                     <td>2001-09-06</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>720.00</td>                     <td>2001-09-06</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.49</td>                     <td>2001-09-06</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.30</td>                     <td>2001-09-06</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>1.40</td>                     <td>2001-09-06</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>5.00</td>                     <td>2001-09-06</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_23c9de662e60b6db97b74aced9a0f3e1.setContent(html_b3bcfd379a20ddb1a3889a2aa8f8a53a);
+            
+        
+
+        circle_marker_a4d8394872fe657b1d4033072f02fbed.bindPopup(popup_23c9de662e60b6db97b74aced9a0f3e1)
+        ;
+
+        
+    
+    
+            circle_marker_a4d8394872fe657b1d4033072f02fbed.bindTooltip(
+                `<div>
+                     WWU150-0013 | IDEM | White Lick Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_230ec90e2ae011417e2a5a2c101d3fdb = L.circleMarker(
+                [39.607778, -86.376667],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_e3762391276479b18d1944dda11a4a1b);
+        
+    
+        var popup_9e9ac4f496848146ff6eb776259fad6f = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_060483fbabd159e7cf71da0b8990838a = $(`<div id="html_060483fbabd159e7cf71da0b8990838a" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU150-0026             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> White Lick Till Plain<br>                 <b>Alt Name:</b> Mooresville Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 2111<br>                 <b>Period:</b> 2001-03-20 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.68</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.96</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>772.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_9e9ac4f496848146ff6eb776259fad6f.setContent(html_060483fbabd159e7cf71da0b8990838a);
+            
+        
+
+        circle_marker_230ec90e2ae011417e2a5a2c101d3fdb.bindPopup(popup_9e9ac4f496848146ff6eb776259fad6f)
+        ;
+
+        
+    
+    
+            circle_marker_230ec90e2ae011417e2a5a2c101d3fdb.bindTooltip(
+                `<div>
+                     WWU150-0026 | IDEM | White Lick Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_dfe61d2c6a49fd7cd69770355ddb8f13 = L.circleMarker(
+                [39.608158, -86.365833],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_e3762391276479b18d1944dda11a4a1b);
+        
+    
+        var popup_4e4c0ba2c61294933c31ef65431fcdb3 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_5c678dd6589e52f80f78e0bb52d27ba1 = $(`<div id="html_5c678dd6589e52f80f78e0bb52d27ba1" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU150-0030             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> White Lick Till Plain<br>                 <b>Alt Name:</b> Mooresville Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 33<br>                 <b>Period:</b> 2001-09-11 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.64</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.86</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>696.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_4e4c0ba2c61294933c31ef65431fcdb3.setContent(html_5c678dd6589e52f80f78e0bb52d27ba1);
+            
+        
+
+        circle_marker_dfe61d2c6a49fd7cd69770355ddb8f13.bindPopup(popup_4e4c0ba2c61294933c31ef65431fcdb3)
+        ;
+
+        
+    
+    
+            circle_marker_dfe61d2c6a49fd7cd69770355ddb8f13.bindTooltip(
+                `<div>
+                     WWU150-0030 | IDEM | White Lick Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7beaf8ed1bc06081cf1645dbf01e20fc = L.circleMarker(
+                [39.624722, -86.357278],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_e3762391276479b18d1944dda11a4a1b);
+        
+    
+        var popup_4eefecceca9dad9853d772df639537af = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_6f8b02f19b8293326afd3c32e8e3ea92 = $(`<div id="html_6f8b02f19b8293326afd3c32e8e3ea92" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU150-0036             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> White Lick Till Plain<br>                 <b>Alt Name:</b> Mooresville Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 4<br>                 <b>Period:</b> 1997-07-18 – 1997-07-18<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>5.65</td>                     <td>1997-07-18</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.90</td>                     <td>1997-07-18</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>712.00</td>                     <td>1997-07-18</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_4eefecceca9dad9853d772df639537af.setContent(html_6f8b02f19b8293326afd3c32e8e3ea92);
+            
+        
+
+        circle_marker_7beaf8ed1bc06081cf1645dbf01e20fc.bindPopup(popup_4eefecceca9dad9853d772df639537af)
+        ;
+
+        
+    
+    
+            circle_marker_7beaf8ed1bc06081cf1645dbf01e20fc.bindTooltip(
+                `<div>
+                     WWU150-0036 | IDEM | White Lick Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_80bd79172e1e5eab2efef249cbfea7e9 = L.circleMarker(
+                [39.598959, -86.366522],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_e3762391276479b18d1944dda11a4a1b);
+        
+    
+        var popup_198784fb3fc78076bcd969080972ecc9 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_2a077511275d197b8d18869ecad58b09 = $(`<div id="html_2a077511275d197b8d18869ecad58b09" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU150-0044             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> White Lick Till Plain<br>                 <b>Alt Name:</b> Mooresville Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 155<br>                 <b>Period:</b> 2006-05-10 – 2006-09-20<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.83</td>                     <td>2006-09-20</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.01</td>                     <td>2006-09-20</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>523.00</td>                     <td>2006-09-20</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.90</td>                     <td>2006-05-10</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.36</td>                     <td>2006-09-20</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>1.00</td>                     <td>2006-09-20</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>10.00</td>                     <td>2006-09-20</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_198784fb3fc78076bcd969080972ecc9.setContent(html_2a077511275d197b8d18869ecad58b09);
+            
+        
+
+        circle_marker_80bd79172e1e5eab2efef249cbfea7e9.bindPopup(popup_198784fb3fc78076bcd969080972ecc9)
+        ;
+
+        
+    
+    
+            circle_marker_80bd79172e1e5eab2efef249cbfea7e9.bindTooltip(
+                `<div>
+                     WWU150-0044 | IDEM | White Lick Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cd202031bc3148c02a33904c21b25ac9 = L.circleMarker(
+                [39.619765, -86.394135],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_e3762391276479b18d1944dda11a4a1b);
+        
+    
+        var popup_7586040e9be07d5b7241a08d1cd3657e = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_274f108f4213157426dde915df3effbd = $(`<div id="html_274f108f4213157426dde915df3effbd" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU150-0129             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> White Lick Till Plain<br>                 <b>Alt Name:</b> Mooresville Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 39<br>                 <b>Period:</b> 2009-09-14 – 2009-10-13<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>11.35</td>                     <td>2009-10-13</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.10</td>                     <td>2009-10-13</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>622.00</td>                     <td>2009-10-13</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_7586040e9be07d5b7241a08d1cd3657e.setContent(html_274f108f4213157426dde915df3effbd);
+            
+        
+
+        circle_marker_cd202031bc3148c02a33904c21b25ac9.bindPopup(popup_7586040e9be07d5b7241a08d1cd3657e)
+        ;
+
+        
+    
+    
+            circle_marker_cd202031bc3148c02a33904c21b25ac9.bindTooltip(
+                `<div>
+                     WWU150-0129 | IDEM | White Lick Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_e3762391276479b18d1944dda11a4a1b.addTo(map_f6d6bd99805eefb3d633fabc25c73e02);
+        
+    
+            var layer_control_57237c57103bde4d6b5861cb3d4dc8df_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_648bfff74e4a2e33aabd6f210f5b7c43,
+                },
+                overlays :  {
+                    "White Lick Till Plain Boundary" : geo_json_14dfd114a8808903813570922dd18edf,
+                    "WQ Sites \u2014 White Lick Till Plain" : marker_cluster_e3762391276479b18d1944dda11a4a1b,
+                },
+            };
+            let layer_control_57237c57103bde4d6b5861cb3d4dc8df = L.control.layers(
+                layer_control_57237c57103bde4d6b5861cb3d4dc8df_layers.base_layers,
+                layer_control_57237c57103bde4d6b5861cb3d4dc8df_layers.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_f6d6bd99805eefb3d633fabc25c73e02);
+
+        
+</script>
+</html>
