@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_3c5f5b81df81deb90a711706c7eca5f0 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+        position: fixed;
+        bottom: 25px;
+        left: 25px;
+        width: 340px;
+        z-index: 9999;
+        background: white;
+        padding: 12px 14px;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+        font-family: Segoe UI, Arial;
+        font-size: 12px;">
+        <b>Indian Creek Hills</b><br>
+        <hr style="margin:6px 0;">
+        <b>Sites:</b> 16<br>
+        <b>Total Records:</b> 729<br>
+        <b>Sources:</b> IDEM, USGS<br>
+    </div>
+    
+    
+            <div class="folium-map" id="map_3c5f5b81df81deb90a711706c7eca5f0" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_3c5f5b81df81deb90a711706c7eca5f0 = L.map(
+                "map_3c5f5b81df81deb90a711706c7eca5f0",
+                {
+                    center: [39.366969125, -86.3209154375],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_3c5f5b81df81deb90a711706c7eca5f0);
+
+            
+
+        
+    
+            var tile_layer_bad15768e1e564c71c92ec9023baad28 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_bad15768e1e564c71c92ec9023baad28.addTo(map_3c5f5b81df81deb90a711706c7eca5f0);
+        
+    
+        function geo_json_da90ef3dbf966e5db236d615e59704a2_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#333333", "fillColor": "#f2f2f2", "fillOpacity": 0.25, "weight": 2};
+            }
+        }
+
+        function geo_json_da90ef3dbf966e5db236d615e59704a2_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_da90ef3dbf966e5db236d615e59704a2 = L.geoJson(null, {
+                onEachFeature: geo_json_da90ef3dbf966e5db236d615e59704a2_onEachFeature,
+            
+                style: geo_json_da90ef3dbf966e5db236d615e59704a2_styler,
+        });
+
+        function geo_json_da90ef3dbf966e5db236d615e59704a2_add (data) {
+            geo_json_da90ef3dbf966e5db236d615e59704a2
+                .addData(data);
+        }
+            geo_json_da90ef3dbf966e5db236d615e59704a2_add({"bbox": [-86.4134858267476, 39.34224334291709, -86.2514662648404, 39.42288749316388], "features": [{"bbox": [-86.4134858267476, 39.34224334291709, -86.2514662648404, 39.42288749316388], "geometry": {"coordinates": [[[-86.2514662648404, 39.400823633545805], [-86.25147652770919, 39.4005923044102], [-86.25156046842558, 39.386284018523156], [-86.2515323518673, 39.386130657345284], [-86.25156268208842, 39.38607678880733], [-86.25154532731095, 39.3713262952415], [-86.25151638061354, 39.365249038186974], [-86.25275610921058, 39.36524466855536], [-86.25459270129932, 39.36582862417673], [-86.2570951235369, 39.36618793277416], [-86.25902362540192, 39.365055874789974], [-86.26138947815242, 39.36438430279811], [-86.26308231599248, 39.364623905913845], [-86.26464095274801, 39.36360384676709], [-86.26502447196093, 39.362175826450446], [-86.26267497040698, 39.361302697853034], [-86.26255704462982, 39.35849828086411], [-86.26087822410331, 39.356942750682485], [-86.25972199707445, 39.35476112582236], [-86.25944473008167, 39.35310004558935], [-86.26084552512458, 39.35305173304866], [-86.26214373633535, 39.35574920782222], [-86.26339178103859, 39.35621485635204], [-86.26426294934839, 39.35747915843056], [-86.2643210446162, 39.35896718774569], [-86.26556556609995, 39.3597760972209], [-86.26741195558853, 39.36047720915776], [-86.27026940515046, 39.36035211778655], [-86.27147152230847, 39.35993051630169], [-86.27423459651683, 39.36001930327395], [-86.27626730165794, 39.359459784652174], [-86.27829261520176, 39.359615406979394], [-86.27958679900335, 39.35919429233898], [-86.2817919718109, 39.359780100554374], [-86.28297865638498, 39.3608602518954], [-86.28464353664332, 39.36022679774354], [-86.2873108820157, 39.360672297081194], [-86.28898514559698, 39.359109048554934], [-86.29508418183856, 39.357286572029466], [-86.29731833478226, 39.35447594410262], [-86.30047707795005, 39.353362535777805], [-86.30318223762696, 39.35153110218091], [-86.30644344697886, 39.35210241784352], [-86.30968317023138, 39.35240776923172], [-86.31299549708234, 39.35282789498646], [-86.31542575400869, 39.35301386954565], [-86.31893312350185, 39.35612421663885], [-86.32490931025515, 39.35547242187492], [-86.32800571735372, 39.355375906546016], [-86.33125169454797, 39.355051296520976], [-86.33509101709684, 39.35432946148438], [-86.3379511527814, 39.3558334346117], [-86.3425729889455, 39.354972756661375], [-86.34921745583968, 39.35375130552255], [-86.35004242982697, 39.352211029031466], [-86.35135835545968, 39.35336273132714], [-86.35363818801555, 39.35389037784128], [-86.35601171290907, 39.35224421282024], [-86.3574997600238, 39.350707549759754], [-86.36059227342199, 39.351010671551585], [-86.360396230527, 39.34826312635442], [-86.35966924405254, 39.34717198495005], [-86.35769324230927, 39.34567342575595], [-86.35660208692214, 39.34412250958197], [-86.35851427225612, 39.344533591464234], [-86.35975911823147, 39.3453987178585], [-86.36136879312846, 39.34666636015772], [-86.36451721679543, 39.348915099873636], [-86.36744682422481, 39.3509336926635], [-86.36900314077342, 39.34996943345207], [-86.3713622483718, 39.347546933410676], [-86.37305843821859, 39.346721651652196], [-86.37473599944758, 39.34798232290126], [-86.37618545305169, 39.34900333858649], [-86.37740836095178, 39.34960590902335], [-86.37893676170364, 39.35038890384117], [-86.37862337169844, 39.351102457445855], [-86.37890068109954, 39.3524410134862], [-86.37969230269717, 39.35320814340442], [-86.38116496638335, 39.35335902859757], [-86.38454690471845, 39.352900144862595], [-86.3871223580634, 39.35189652512757], [-86.38806038973867, 39.34997034922961], [-86.38826457758954, 39.347682696632], [-86.38699061412304, 39.34588792579586], [-86.38618601621634, 39.343094298493874], [-86.38757511391735, 39.34224334291709], [-86.39017689991927, 39.344931160479], [-86.39071796548072, 39.34626908522499], [-86.39180925063496, 39.347895974611276], [-86.39167403036029, 39.349325721917275], [-86.39394085735383, 39.349957411635394], [-86.39424091299807, 39.35076956420317], [-86.39570863076901, 39.3514924210464], [-86.39557964427634, 39.35220697794723], [-86.39501212530918, 39.35392057290296], [-86.39470213038861, 39.35479153720599], [-86.39414229040503, 39.35561113429803], [-86.39445391821506, 39.35686440193728], [-86.39573905264866, 39.357407501293814], [-86.39698552248781, 39.357092114857345], [-86.39851541040281, 39.35595567000765], [-86.398696593329, 39.356314219414486], [-86.39864409253224, 39.3570649356501], [-86.3988695030851, 39.35763828108762], [-86.39849762371821, 39.358029733935474], [-86.39802471168036, 39.359457740562874], [-86.39810978186095, 39.36028069023859], [-86.39953136627298, 39.361039020978446], [-86.40082028326077, 39.36115294823317], [-86.40239260729469, 39.360445807262785], [-86.40350242831732, 39.35995084297045], [-86.4028483865592, 39.36102032752825], [-86.4016439714222, 39.36180088937495], [-86.40062746325778, 39.36215327120093], [-86.39905967993062, 39.3623239923032], [-86.3981002874615, 39.36335491899442], [-86.39728867898413, 39.36487653227447], [-86.39733657935115, 39.36645027550462], [-86.39892464638694, 39.36750748560505], [-86.39978502279536, 39.36746424480388], [-86.40089517733338, 39.366945467185026], [-86.40256545674818, 39.36557128566351], [-86.40380732804587, 39.36400415888754], [-86.40584560873856, 39.36267949570658], [-86.40676855442398, 39.36249347737037], [-86.40837115816012, 39.36183409177507], [-86.40916923514361, 39.36188582806307], [-86.4094679108285, 39.36288866014803], [-86.40872722423737, 39.36331403461215], [-86.40644409048369, 39.36454213620819], [-86.4054540330729, 39.36539535264328], [-86.40341241989825, 39.36710144442361], [-86.4035433373685, 39.36798327271943], [-86.40610096726233, 39.37062838132933], [-86.4063061219379, 39.37251762108241], [-86.40932562423919, 39.37287629507498], [-86.40991015567683, 39.37359456299152], [-86.40888627896562, 39.37480524773217], [-86.40786417933204, 39.3758013649404], [-86.40757321976054, 39.377516421556706], [-86.40848327872871, 39.37887997660973], [-86.4100378653737, 39.38031831632255], [-86.40984150674991, 39.381747767620524], [-86.41176602620035, 39.383044914797566], [-86.41028785383814, 39.383466566600426], [-86.40990596108603, 39.385038121370854], [-86.41089810332474, 39.387617951184474], [-86.41121479507622, 39.38941714707034], [-86.41282784893896, 39.390512436732024], [-86.41274691860562, 39.39137029514425], [-86.41295422434168, 39.393030656867566], [-86.4134858267476, 39.39347466463039], [-86.40990945311394, 39.39718965243744], [-86.40873498945182, 39.39793896367902], [-86.3915976411664, 39.398454828597906], [-86.39160605456475, 39.40171675591347], [-86.3890724073666, 39.40200558812875], [-86.38283821141503, 39.40242584804325], [-86.38145666758204, 39.40453327374309], [-86.38125128853665, 39.405740617062634], [-86.37677175289781, 39.40586776080447], [-86.37631641058582, 39.41326698075018], [-86.36735771405363, 39.4133696606196], [-86.36183656453848, 39.42089220497676], [-86.35307023477151, 39.42114589066875], [-86.3441133515306, 39.42094467981585], [-86.33748344870139, 39.42181343186107], [-86.32813124848799, 39.422212952802525], [-86.32364767065289, 39.42264013117666], [-86.31429677715418, 39.42288749316388], [-86.30787155424105, 39.422698387090925], [-86.30771117513056, 39.41922320020579], [-86.28451308412251, 39.41956225077935], [-86.28392612576462, 39.4206016613389], [-86.27988746465284, 39.42102373957194], [-86.28017151324879, 39.412085303169825], [-86.2707567596886, 39.412324673197], [-86.27080021674021, 39.408152852078906], [-86.26599394486657, 39.408569636733795], [-86.26607672134732, 39.400672976052526], [-86.2514662648404, 39.400823633545805]]], "type": "Polygon"}, "id": "5", "properties": {"Alt_Name": "Morgantown Hills", "Id": 3, "Name": "Indian Creek Hills", "Region_Description": "This hilly region is marked by a hilly relief of 179 ft, with a high elevation of 950 ft. It is bounded by hilly till to the north, outwash to the northwest, and Indian Creek to the south. In addition to the till, a region of exposed shale bedrock appears in the center of the region along ridgetops and alluvium deposits along Indian Creek. 15 high-capacity wells operate in the region, ranging from 50 GPM in the outwash to 1000 GPM in alluvial sediment. The Morgantown Township is in this region.", "longitude": null}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_da90ef3dbf966e5db236d615e59704a2.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Name", "Alt_Name", "Region_Description"];
+    let aliases = ["Region:", "Alt Name:", "Description:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_da90ef3dbf966e5db236d615e59704a2.addTo(map_3c5f5b81df81deb90a711706c7eca5f0);
+        
+    
+            var marker_cluster_8fffd9647c24eb8ad75851774e414ea6 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var circle_marker_e1b4922d7794103c1091806101076065 = L.circleMarker(
+                [39.379017, -86.400792],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_7f3b68ffa1f3b2344e181a0cfa9288c5 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_4587fb3045492372fe1fb3d91950b2d3 = $(`<div id="html_4587fb3045492372fe1fb3d91950b2d3" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392244086240301             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1979-11-01 – 1980-10-09<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>0.10</td>                     <td>1980-10-09</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>497.00</td>                     <td>1980-10-09</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_7f3b68ffa1f3b2344e181a0cfa9288c5.setContent(html_4587fb3045492372fe1fb3d91950b2d3);
+            
+        
+
+        circle_marker_e1b4922d7794103c1091806101076065.bindPopup(popup_7f3b68ffa1f3b2344e181a0cfa9288c5)
+        ;
+
+        
+    
+    
+            circle_marker_e1b4922d7794103c1091806101076065.bindTooltip(
+                `<div>
+                     USGS-392244086240301 | USGS | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_eb401c64f5243e20f2c96e1f81f24432 = L.circleMarker(
+                [39.363747, -86.279567],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_556d88937ed1480cfd793136bd86313b = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_619287cddfcfe76b24c95e393bb5facc = $(`<div id="html_619287cddfcfe76b24c95e393bb5facc" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-16-0002             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 18<br>                 <b>Period:</b> 2013-01-09 – 2013-01-09<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>14.02</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.51</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>518.00</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.30</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.03</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>0.20</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>4.00</td>                     <td>2013-01-09</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_556d88937ed1480cfd793136bd86313b.setContent(html_619287cddfcfe76b24c95e393bb5facc);
+            
+        
+
+        circle_marker_eb401c64f5243e20f2c96e1f81f24432.bindPopup(popup_556d88937ed1480cfd793136bd86313b)
+        ;
+
+        
+    
+    
+            circle_marker_eb401c64f5243e20f2c96e1f81f24432.bindTooltip(
+                `<div>
+                     WWU-16-0002 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_78858c5dd6df02bbfa325505cd0ee09f = L.circleMarker(
+                [39.363833, -86.27975],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_d4a8a5f9183a76af1b8112adfff9dc93 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_16a9c5f009b0dbac2521f8c33c3c6cd2 = $(`<div id="html_16a9c5f009b0dbac2521f8c33c3c6cd2" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-16-0003             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 25<br>                 <b>Period:</b> 2013-01-09 – 2013-01-09<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>12.77</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.82</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>981.00</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>17.00</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>3.31</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>0.30</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>19.00</td>                     <td>2013-01-09</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_d4a8a5f9183a76af1b8112adfff9dc93.setContent(html_16a9c5f009b0dbac2521f8c33c3c6cd2);
+            
+        
+
+        circle_marker_78858c5dd6df02bbfa325505cd0ee09f.bindPopup(popup_d4a8a5f9183a76af1b8112adfff9dc93)
+        ;
+
+        
+    
+    
+            circle_marker_78858c5dd6df02bbfa325505cd0ee09f.bindTooltip(
+                `<div>
+                     WWU-16-0003 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1a3b10286fea6afa617a55c588840dca = L.circleMarker(
+                [39.364447, -86.281644],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_0223edb7f923b6d8d96ec539e014e1f2 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_93a5183600318b2399636f392f207580 = $(`<div id="html_93a5183600318b2399636f392f207580" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-16-0004             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 17<br>                 <b>Period:</b> 2013-01-09 – 2013-01-09<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>15.04</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.46</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>548.00</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.70</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.16</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>0.20</td>                     <td>2013-01-09</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>24.00</td>                     <td>2013-01-09</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_0223edb7f923b6d8d96ec539e014e1f2.setContent(html_93a5183600318b2399636f392f207580);
+            
+        
+
+        circle_marker_1a3b10286fea6afa617a55c588840dca.bindPopup(popup_0223edb7f923b6d8d96ec539e014e1f2)
+        ;
+
+        
+    
+    
+            circle_marker_1a3b10286fea6afa617a55c588840dca.bindTooltip(
+                `<div>
+                     WWU-16-0004 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5223333399b8591bb1189939d3228afc = L.circleMarker(
+                [39.362222, -86.307778],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_4950458949ca3fa79b09077e5b955121 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_1e8e28fc6adc92652dc1f0db753b90ba = $(`<div id="html_1e8e28fc6adc92652dc1f0db753b90ba" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0001             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 170<br>                 <b>Period:</b> 1996-02-27 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.61</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.13</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>420.00</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.49</td>                     <td>1996-11-18</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.04</td>                     <td>1996-11-18</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>4.00</td>                     <td>1996-11-18</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_4950458949ca3fa79b09077e5b955121.setContent(html_1e8e28fc6adc92652dc1f0db753b90ba);
+            
+        
+
+        circle_marker_5223333399b8591bb1189939d3228afc.bindPopup(popup_4950458949ca3fa79b09077e5b955121)
+        ;
+
+        
+    
+    
+            circle_marker_5223333399b8591bb1189939d3228afc.bindTooltip(
+                `<div>
+                     WWU170-0001 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4687681ee60d3f09060ea88d7d50ef46 = L.circleMarker(
+                [39.379167, -86.400833],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_7f954065249a7f83fa8c958bd790b872 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_3f77db25b89688a1e88aa3d24dc9e0d3 = $(`<div id="html_3f77db25b89688a1e88aa3d24dc9e0d3" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0005             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 48<br>                 <b>Period:</b> 2001-07-25 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.28</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.92</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>377.00</td>                     <td>2001-08-21</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_7f954065249a7f83fa8c958bd790b872.setContent(html_3f77db25b89688a1e88aa3d24dc9e0d3);
+            
+        
+
+        circle_marker_4687681ee60d3f09060ea88d7d50ef46.bindPopup(popup_7f954065249a7f83fa8c958bd790b872)
+        ;
+
+        
+    
+    
+            circle_marker_4687681ee60d3f09060ea88d7d50ef46.bindTooltip(
+                `<div>
+                     WWU170-0005 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_85717e12dd2b17af579193461e333393 = L.circleMarker(
+                [39.366886, -86.261292],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_d5cfe16dab3cf52a74949e4641e0d2c3 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_621d3386de70fdb9f2d4401baf38ae12 = $(`<div id="html_621d3386de70fdb9f2d4401baf38ae12" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0015             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 42<br>                 <b>Period:</b> 2001-07-25 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.01</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.84</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>456.00</td>                     <td>2001-08-21</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_d5cfe16dab3cf52a74949e4641e0d2c3.setContent(html_621d3386de70fdb9f2d4401baf38ae12);
+            
+        
+
+        circle_marker_85717e12dd2b17af579193461e333393.bindPopup(popup_d5cfe16dab3cf52a74949e4641e0d2c3)
+        ;
+
+        
+    
+    
+            circle_marker_85717e12dd2b17af579193461e333393.bindTooltip(
+                `<div>
+                     WWU170-0015 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d8789d31e07f3582d0e11b499f610436 = L.circleMarker(
+                [39.360622, -86.270547],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_cf30e63c441486424bcedd0e6c40aa99 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_08682d87cafd87bfb99807ca8058b04d = $(`<div id="html_08682d87cafd87bfb99807ca8058b04d" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0016             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 41<br>                 <b>Period:</b> 2001-07-25 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.26</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.94</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>440.00</td>                     <td>2001-08-21</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_cf30e63c441486424bcedd0e6c40aa99.setContent(html_08682d87cafd87bfb99807ca8058b04d);
+            
+        
+
+        circle_marker_d8789d31e07f3582d0e11b499f610436.bindPopup(popup_cf30e63c441486424bcedd0e6c40aa99)
+        ;
+
+        
+    
+    
+            circle_marker_d8789d31e07f3582d0e11b499f610436.bindTooltip(
+                `<div>
+                     WWU170-0016 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5657d27ec27e56386053844ed0a50cf6 = L.circleMarker(
+                [39.371442, -86.266783],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_03dda5b28aac24543d17c6952f5f89b5 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_e13d2af4d5a8961f98128f1e5c4de44e = $(`<div id="html_e13d2af4d5a8961f98128f1e5c4de44e" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0017             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 48<br>                 <b>Period:</b> 2001-07-25 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.08</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.90</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>395.00</td>                     <td>2001-08-21</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_03dda5b28aac24543d17c6952f5f89b5.setContent(html_e13d2af4d5a8961f98128f1e5c4de44e);
+            
+        
+
+        circle_marker_5657d27ec27e56386053844ed0a50cf6.bindPopup(popup_03dda5b28aac24543d17c6952f5f89b5)
+        ;
+
+        
+    
+    
+            circle_marker_5657d27ec27e56386053844ed0a50cf6.bindTooltip(
+                `<div>
+                     WWU170-0017 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a2971e1cdd379547746d7576aaec478d = L.circleMarker(
+                [39.371169, -86.254411],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_1cddea2bda3d45d6267592fb4eb6989e = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_d0ad946764f963e19fc9d83d68a3a4c1 = $(`<div id="html_d0ad946764f963e19fc9d83d68a3a4c1" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0018             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 21<br>                 <b>Period:</b> 2001-07-25 – 2001-08-07<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.25</td>                     <td>2001-07-30</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.05</td>                     <td>2001-07-30</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>219.00</td>                     <td>2001-07-30</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_1cddea2bda3d45d6267592fb4eb6989e.setContent(html_d0ad946764f963e19fc9d83d68a3a4c1);
+            
+        
+
+        circle_marker_a2971e1cdd379547746d7576aaec478d.bindPopup(popup_1cddea2bda3d45d6267592fb4eb6989e)
+        ;
+
+        
+    
+    
+            circle_marker_a2971e1cdd379547746d7576aaec478d.bindTooltip(
+                `<div>
+                     WWU170-0018 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3b43ae8a2fdc803b85e46036fd95eb32 = L.circleMarker(
+                [39.355981, -86.298644],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_ae375b58659fc3d5a9f5ece7a1b998a5 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_3466371127fd2da1787a38c8c42189a5 = $(`<div id="html_3466371127fd2da1787a38c8c42189a5" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0019             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 49<br>                 <b>Period:</b> 2001-07-25 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.09</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.02</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>477.00</td>                     <td>2001-08-21</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_ae375b58659fc3d5a9f5ece7a1b998a5.setContent(html_3466371127fd2da1787a38c8c42189a5);
+            
+        
+
+        circle_marker_3b43ae8a2fdc803b85e46036fd95eb32.bindPopup(popup_ae375b58659fc3d5a9f5ece7a1b998a5)
+        ;
+
+        
+    
+    
+            circle_marker_3b43ae8a2fdc803b85e46036fd95eb32.bindTooltip(
+                `<div>
+                     WWU170-0019 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b58def10efbb737b4ad2c37c10ac76ec = L.circleMarker(
+                [39.363281, -86.309114],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_4c1b700a1fc0af6dee55fd7e553f3f1e = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_5a78b340818326bf3f5651e93805d864 = $(`<div id="html_5a78b340818326bf3f5651e93805d864" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0020             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 50<br>                 <b>Period:</b> 2001-07-25 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>6.24</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.78</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>389.00</td>                     <td>2001-08-21</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_4c1b700a1fc0af6dee55fd7e553f3f1e.setContent(html_5a78b340818326bf3f5651e93805d864);
+            
+        
+
+        circle_marker_b58def10efbb737b4ad2c37c10ac76ec.bindPopup(popup_4c1b700a1fc0af6dee55fd7e553f3f1e)
+        ;
+
+        
+    
+    
+            circle_marker_b58def10efbb737b4ad2c37c10ac76ec.bindTooltip(
+                `<div>
+                     WWU170-0020 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c6f56652c6063b173c35fcb9f645be8e = L.circleMarker(
+                [39.358097, -86.359825],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_b85d19e31bb25f199c3cda6e52e56f54 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_a32d44a59a4649f10874faa967fcd53f = $(`<div id="html_a32d44a59a4649f10874faa967fcd53f" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0022             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 50<br>                 <b>Period:</b> 2001-07-25 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.75</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.02</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>415.00</td>                     <td>2001-08-21</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_b85d19e31bb25f199c3cda6e52e56f54.setContent(html_a32d44a59a4649f10874faa967fcd53f);
+            
+        
+
+        circle_marker_c6f56652c6063b173c35fcb9f645be8e.bindPopup(popup_b85d19e31bb25f199c3cda6e52e56f54)
+        ;
+
+        
+    
+    
+            circle_marker_c6f56652c6063b173c35fcb9f645be8e.bindTooltip(
+                `<div>
+                     WWU170-0022 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c74082a144cf4cbf609adbcd052513ad = L.circleMarker(
+                [39.361972, -86.366417],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_fd94067d559959cec65dd809663f0500 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_14a563f95bf2f4383b97113bf674a36d = $(`<div id="html_14a563f95bf2f4383b97113bf674a36d" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0023             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 47<br>                 <b>Period:</b> 2001-07-25 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.98</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.00</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>441.00</td>                     <td>2001-08-21</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_fd94067d559959cec65dd809663f0500.setContent(html_14a563f95bf2f4383b97113bf674a36d);
+            
+        
+
+        circle_marker_c74082a144cf4cbf609adbcd052513ad.bindPopup(popup_fd94067d559959cec65dd809663f0500)
+        ;
+
+        
+    
+    
+            circle_marker_c74082a144cf4cbf609adbcd052513ad.bindTooltip(
+                `<div>
+                     WWU170-0023 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_68d0fb2e8df1f4cc40dbfd5d66e60747 = L.circleMarker(
+                [39.352417, -86.38955],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_885696b41dbcbea84f0eb84f9a9cd096 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_7e7ac26a951fad9167782ba3c9ce1d36 = $(`<div id="html_7e7ac26a951fad9167782ba3c9ce1d36" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0025             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 49<br>                 <b>Period:</b> 2001-07-25 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.08</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.61</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>314.00</td>                     <td>2001-08-21</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_885696b41dbcbea84f0eb84f9a9cd096.setContent(html_7e7ac26a951fad9167782ba3c9ce1d36);
+            
+        
+
+        circle_marker_68d0fb2e8df1f4cc40dbfd5d66e60747.bindPopup(popup_885696b41dbcbea84f0eb84f9a9cd096)
+        ;
+
+        
+    
+    
+            circle_marker_68d0fb2e8df1f4cc40dbfd5d66e60747.bindTooltip(
+                `<div>
+                     WWU170-0025 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_aa4fe6f914f5e6b7d60490a5aa180f46 = L.circleMarker(
+                [39.397206, -86.4077],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8fffd9647c24eb8ad75851774e414ea6);
+        
+    
+        var popup_5f348580e2a745429a1229751af4f344 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_fce979e7e8d837ca721bdc543a001b1e = $(`<div id="html_fce979e7e8d837ca721bdc543a001b1e" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0027             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Indian Creek Hills<br>                 <b>Alt Name:</b> Morgantown Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 46<br>                 <b>Period:</b> 2001-07-25 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.50</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.94</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>367.00</td>                     <td>2001-08-21</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_5f348580e2a745429a1229751af4f344.setContent(html_fce979e7e8d837ca721bdc543a001b1e);
+            
+        
+
+        circle_marker_aa4fe6f914f5e6b7d60490a5aa180f46.bindPopup(popup_5f348580e2a745429a1229751af4f344)
+        ;
+
+        
+    
+    
+            circle_marker_aa4fe6f914f5e6b7d60490a5aa180f46.bindTooltip(
+                `<div>
+                     WWU170-0027 | IDEM | Indian Creek Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_8fffd9647c24eb8ad75851774e414ea6.addTo(map_3c5f5b81df81deb90a711706c7eca5f0);
+        
+    
+            var layer_control_ea072929f8dcd1b428193556fcbf8046_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_bad15768e1e564c71c92ec9023baad28,
+                },
+                overlays :  {
+                    "Indian Creek Hills Boundary" : geo_json_da90ef3dbf966e5db236d615e59704a2,
+                    "WQ Sites \u2014 Indian Creek Hills" : marker_cluster_8fffd9647c24eb8ad75851774e414ea6,
+                },
+            };
+            let layer_control_ea072929f8dcd1b428193556fcbf8046 = L.control.layers(
+                layer_control_ea072929f8dcd1b428193556fcbf8046_layers.base_layers,
+                layer_control_ea072929f8dcd1b428193556fcbf8046_layers.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_3c5f5b81df81deb90a711706c7eca5f0);
+
+        
+</script>
+</html>
