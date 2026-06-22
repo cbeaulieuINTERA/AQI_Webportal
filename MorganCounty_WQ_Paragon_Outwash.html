@@ -1,0 +1,1552 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_1990435e162b97371b028de2375021aa {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+        position: fixed;
+        bottom: 25px;
+        left: 25px;
+        width: 340px;
+        z-index: 9999;
+        background: white;
+        padding: 12px 14px;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+        font-family: Segoe UI, Arial;
+        font-size: 12px;">
+        <b>Paragon Outwash</b><br>
+        <hr style="margin:6px 0;">
+        <b>Sites:</b> 47<br>
+        <b>Total Records:</b> 1954<br>
+        <b>Sources:</b> EPA, IDEM, USGS<br>
+    </div>
+    
+    
+            <div class="folium-map" id="map_1990435e162b97371b028de2375021aa" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_1990435e162b97371b028de2375021aa = L.map(
+                "map_1990435e162b97371b028de2375021aa",
+                {
+                    center: [39.389485510638295, -86.52156572340424],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_1990435e162b97371b028de2375021aa);
+
+            
+
+        
+    
+            var tile_layer_3f20e9393e6e0f416ace7a398ab19951 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_3f20e9393e6e0f416ace7a398ab19951.addTo(map_1990435e162b97371b028de2375021aa);
+        
+    
+        function geo_json_f8a9e6d8714f33d87235ec1547cab5dc_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#333333", "fillColor": "#f2f2f2", "fillOpacity": 0.25, "weight": 2};
+            }
+        }
+
+        function geo_json_f8a9e6d8714f33d87235ec1547cab5dc_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_f8a9e6d8714f33d87235ec1547cab5dc = L.geoJson(null, {
+                onEachFeature: geo_json_f8a9e6d8714f33d87235ec1547cab5dc_onEachFeature,
+            
+                style: geo_json_f8a9e6d8714f33d87235ec1547cab5dc_styler,
+        });
+
+        function geo_json_f8a9e6d8714f33d87235ec1547cab5dc_add (data) {
+            geo_json_f8a9e6d8714f33d87235ec1547cab5dc
+                .addData(data);
+        }
+            geo_json_f8a9e6d8714f33d87235ec1547cab5dc_add({"bbox": [-86.63081274579868, 39.34642344801459, -86.4424212450295, 39.42616087236216], "features": [{"bbox": [-86.63081274579868, 39.34642344801459, -86.4424212450295, 39.42616087236216], "geometry": {"coordinates": [[[-86.57868287795166, 39.41487927798801], [-86.57534305320456, 39.41675736944511], [-86.57493832396698, 39.416566995019025], [-86.57394633313183, 39.416942434255624], [-86.57055868133685, 39.41802665267894], [-86.56846686058897, 39.41830500084074], [-86.56766506729655, 39.4187311572472], [-86.56532643364342, 39.419151575775984], [-86.56403490221429, 39.419242105722034], [-86.56335929108785, 39.41914420885083], [-86.56195077973533, 39.418280646844856], [-86.55992848610698, 39.417271702989424], [-86.55728020609399, 39.41513744393377], [-86.55572135611398, 39.41377257806994], [-86.55462721118953, 39.41183729274188], [-86.55335146916532, 39.40947216561975], [-86.55188089649717, 39.40875128722167], [-86.55012595653201, 39.409245170484404], [-86.54920076701922, 39.4097422453521], [-86.54791231524473, 39.4093796340248], [-86.54668004010347, 39.407407453497534], [-86.54470517081694, 39.408639461907455], [-86.54296364038318, 39.41177961427899], [-86.54503676944888, 39.41436254171741], [-86.54748997525773, 39.415230376869644], [-86.5484682108473, 39.419018777321824], [-86.54677075705108, 39.4200850091545], [-86.54477363168002, 39.41995800743825], [-86.54524320516211, 39.41864860395092], [-86.54479301485759, 39.41697799177918], [-86.54341535775599, 39.41613816699662], [-86.53972556816254, 39.416362034127374], [-86.53895168988042, 39.41719339540612], [-86.53938226790332, 39.41808674445492], [-86.53959980341594, 39.418659783088536], [-86.53856291465705, 39.41928506995895], [-86.53767392215201, 39.4198537176257], [-86.53641872382265, 39.42002037554784], [-86.53502282515464, 39.419156538469075], [-86.53369424683007, 39.41926565596683], [-86.53213785854696, 39.42034654358399], [-86.53264545149557, 39.4216645913485], [-86.53226933435755, 39.42275021598407], [-86.53167571746043, 39.42326278687625], [-86.5310882266046, 39.42285989636632], [-86.53094605312823, 39.42205827543918], [-86.52881750854495, 39.423184490860876], [-86.52585646274665, 39.42467442340266], [-86.52354715230622, 39.425237164347344], [-86.52206532466674, 39.42616087236216], [-86.51994724375946, 39.42572301834813], [-86.51699874044832, 39.42535320276169], [-86.51588458278215, 39.425699227991984], [-86.51496323106831, 39.42557618649553], [-86.51481697408317, 39.424502745727345], [-86.51435961592138, 39.423964421752935], [-86.5132106538972, 39.423423203866236], [-86.5124480112532, 39.42258558574248], [-86.51392586272762, 39.42002889510331], [-86.51200772407746, 39.41960365215758], [-86.51076367810407, 39.42168448813068], [-86.5104471302187, 39.42299439453292], [-86.50944271165773, 39.423764985552786], [-86.5090639178141, 39.42298856517509], [-86.50985407712587, 39.419892606671226], [-86.51009544997953, 39.41834397753259], [-86.51014053336425, 39.40783292358758], [-86.50626030860177, 39.408960876591046], [-86.50218641139337, 39.41137527079386], [-86.49885599331914, 39.41293445989708], [-86.49369068448657, 39.41319818288678], [-86.4879700387559, 39.413745322063086], [-86.48500695736998, 39.41544877357187], [-86.48406488503355, 39.41816243874514], [-86.48349791693137, 39.42001949641384], [-86.48201197163678, 39.421443330078205], [-86.47960383004708, 39.42286302242885], [-86.47941594849397, 39.423484023355904], [-86.47212611711736, 39.425388218938025], [-86.47213918798447, 39.425320599896075], [-86.4720843147873, 39.42535315107567], [-86.47216813576507, 39.42520915885134], [-86.4424212450295, 39.400259597668835], [-86.44313313003518, 39.399630207670846], [-86.44595856044458, 39.39672558984528], [-86.44709824311032, 39.39559619156798], [-86.44814054488613, 39.39434234801587], [-86.45119707465714, 39.39012268430915], [-86.45225800817752, 39.386465738438254], [-86.45406814754324, 39.381267413043425], [-86.45461006042713, 39.37795131131968], [-86.45407375561618, 39.373448599154095], [-86.45566082284486, 39.370809698847715], [-86.45696691435707, 39.36874164557393], [-86.45827790144892, 39.36602989568238], [-86.46032696630908, 39.363178509261495], [-86.46264348857183, 39.361472683867966], [-86.46578089926685, 39.36084342383646], [-86.47057607251585, 39.36029315514137], [-86.47260188158238, 39.36044539891562], [-86.47453074528201, 39.36124087451875], [-86.47626951046823, 39.36282221289956], [-86.47707952084262, 39.365400673344475], [-86.47742142012534, 39.3689783432974], [-86.47730314896913, 39.37248242142887], [-86.47756786418164, 39.374057107565534], [-86.48034893708818, 39.36872324302219], [-86.48153112660442, 39.36461596096801], [-86.48223271568875, 39.36318862992732], [-86.48171376186019, 39.36068302338655], [-86.48265530385437, 39.35794550580781], [-86.48521288898763, 39.354678717278134], [-86.48812057958686, 39.3560027947961], [-86.48833785069466, 39.35779182104483], [-86.48916455998057, 39.36023914872575], [-86.48807142198615, 39.36273764241712], [-86.48604765286755, 39.36648366581457], [-86.4870876641389, 39.36745921964914], [-86.48712642000898, 39.370558706678715], [-86.48939238095177, 39.37152230694808], [-86.48900954668751, 39.373475578738486], [-86.49103301030196, 39.3740089459539], [-86.49224547096573, 39.37519039260075], [-86.49315456897185, 39.37691089849311], [-86.49434585391839, 39.377845875031426], [-86.49719751401408, 39.37857345790091], [-86.49913226913077, 39.37865332451673], [-86.50834834473405, 39.37862110652949], [-86.51074888782904, 39.377987520934376], [-86.51341740938251, 39.37857089122997], [-86.51879779918062, 39.37344363377235], [-86.51835818393151, 39.37036633835502], [-86.51809551415909, 39.36836261405841], [-86.52078621969264, 39.3656558599254], [-86.52272405712094, 39.36523468685301], [-86.52337631770276, 39.3641645179376], [-86.52467011348656, 39.36359762705282], [-86.52743420056748, 39.3636088841182], [-86.52853297356344, 39.363035197811065], [-86.52938114916093, 39.36250220955993], [-86.53522188893733, 39.36169124935405], [-86.53629599571933, 39.36181473891754], [-86.53998057598382, 39.361948566738256], [-86.54068173236675, 39.36040167359669], [-86.54030409879839, 39.359446543807444], [-86.53870121554975, 39.35800974300763], [-86.53717202427231, 39.357050032567635], [-86.53786926565706, 39.356099164115186], [-86.53948304549013, 39.355867151188434], [-86.54078387529782, 39.356527918340994], [-86.54092922860498, 39.35778014323484], [-86.54192106226556, 39.35873769045199], [-86.54291369985087, 39.359576027413354], [-86.5435193731397, 39.360889657983364], [-86.54482381570753, 39.36101397210697], [-86.54597123480255, 39.36167408084454], [-86.54668614105557, 39.36218597170163], [-86.54713603719078, 39.36385659049737], [-86.54859448708336, 39.363921859224824], [-86.55005638173502, 39.363450701417555], [-86.55226702725038, 39.365962527944816], [-86.55486478712945, 39.36799897423391], [-86.55632295410253, 39.36812374750996], [-86.55824521994259, 39.36771384390274], [-86.56209564076214, 39.365940325145075], [-86.56402374299822, 39.36457670921601], [-86.56588679680735, 39.361305540244835], [-86.56834809890103, 39.360599466020666], [-86.57089269242987, 39.358820802152266], [-86.57292761838025, 39.356855141672725], [-86.5759764893968, 39.35543582959231], [-86.57957455407221, 39.35459060668116], [-86.58169641661755, 39.35409759112099], [-86.58518488115773, 39.35618424551426], [-86.58775057204704, 39.35855362192729], [-86.5923325639068, 39.36278961908761], [-86.59417528398295, 39.3627960596029], [-86.59639436989507, 39.36144484017426], [-86.59916943571221, 39.359523310092605], [-86.60028683791464, 39.357452985321714], [-86.60158152024205, 39.356599148132936], [-86.6035170163301, 39.35646271190481], [-86.60628205549646, 39.35625752971005], [-86.61062237539535, 39.354412531788235], [-86.61560967903009, 39.35214037086684], [-86.6183741256233, 39.35200642207052], [-86.62161537375184, 39.3488699856334], [-86.62457157097771, 39.3473060485172], [-86.628812692478, 39.34660441941354], [-86.63081274579868, 39.34642344801459], [-86.6307988333821, 39.34786340068697], [-86.63079866743219, 39.34789493789265], [-86.63078414576547, 39.355202630302706], [-86.63077285085991, 39.36933596895536], [-86.63076244959072, 39.36979548405395], [-86.63079356108312, 39.37615923964903], [-86.62538661902771, 39.378638931197806], [-86.6135684263761, 39.382605560172784], [-86.60969362850662, 39.38330785495436], [-86.6039374712324, 39.39072676434656], [-86.60446304779111, 39.3955920900288], [-86.60098549655893, 39.39114581432334], [-86.59304529672504, 39.39340703716496], [-86.58917641207081, 39.39296430535613], [-86.58624031076756, 39.39066517808873], [-86.58420232658085, 39.39237445544969], [-86.58306728150681, 39.39723392762268], [-86.58220195325234, 39.39894535556683], [-86.57878855723808, 39.40447603915943], [-86.57839402230144, 39.406203068584425], [-86.5811462618717, 39.40847788582682], [-86.58129564444248, 39.40919364737401], [-86.58029684479031, 39.40919004839596], [-86.57899538174117, 39.4084105201931], [-86.57845793155435, 39.408348972060416], [-86.57804612221264, 39.41293683026598], [-86.57868287795166, 39.41487927798801]]], "type": "Polygon"}, "id": "4", "properties": {"Alt_Name": "Paragon Outwash", "Id": 1, "Name": "Lower White River Outwash", "Region_Description": "This region is the most uniform of the regions, marked by the alluvium and outwash in the White River flood plain. Three high-capacity wells operate in the area: 100 GPM is produced in Paragon Township; 2500 GPM is produced in the two wells on the eastern side of the region.", "longitude": null}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_f8a9e6d8714f33d87235ec1547cab5dc.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Name", "Alt_Name", "Region_Description"];
+    let aliases = ["Region:", "Alt Name:", "Description:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_f8a9e6d8714f33d87235ec1547cab5dc.addTo(map_1990435e162b97371b028de2375021aa);
+        
+    
+            var marker_cluster_d43726a96a30a6d229e15a888542a314 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var circle_marker_828c901f177869b39b062c7da2f35195 = L.circleMarker(
+                [39.404491, -86.50833],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_03a7ab656019d75eb3e8952112e69cc1 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_04ecf2b3560ecfde44ce89e8caafb521 = $(`<div id="html_04ecf2b3560ecfde44ce89e8caafb521" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 IN033-392416086303001             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> EPA<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1989-09-18 – 1989-09-18<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>TKN</b></td>                     <td>0.36</td>                     <td>1989-09-18</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_03a7ab656019d75eb3e8952112e69cc1.setContent(html_04ecf2b3560ecfde44ce89e8caafb521);
+            
+        
+
+        circle_marker_828c901f177869b39b062c7da2f35195.bindPopup(popup_03a7ab656019d75eb3e8952112e69cc1)
+        ;
+
+        
+    
+    
+            circle_marker_828c901f177869b39b062c7da2f35195.bindTooltip(
+                `<div>
+                     IN033-392416086303001 | EPA | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f5b5f62d7751fdeea659e8c38358bf61 = L.circleMarker(
+                [39.372818, -86.55637],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_92717285b2517d24652e3c018d7bfc5d = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_e6a4890cf1ff0ef0ff51f0338844aad9 = $(`<div id="html_e6a4890cf1ff0ef0ff51f0338844aad9" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-03354300             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 3<br>                 <b>Period:</b> 1964-10-29 – 1964-10-29<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>5.00</td>                     <td>1964-10-29</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>1010.00</td>                     <td>1964-10-29</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_92717285b2517d24652e3c018d7bfc5d.setContent(html_e6a4890cf1ff0ef0ff51f0338844aad9);
+            
+        
+
+        circle_marker_f5b5f62d7751fdeea659e8c38358bf61.bindPopup(popup_92717285b2517d24652e3c018d7bfc5d)
+        ;
+
+        
+    
+    
+            circle_marker_f5b5f62d7751fdeea659e8c38358bf61.bindTooltip(
+                `<div>
+                     USGS-03354300 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d22c594643744d69608444767149cff8 = L.circleMarker(
+                [39.357686, -86.574631],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_883bb730842371cf9f0da6feb2137436 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_69ec88e4c96cc261fd50ee7dc0210132 = $(`<div id="html_69ec88e4c96cc261fd50ee7dc0210132" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392128086342701             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1980-01-11 – 1980-01-11<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>3.20</td>                     <td>1980-01-11</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>416.00</td>                     <td>1980-01-11</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_883bb730842371cf9f0da6feb2137436.setContent(html_69ec88e4c96cc261fd50ee7dc0210132);
+            
+        
+
+        circle_marker_d22c594643744d69608444767149cff8.bindPopup(popup_883bb730842371cf9f0da6feb2137436)
+        ;
+
+        
+    
+    
+            circle_marker_d22c594643744d69608444767149cff8.bindTooltip(
+                `<div>
+                     USGS-392128086342701 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_41c501b1161e40e419d3ecbc9c4807dd = L.circleMarker(
+                [39.367825, -86.549165],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_e353c8cea1c99f37fc6e0a916af1b3f2 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_e19870be832464ff48f76fcfe8dd40b9 = $(`<div id="html_e19870be832464ff48f76fcfe8dd40b9" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392204086325701             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1979-11-08 – 1980-10-06<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>3.70</td>                     <td>1980-10-06</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>731.00</td>                     <td>1980-10-06</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_e353c8cea1c99f37fc6e0a916af1b3f2.setContent(html_e19870be832464ff48f76fcfe8dd40b9);
+            
+        
+
+        circle_marker_41c501b1161e40e419d3ecbc9c4807dd.bindPopup(popup_e353c8cea1c99f37fc6e0a916af1b3f2)
+        ;
+
+        
+    
+    
+            circle_marker_41c501b1161e40e419d3ecbc9c4807dd.bindTooltip(
+                `<div>
+                     USGS-392204086325701 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0cc48c59a5c93d97884bac4de68b0cf7 = L.circleMarker(
+                [39.367824, -86.623335],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_8b8ef5e446947df819f7401e6360cdb5 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_9d1dee7f102197386b0d5f059d46d902 = $(`<div id="html_9d1dee7f102197386b0d5f059d46d902" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392204086372501             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1979-11-13 – 1979-11-13<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>2.50</td>                     <td>1979-11-13</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>411.00</td>                     <td>1979-11-13</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_8b8ef5e446947df819f7401e6360cdb5.setContent(html_9d1dee7f102197386b0d5f059d46d902);
+            
+        
+
+        circle_marker_0cc48c59a5c93d97884bac4de68b0cf7.bindPopup(popup_8b8ef5e446947df819f7401e6360cdb5)
+        ;
+
+        
+    
+    
+            circle_marker_0cc48c59a5c93d97884bac4de68b0cf7.bindTooltip(
+                `<div>
+                     USGS-392204086372501 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_50e8b163515e9af980627f0f19660cda = L.circleMarker(
+                [39.369972, -86.477056],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_801acbd22b62f091f9ec45e10868609c = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_27d237333a0ace03a2144f65fe9d7969 = $(`<div id="html_27d237333a0ace03a2144f65fe9d7969" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392211086283701             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 3<br>                 <b>Period:</b> 1995-07-27 – 1995-07-27<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>5.80</td>                     <td>1995-07-27</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>602.00</td>                     <td>1995-07-27</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_801acbd22b62f091f9ec45e10868609c.setContent(html_27d237333a0ace03a2144f65fe9d7969);
+            
+        
+
+        circle_marker_50e8b163515e9af980627f0f19660cda.bindPopup(popup_801acbd22b62f091f9ec45e10868609c)
+        ;
+
+        
+    
+    
+            circle_marker_50e8b163515e9af980627f0f19660cda.bindTooltip(
+                `<div>
+                     USGS-392211086283701 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e50a5814e88ded36e4a95e1845ab2172 = L.circleMarker(
+                [39.371422, -86.615069],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_39f32d1c71933c81aaabeaab09aa7fff = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_b9da8a53f157460b79596894dcbf1c55 = $(`<div id="html_b9da8a53f157460b79596894dcbf1c55" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392218086365401             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1979-11-13 – 1979-11-13<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>1.20</td>                     <td>1979-11-13</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>498.00</td>                     <td>1979-11-13</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_39f32d1c71933c81aaabeaab09aa7fff.setContent(html_b9da8a53f157460b79596894dcbf1c55);
+            
+        
+
+        circle_marker_e50a5814e88ded36e4a95e1845ab2172.bindPopup(popup_39f32d1c71933c81aaabeaab09aa7fff)
+        ;
+
+        
+    
+    
+            circle_marker_e50a5814e88ded36e4a95e1845ab2172.bindTooltip(
+                `<div>
+                     USGS-392218086365401 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_efb7d6e9971a6cbcee13546478a614fe = L.circleMarker(
+                [39.374394, -86.466169],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_33259c43fbc70584d047a32606fb4e81 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_d70adf88ab27948695eb632fd15c0a63 = $(`<div id="html_d70adf88ab27948695eb632fd15c0a63" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392228086275801             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1979-11-08 – 1979-11-08<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.90</td>                     <td>1979-11-08</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>493.00</td>                     <td>1979-11-08</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_33259c43fbc70584d047a32606fb4e81.setContent(html_d70adf88ab27948695eb632fd15c0a63);
+            
+        
+
+        circle_marker_efb7d6e9971a6cbcee13546478a614fe.bindPopup(popup_33259c43fbc70584d047a32606fb4e81)
+        ;
+
+        
+    
+    
+            circle_marker_efb7d6e9971a6cbcee13546478a614fe.bindTooltip(
+                `<div>
+                     USGS-392228086275801 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4604e7dc8a055c8dace85bf3ac5f2ce2 = L.circleMarker(
+                [39.374492, -86.479163],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_b9c8d300d92eab3007fc7b5038616519 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_739b99ffb500b78debb0cb2f714ae9a2 = $(`<div id="html_739b99ffb500b78debb0cb2f714ae9a2" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392228086284501             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1979-11-08 – 1979-11-08<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>0.70</td>                     <td>1979-11-08</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>900.00</td>                     <td>1979-11-08</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_b9c8d300d92eab3007fc7b5038616519.setContent(html_739b99ffb500b78debb0cb2f714ae9a2);
+            
+        
+
+        circle_marker_4604e7dc8a055c8dace85bf3ac5f2ce2.bindPopup(popup_b9c8d300d92eab3007fc7b5038616519)
+        ;
+
+        
+    
+    
+            circle_marker_4604e7dc8a055c8dace85bf3ac5f2ce2.bindTooltip(
+                `<div>
+                     USGS-392228086284501 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_df041123001beb066b0ebfcbef34cfa1 = L.circleMarker(
+                [39.374491, -86.55861],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_1a6939b0d4481bbb34df0b8669567529 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_175b5da92f0a50ec362dd99f4a13b1e2 = $(`<div id="html_175b5da92f0a50ec362dd99f4a13b1e2" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392228086333101             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1979-11-09 – 1980-10-08<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>0.00</td>                     <td>1980-10-08</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>613.00</td>                     <td>1980-10-08</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_1a6939b0d4481bbb34df0b8669567529.setContent(html_175b5da92f0a50ec362dd99f4a13b1e2);
+            
+        
+
+        circle_marker_df041123001beb066b0ebfcbef34cfa1.bindPopup(popup_1a6939b0d4481bbb34df0b8669567529)
+        ;
+
+        
+    
+    
+            circle_marker_df041123001beb066b0ebfcbef34cfa1.bindTooltip(
+                `<div>
+                     USGS-392228086333101 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_198b91a4f5a43f198923074fcd0dc7d7 = L.circleMarker(
+                [39.382083, -86.600311],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_fd123ea6e224fcbb9466e58c1bda4451 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_03d4db4644cbaed7335dee04c61696f9 = $(`<div id="html_03d4db4644cbaed7335dee04c61696f9" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392255086355701             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1979-11-13 – 1979-11-13<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>4.30</td>                     <td>1979-11-13</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>358.00</td>                     <td>1979-11-13</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_fd123ea6e224fcbb9466e58c1bda4451.setContent(html_03d4db4644cbaed7335dee04c61696f9);
+            
+        
+
+        circle_marker_198b91a4f5a43f198923074fcd0dc7d7.bindPopup(popup_fd123ea6e224fcbb9466e58c1bda4451)
+        ;
+
+        
+    
+    
+            circle_marker_198b91a4f5a43f198923074fcd0dc7d7.bindTooltip(
+                `<div>
+                     USGS-392255086355701 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_be43d65ff5e01e6904dd54614ba28f95 = L.circleMarker(
+                [39.382825, -86.521386],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_c4757b57840e5776943b8ac07450c034 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_cd0065f47ae31dbd261bd58876c37546 = $(`<div id="html_cd0065f47ae31dbd261bd58876c37546" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392258086311701             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1979-11-12 – 1979-11-12<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>1.00</td>                     <td>1979-11-12</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>585.00</td>                     <td>1979-11-12</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_c4757b57840e5776943b8ac07450c034.setContent(html_cd0065f47ae31dbd261bd58876c37546);
+            
+        
+
+        circle_marker_be43d65ff5e01e6904dd54614ba28f95.bindPopup(popup_c4757b57840e5776943b8ac07450c034)
+        ;
+
+        
+    
+    
+            circle_marker_be43d65ff5e01e6904dd54614ba28f95.bindTooltip(
+                `<div>
+                     USGS-392258086311701 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_57df7e49622f40e28922d37ee4f9d7d0 = L.circleMarker(
+                [39.383647, -86.563714],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_b9bb4ab30ddcf1c082ec91e2f89b09ee = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_544c448ef11a541755fe92977300c969 = $(`<div id="html_544c448ef11a541755fe92977300c969" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392301086335101             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1979-11-09 – 1980-10-08<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>0.00</td>                     <td>1980-10-08</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>500.00</td>                     <td>1980-10-08</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_b9bb4ab30ddcf1c082ec91e2f89b09ee.setContent(html_544c448ef11a541755fe92977300c969);
+            
+        
+
+        circle_marker_57df7e49622f40e28922d37ee4f9d7d0.bindPopup(popup_b9bb4ab30ddcf1c082ec91e2f89b09ee)
+        ;
+
+        
+    
+    
+            circle_marker_57df7e49622f40e28922d37ee4f9d7d0.bindTooltip(
+                `<div>
+                     USGS-392301086335101 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7a8d0bb27cb8c33952a089e333aaf38c = L.circleMarker(
+                [39.393381, -86.459718],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_b00cbbe8baf444a4c665f862e8077fbc = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_aafca6af6964c2d947345979eabd416c = $(`<div id="html_aafca6af6964c2d947345979eabd416c" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392336086273501             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1994-09-15 – 1995-03-14<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.90</td>                     <td>1995-03-14</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>422.00</td>                     <td>1995-03-14</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.30</td>                     <td>1995-03-14</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_b00cbbe8baf444a4c665f862e8077fbc.setContent(html_aafca6af6964c2d947345979eabd416c);
+            
+        
+
+        circle_marker_7a8d0bb27cb8c33952a089e333aaf38c.bindPopup(popup_b00cbbe8baf444a4c665f862e8077fbc)
+        ;
+
+        
+    
+    
+            circle_marker_7a8d0bb27cb8c33952a089e333aaf38c.bindTooltip(
+                `<div>
+                     USGS-392336086273501 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_bf9a1f79a921c8d363147b39ea7db768 = L.circleMarker(
+                [39.394492, -86.452773],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_2ee8b55191a7a177632cdd1aba36a2be = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_99766cf00ec3db204adc8e7875e85a92 = $(`<div id="html_99766cf00ec3db204adc8e7875e85a92" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392340086270901             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1979-11-07 – 1980-10-09<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>5.10</td>                     <td>1980-10-09</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>670.00</td>                     <td>1980-10-09</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_2ee8b55191a7a177632cdd1aba36a2be.setContent(html_99766cf00ec3db204adc8e7875e85a92);
+            
+        
+
+        circle_marker_bf9a1f79a921c8d363147b39ea7db768.bindPopup(popup_2ee8b55191a7a177632cdd1aba36a2be)
+        ;
+
+        
+    
+    
+            circle_marker_bf9a1f79a921c8d363147b39ea7db768.bindTooltip(
+                `<div>
+                     USGS-392340086270901 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f38f7f3a506380e12cb4c1f55c9a4acd = L.circleMarker(
+                [39.396714, -86.502774],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_37d6081e6f4d6fdd44bc25c5e4bae70e = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_33c74d720879a94b719e1b8d9d4539cc = $(`<div id="html_33c74d720879a94b719e1b8d9d4539cc" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392348086301001             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1979-11-12 – 1979-11-12<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>4.50</td>                     <td>1979-11-12</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>657.00</td>                     <td>1979-11-12</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_37d6081e6f4d6fdd44bc25c5e4bae70e.setContent(html_33c74d720879a94b719e1b8d9d4539cc);
+            
+        
+
+        circle_marker_f38f7f3a506380e12cb4c1f55c9a4acd.bindPopup(popup_37d6081e6f4d6fdd44bc25c5e4bae70e)
+        ;
+
+        
+    
+    
+            circle_marker_f38f7f3a506380e12cb4c1f55c9a4acd.bindTooltip(
+                `<div>
+                     USGS-392348086301001 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_72e6521c06d464d9e5e9da88d174a46e = L.circleMarker(
+                [39.398236, -86.535419],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_d37c0843ccf0a8e99327c6cb3bc7af73 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_064b102b819d6e56e5f9c94222a096a1 = $(`<div id="html_064b102b819d6e56e5f9c94222a096a1" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392354086320801             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1979-11-09 – 1979-11-09<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>3.20</td>                     <td>1979-11-09</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>480.00</td>                     <td>1979-11-09</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_d37c0843ccf0a8e99327c6cb3bc7af73.setContent(html_064b102b819d6e56e5f9c94222a096a1);
+            
+        
+
+        circle_marker_72e6521c06d464d9e5e9da88d174a46e.bindPopup(popup_d37c0843ccf0a8e99327c6cb3bc7af73)
+        ;
+
+        
+    
+    
+            circle_marker_72e6521c06d464d9e5e9da88d174a46e.bindTooltip(
+                `<div>
+                     USGS-392354086320801 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d08b6f5d7e80be6b37f5b7ae56a4180b = L.circleMarker(
+                [39.398658, -86.574999],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_a444183e18106c6df9ff15d0b326c651 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_127867daa10301c4b0cfa830141a4644 = $(`<div id="html_127867daa10301c4b0cfa830141a4644" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392355086343001             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1979-11-13 – 1980-10-08<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>0.00</td>                     <td>1980-10-08</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>459.00</td>                     <td>1980-10-08</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_a444183e18106c6df9ff15d0b326c651.setContent(html_127867daa10301c4b0cfa830141a4644);
+            
+        
+
+        circle_marker_d08b6f5d7e80be6b37f5b7ae56a4180b.bindPopup(popup_a444183e18106c6df9ff15d0b326c651)
+        ;
+
+        
+    
+    
+            circle_marker_d08b6f5d7e80be6b37f5b7ae56a4180b.bindTooltip(
+                `<div>
+                     USGS-392355086343001 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3fec0d135872197c30a1d23121e6dbcc = L.circleMarker(
+                [39.401436, -86.52472],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_f0dedf3c81a0af5dbd18dc6a813bc6bd = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_3f3efc56372be4880c9a4e714c7d1bf3 = $(`<div id="html_3f3efc56372be4880c9a4e714c7d1bf3" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392405086312901             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1979-11-09 – 1979-11-09<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>4.90</td>                     <td>1979-11-09</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>405.00</td>                     <td>1979-11-09</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_f0dedf3c81a0af5dbd18dc6a813bc6bd.setContent(html_3f3efc56372be4880c9a4e714c7d1bf3);
+            
+        
+
+        circle_marker_3fec0d135872197c30a1d23121e6dbcc.bindPopup(popup_f0dedf3c81a0af5dbd18dc6a813bc6bd)
+        ;
+
+        
+    
+    
+            circle_marker_3fec0d135872197c30a1d23121e6dbcc.bindTooltip(
+                `<div>
+                     USGS-392405086312901 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9aada40b05b4a97d13c180f6b918f5a7 = L.circleMarker(
+                [39.404213, -86.559166],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_6d0bcbdf4f60a22c4383e8acd3e7705a = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_2a2c73c618caa9f518a05fc9aef37ff2 = $(`<div id="html_2a2c73c618caa9f518a05fc9aef37ff2" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392416086333301             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1979-11-12 – 1979-11-12<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>3.20</td>                     <td>1979-11-12</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>549.00</td>                     <td>1979-11-12</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_6d0bcbdf4f60a22c4383e8acd3e7705a.setContent(html_2a2c73c618caa9f518a05fc9aef37ff2);
+            
+        
+
+        circle_marker_9aada40b05b4a97d13c180f6b918f5a7.bindPopup(popup_6d0bcbdf4f60a22c4383e8acd3e7705a)
+        ;
+
+        
+    
+    
+            circle_marker_9aada40b05b4a97d13c180f6b918f5a7.bindTooltip(
+                `<div>
+                     USGS-392416086333301 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_51209f53b5c7b4d53102ad9e10a72e7c = L.circleMarker(
+                [39.404769, -86.460273],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_675c7ccd7dba923b19ac2922e273157f = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_72d994c510d38fd3b41ec25d32ab03d5 = $(`<div id="html_72d994c510d38fd3b41ec25d32ab03d5" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392417086273701             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 24<br>                 <b>Period:</b> 1979-11-08 – 1992-08-18<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>6.60</td>                     <td>1992-08-18</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>459.00</td>                     <td>1992-08-18</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_675c7ccd7dba923b19ac2922e273157f.setContent(html_72d994c510d38fd3b41ec25d32ab03d5);
+            
+        
+
+        circle_marker_51209f53b5c7b4d53102ad9e10a72e7c.bindPopup(popup_675c7ccd7dba923b19ac2922e273157f)
+        ;
+
+        
+    
+    
+            circle_marker_51209f53b5c7b4d53102ad9e10a72e7c.bindTooltip(
+                `<div>
+                     USGS-392417086273701 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_12b4adfa327c33a2781da20311956f0c = L.circleMarker(
+                [39.410881, -86.483607],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_1ef2d1e88dbdfb1ef2829680f95e5e1d = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_4fdbb9ed630ce85d6377c9dcf2782d81 = $(`<div id="html_4fdbb9ed630ce85d6377c9dcf2782d81" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392439086290101             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1979-11-12 – 1979-11-12<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.50</td>                     <td>1979-11-12</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>594.00</td>                     <td>1979-11-12</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_1ef2d1e88dbdfb1ef2829680f95e5e1d.setContent(html_4fdbb9ed630ce85d6377c9dcf2782d81);
+            
+        
+
+        circle_marker_12b4adfa327c33a2781da20311956f0c.bindPopup(popup_1ef2d1e88dbdfb1ef2829680f95e5e1d)
+        ;
+
+        
+    
+    
+            circle_marker_12b4adfa327c33a2781da20311956f0c.bindTooltip(
+                `<div>
+                     USGS-392439086290101 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3e40bfcabb6148f651a5d31283419a49 = L.circleMarker(
+                [39.415602, -86.539443],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_d6d3258a689ab225ee3bddfe8c41b9a1 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_416de8261dcc4533b083ea1203713676 = $(`<div id="html_416de8261dcc4533b083ea1203713676" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392456086322801             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1980-01-11 – 1980-01-11<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>0.50</td>                     <td>1980-01-11</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>490.00</td>                     <td>1980-01-11</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_d6d3258a689ab225ee3bddfe8c41b9a1.setContent(html_416de8261dcc4533b083ea1203713676);
+            
+        
+
+        circle_marker_3e40bfcabb6148f651a5d31283419a49.bindPopup(popup_d6d3258a689ab225ee3bddfe8c41b9a1)
+        ;
+
+        
+    
+    
+            circle_marker_3e40bfcabb6148f651a5d31283419a49.bindTooltip(
+                `<div>
+                     USGS-392456086322801 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9b9446a789dc9859c2ac65911b45dfe7 = L.circleMarker(
+                [39.421761, -86.478778],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_497b538f2b365c01b7b4894cc3ea9bc9 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_986015d88dd30a0435636a251ca90edd = $(`<div id="html_986015d88dd30a0435636a251ca90edd" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392518086284301             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1980-01-11 – 1980-10-08<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>1.50</td>                     <td>1980-10-08</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>497.00</td>                     <td>1980-10-08</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_497b538f2b365c01b7b4894cc3ea9bc9.setContent(html_986015d88dd30a0435636a251ca90edd);
+            
+        
+
+        circle_marker_9b9446a789dc9859c2ac65911b45dfe7.bindPopup(popup_497b538f2b365c01b7b4894cc3ea9bc9)
+        ;
+
+        
+    
+    
+            circle_marker_9b9446a789dc9859c2ac65911b45dfe7.bindTooltip(
+                `<div>
+                     USGS-392518086284301 | USGS | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c052c632f7eb0f93e4ea523071eb36d8 = L.circleMarker(
+                [39.398744, -86.479067],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_967d971c6ebe22c4e19902dc845e3b3b = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_5fd7738834e6f54c5b49275918d1ff8c = $(`<div id="html_5fd7738834e6f54c5b49275918d1ff8c" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-15-0001             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 145<br>                 <b>Period:</b> 2011-05-25 – 2011-10-17<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.48</td>                     <td>2011-10-17</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.22</td>                     <td>2011-10-17</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>889.00</td>                     <td>2011-10-03</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.95</td>                     <td>2011-10-17</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.40</td>                     <td>2011-10-17</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>3.50</td>                     <td>2011-10-17</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>7.00</td>                     <td>2011-10-17</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_967d971c6ebe22c4e19902dc845e3b3b.setContent(html_5fd7738834e6f54c5b49275918d1ff8c);
+            
+        
+
+        circle_marker_c052c632f7eb0f93e4ea523071eb36d8.bindPopup(popup_967d971c6ebe22c4e19902dc845e3b3b)
+        ;
+
+        
+    
+    
+            circle_marker_c052c632f7eb0f93e4ea523071eb36d8.bindTooltip(
+                `<div>
+                     WWU-15-0001 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_bcb4ca296a4a713a04da960b852fa3ca = L.circleMarker(
+                [39.42403, -86.47524],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_3bbe4f24fb7b3cc055ae29747f207d01 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_3bd90212380695c673e95e7c6bdc2652 = $(`<div id="html_3bd90212380695c673e95e7c6bdc2652" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-15-0011             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 53<br>                 <b>Period:</b> 2023-08-08 – 2024-09-11<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>6.58</td>                     <td>2024-09-11</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.74</td>                     <td>2024-09-11</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>307.00</td>                     <td>2024-01-24</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_3bbe4f24fb7b3cc055ae29747f207d01.setContent(html_3bd90212380695c673e95e7c6bdc2652);
+            
+        
+
+        circle_marker_bcb4ca296a4a713a04da960b852fa3ca.bindPopup(popup_3bbe4f24fb7b3cc055ae29747f207d01)
+        ;
+
+        
+    
+    
+            circle_marker_bcb4ca296a4a713a04da960b852fa3ca.bindTooltip(
+                `<div>
+                     WWU-15-0011 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_705d4e8db88723d5ae90bb9a88975355 = L.circleMarker(
+                [39.400252, -86.443975],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_aef927f150346d0d961106cee31758c7 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_32dc388851654e5d350f75553f265fee = $(`<div id="html_32dc388851654e5d350f75553f265fee" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-16-0006             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 185<br>                 <b>Period:</b> 2020-06-02 – 2020-10-19<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.48</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.63</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>253.20</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.60</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.14</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>0.49</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>17.00</td>                     <td>2020-10-19</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_aef927f150346d0d961106cee31758c7.setContent(html_32dc388851654e5d350f75553f265fee);
+            
+        
+
+        circle_marker_705d4e8db88723d5ae90bb9a88975355.bindPopup(popup_aef927f150346d0d961106cee31758c7)
+        ;
+
+        
+    
+    
+            circle_marker_705d4e8db88723d5ae90bb9a88975355.bindTooltip(
+                `<div>
+                     WWU-16-0006 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f4188dc69c47ae0b702bff26e982023c = L.circleMarker(
+                [39.380991, -86.501675],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_56210b25bbf0591b57de444c6e11171e = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_b6660287d886d5617596033f7983ff9d = $(`<div id="html_b6660287d886d5617596033f7983ff9d" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-17-0009             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 141<br>                 <b>Period:</b> 2020-06-02 – 2021-10-05<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>10.00</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.22</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>686.00</td>                     <td>2020-07-06</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.83</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.16</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>4.10</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>13.00</td>                     <td>2020-10-19</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_56210b25bbf0591b57de444c6e11171e.setContent(html_b6660287d886d5617596033f7983ff9d);
+            
+        
+
+        circle_marker_f4188dc69c47ae0b702bff26e982023c.bindPopup(popup_56210b25bbf0591b57de444c6e11171e)
+        ;
+
+        
+    
+    
+            circle_marker_f4188dc69c47ae0b702bff26e982023c.bindTooltip(
+                `<div>
+                     WWU-17-0009 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_aded6213a814a0deff7005731dbe1eac = L.circleMarker(
+                [39.373255, -86.558346],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_df06ccca058f429bc422384102271bdc = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_e49894dd72ac42ff6a0293660b99ccfe = $(`<div id="html_e49894dd72ac42ff6a0293660b99ccfe" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-17-0010             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 136<br>                 <b>Period:</b> 2020-06-02 – 2020-10-19<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>10.09</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.25</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>697.00</td>                     <td>2020-07-06</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.74</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.16</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>4.00</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>11.00</td>                     <td>2020-10-19</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_df06ccca058f429bc422384102271bdc.setContent(html_e49894dd72ac42ff6a0293660b99ccfe);
+            
+        
+
+        circle_marker_aded6213a814a0deff7005731dbe1eac.bindPopup(popup_df06ccca058f429bc422384102271bdc)
+        ;
+
+        
+    
+    
+            circle_marker_aded6213a814a0deff7005731dbe1eac.bindTooltip(
+                `<div>
+                     WWU-17-0010 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_67554da770c0bb6d62529ec70c498dc8 = L.circleMarker(
+                [39.36766, -86.55887],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_6d16a6ed354d7d2ecb744d24f6d4ccdb = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_ebf8a20238b4cb487ef86f6a03e96e6d = $(`<div id="html_ebf8a20238b4cb487ef86f6a03e96e6d" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-17-0013             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 38<br>                 <b>Period:</b> 2023-08-08 – 2024-06-25<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.73</td>                     <td>2024-06-25</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.98</td>                     <td>2024-06-25</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>311.67</td>                     <td>2024-01-24</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_6d16a6ed354d7d2ecb744d24f6d4ccdb.setContent(html_ebf8a20238b4cb487ef86f6a03e96e6d);
+            
+        
+
+        circle_marker_67554da770c0bb6d62529ec70c498dc8.bindPopup(popup_6d16a6ed354d7d2ecb744d24f6d4ccdb)
+        ;
+
+        
+    
+    
+            circle_marker_67554da770c0bb6d62529ec70c498dc8.bindTooltip(
+                `<div>
+                     WWU-17-0013 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a7e38cbbdccbfcf0bb8aa1171c0cc58e = L.circleMarker(
+                [39.37358, -86.61175],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_c8bd96b295b6970748f83ba699d20c9f = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_ef04c31f71ab747af8d122b25b24abd5 = $(`<div id="html_ef04c31f71ab747af8d122b25b24abd5" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-17-0014             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 31<br>                 <b>Period:</b> 2023-08-08 – 2024-06-25<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.69</td>                     <td>2024-06-25</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.01</td>                     <td>2024-06-25</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>361.67</td>                     <td>2023-08-08</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_c8bd96b295b6970748f83ba699d20c9f.setContent(html_ef04c31f71ab747af8d122b25b24abd5);
+            
+        
+
+        circle_marker_a7e38cbbdccbfcf0bb8aa1171c0cc58e.bindPopup(popup_c8bd96b295b6970748f83ba699d20c9f)
+        ;
+
+        
+    
+    
+            circle_marker_a7e38cbbdccbfcf0bb8aa1171c0cc58e.bindTooltip(
+                `<div>
+                     WWU-17-0014 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a5ab03e0793e3acc278482381a55a4ab = L.circleMarker(
+                [39.40149, -86.52292],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_f125bf974684235c46594acb1db77a34 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_43456fa6b89fead8f32071799862f4e0 = $(`<div id="html_43456fa6b89fead8f32071799862f4e0" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-17-0015             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 40<br>                 <b>Period:</b> 2023-08-08 – 2024-06-25<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.08</td>                     <td>2024-06-25</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.72</td>                     <td>2024-06-25</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>253.00</td>                     <td>2024-01-24</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_f125bf974684235c46594acb1db77a34.setContent(html_43456fa6b89fead8f32071799862f4e0);
+            
+        
+
+        circle_marker_a5ab03e0793e3acc278482381a55a4ab.bindPopup(popup_f125bf974684235c46594acb1db77a34)
+        ;
+
+        
+    
+    
+            circle_marker_a5ab03e0793e3acc278482381a55a4ab.bindTooltip(
+                `<div>
+                     WWU-17-0015 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2162061ba286a55f83da312da9fd8b83 = L.circleMarker(
+                [39.39348, -86.57978],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_f1d3270a4cf0ead80f91ed0cc9353c9a = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_9a3c005bca9ca9a0cdd7a04445326475 = $(`<div id="html_9a3c005bca9ca9a0cdd7a04445326475" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-17-0017             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 37<br>                 <b>Period:</b> 2023-08-08 – 2024-06-25<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.41</td>                     <td>2024-06-25</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.03</td>                     <td>2024-06-25</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_f1d3270a4cf0ead80f91ed0cc9353c9a.setContent(html_9a3c005bca9ca9a0cdd7a04445326475);
+            
+        
+
+        circle_marker_2162061ba286a55f83da312da9fd8b83.bindPopup(popup_f1d3270a4cf0ead80f91ed0cc9353c9a)
+        ;
+
+        
+    
+    
+            circle_marker_2162061ba286a55f83da312da9fd8b83.bindTooltip(
+                `<div>
+                     WWU-17-0017 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_06262c4f468cc9ac355f15e0b5b27d74 = L.circleMarker(
+                [39.38201, -86.59978],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_8ca8ada564cc3ba13f5e2a421096932c = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_b68defc6f0b8d42bef456b1d2290aae4 = $(`<div id="html_b68defc6f0b8d42bef456b1d2290aae4" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-17-0018             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 37<br>                 <b>Period:</b> 2023-08-08 – 2024-06-25<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>6.43</td>                     <td>2024-06-25</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.82</td>                     <td>2024-06-25</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_8ca8ada564cc3ba13f5e2a421096932c.setContent(html_b68defc6f0b8d42bef456b1d2290aae4);
+            
+        
+
+        circle_marker_06262c4f468cc9ac355f15e0b5b27d74.bindPopup(popup_8ca8ada564cc3ba13f5e2a421096932c)
+        ;
+
+        
+    
+    
+            circle_marker_06262c4f468cc9ac355f15e0b5b27d74.bindTooltip(
+                `<div>
+                     WWU-17-0018 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8c5fca86e6cab795224dd78f08262244 = L.circleMarker(
+                [39.423914, -86.475506],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_5f7dda4d2f90f289c1cb864ce578b86a = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_74afc0b811b06a400630e841ce3e5346 = $(`<div id="html_74afc0b811b06a400630e841ce3e5346" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0005             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 211<br>                 <b>Period:</b> 1996-02-27 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>10.09</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.98</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>381.00</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.57</td>                     <td>1996-11-18</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.04</td>                     <td>1996-11-18</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>4.00</td>                     <td>1996-11-18</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_5f7dda4d2f90f289c1cb864ce578b86a.setContent(html_74afc0b811b06a400630e841ce3e5346);
+            
+        
+
+        circle_marker_8c5fca86e6cab795224dd78f08262244.bindPopup(popup_5f7dda4d2f90f289c1cb864ce578b86a)
+        ;
+
+        
+    
+    
+            circle_marker_8c5fca86e6cab795224dd78f08262244.bindTooltip(
+                `<div>
+                     WWU160-0005 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_575bfbb2aa027e9f6bcba3c9f09943cf = L.circleMarker(
+                [39.421892, -86.478742],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_647c2ca19086785e47e530751c32b2c6 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_8c16f79e0fbfe517d7d6ecfc20e32bc3 = $(`<div id="html_8c16f79e0fbfe517d7d6ecfc20e32bc3" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0028             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 43<br>                 <b>Period:</b> 2001-06-04 – 2001-07-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.03</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.15</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>458.00</td>                     <td>2001-07-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_647c2ca19086785e47e530751c32b2c6.setContent(html_8c16f79e0fbfe517d7d6ecfc20e32bc3);
+            
+        
+
+        circle_marker_575bfbb2aa027e9f6bcba3c9f09943cf.bindPopup(popup_647c2ca19086785e47e530751c32b2c6)
+        ;
+
+        
+    
+    
+            circle_marker_575bfbb2aa027e9f6bcba3c9f09943cf.bindTooltip(
+                `<div>
+                     WWU160-0028 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4eb54e8702d9eefe27b58759b817d7ef = L.circleMarker(
+                [39.395278, -86.478889],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_f02f79ca53413777bb32e08c3b096031 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_ba5a9997d20fe67e6022b91e3e9e7262 = $(`<div id="html_ba5a9997d20fe67e6022b91e3e9e7262" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0033             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 37<br>                 <b>Period:</b> 2001-09-11 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.58</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.98</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>796.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_f02f79ca53413777bb32e08c3b096031.setContent(html_ba5a9997d20fe67e6022b91e3e9e7262);
+            
+        
+
+        circle_marker_4eb54e8702d9eefe27b58759b817d7ef.bindPopup(popup_f02f79ca53413777bb32e08c3b096031)
+        ;
+
+        
+    
+    
+            circle_marker_4eb54e8702d9eefe27b58759b817d7ef.bindTooltip(
+                `<div>
+                     WWU160-0033 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ccd3f8d722ab89a56ca1cfe42d3ef9b6 = L.circleMarker(
+                [39.406667, -86.466944],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_3d871178eed70a7a33941fd7f5c583c2 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_e5c29a4504d6ee0a1acf4b2796798565 = $(`<div id="html_e5c29a4504d6ee0a1acf4b2796798565" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0034             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 36<br>                 <b>Period:</b> 2001-09-11 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.48</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.01</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>797.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_3d871178eed70a7a33941fd7f5c583c2.setContent(html_e5c29a4504d6ee0a1acf4b2796798565);
+            
+        
+
+        circle_marker_ccd3f8d722ab89a56ca1cfe42d3ef9b6.bindPopup(popup_3d871178eed70a7a33941fd7f5c583c2)
+        ;
+
+        
+    
+    
+            circle_marker_ccd3f8d722ab89a56ca1cfe42d3ef9b6.bindTooltip(
+                `<div>
+                     WWU160-0034 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_110509f50bb851e0bbfc546e38960c07 = L.circleMarker(
+                [39.392778, -86.456667],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_58f70265daf18883b510212ff4de6840 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_e0087f15fb545dae72af7c386867c7b2 = $(`<div id="html_e0087f15fb545dae72af7c386867c7b2" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0002             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 171<br>                 <b>Period:</b> 1996-02-27 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.87</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.73</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>370.00</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.47</td>                     <td>1996-11-18</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.04</td>                     <td>1996-11-18</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>5.00</td>                     <td>1996-11-18</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_58f70265daf18883b510212ff4de6840.setContent(html_e0087f15fb545dae72af7c386867c7b2);
+            
+        
+
+        circle_marker_110509f50bb851e0bbfc546e38960c07.bindPopup(popup_58f70265daf18883b510212ff4de6840)
+        ;
+
+        
+    
+    
+            circle_marker_110509f50bb851e0bbfc546e38960c07.bindTooltip(
+                `<div>
+                     WWU170-0002 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_0d21315c0c6a87c3153e416f39770c90 = L.circleMarker(
+                [39.393333, -86.456389],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_e6c0d58322e5dcb8d069d27ce72017c9 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_400b2afa0539e01ce7b8618c2c6c7717 = $(`<div id="html_400b2afa0539e01ce7b8618c2c6c7717" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0030             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 43<br>                 <b>Period:</b> 2001-09-11 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.70</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.86</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>491.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_e6c0d58322e5dcb8d069d27ce72017c9.setContent(html_400b2afa0539e01ce7b8618c2c6c7717);
+            
+        
+
+        circle_marker_0d21315c0c6a87c3153e416f39770c90.bindPopup(popup_e6c0d58322e5dcb8d069d27ce72017c9)
+        ;
+
+        
+    
+    
+            circle_marker_0d21315c0c6a87c3153e416f39770c90.bindTooltip(
+                `<div>
+                     WWU170-0030 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8a8c598ed2452596e4880f8ee12e5ca3 = L.circleMarker(
+                [39.400301, -86.446388],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_c5329c005fe0e793ede392e68b3b48c9 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_269cf8e5fe03cc52b6c47f635a1ce944 = $(`<div id="html_269cf8e5fe03cc52b6c47f635a1ce944" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0032             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 137<br>                 <b>Period:</b> 2006-05-10 – 2006-09-13<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.35</td>                     <td>2006-09-13</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.68</td>                     <td>2006-09-13</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>270.00</td>                     <td>2006-09-13</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.80</td>                     <td>2006-05-10</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.43</td>                     <td>2006-09-13</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>0.58</td>                     <td>2006-09-13</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>200.00</td>                     <td>2006-09-13</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_c5329c005fe0e793ede392e68b3b48c9.setContent(html_269cf8e5fe03cc52b6c47f635a1ce944);
+            
+        
+
+        circle_marker_8a8c598ed2452596e4880f8ee12e5ca3.bindPopup(popup_c5329c005fe0e793ede392e68b3b48c9)
+        ;
+
+        
+    
+    
+            circle_marker_8a8c598ed2452596e4880f8ee12e5ca3.bindTooltip(
+                `<div>
+                     WWU170-0032 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9cbf40201429e59d4ca5b44704746e52 = L.circleMarker(
+                [39.373056, -86.558611],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_e6553659c3097d0ff0e1dbff073e0385 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_f97f05a23f672c2399101e31e2ae6efc = $(`<div id="html_f97f05a23f672c2399101e31e2ae6efc" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU180-0001             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 37<br>                 <b>Period:</b> 2001-09-11 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.53</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.02</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>801.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_e6553659c3097d0ff0e1dbff073e0385.setContent(html_f97f05a23f672c2399101e31e2ae6efc);
+            
+        
+
+        circle_marker_9cbf40201429e59d4ca5b44704746e52.bindPopup(popup_e6553659c3097d0ff0e1dbff073e0385)
+        ;
+
+        
+    
+    
+            circle_marker_9cbf40201429e59d4ca5b44704746e52.bindTooltip(
+                `<div>
+                     WWU180-0001 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f208fa24fc81107542638e4899f71c01 = L.circleMarker(
+                [39.373056, -86.558889],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_23889ea7b8ac310b16c0aa669db8a096 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_d73d942956394395d51fb7e1766dd492 = $(`<div id="html_d73d942956394395d51fb7e1766dd492" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU180-0002             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 120<br>                 <b>Period:</b> 1996-02-28 – 1996-11-19<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>10.00</td>                     <td>1996-11-19</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.90</td>                     <td>1996-11-19</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>835.00</td>                     <td>1996-11-19</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>1.60</td>                     <td>1996-11-19</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.36</td>                     <td>1996-11-19</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>16.00</td>                     <td>1996-11-19</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_23889ea7b8ac310b16c0aa669db8a096.setContent(html_d73d942956394395d51fb7e1766dd492);
+            
+        
+
+        circle_marker_f208fa24fc81107542638e4899f71c01.bindPopup(popup_23889ea7b8ac310b16c0aa669db8a096)
+        ;
+
+        
+    
+    
+            circle_marker_f208fa24fc81107542638e4899f71c01.bindTooltip(
+                `<div>
+                     WWU180-0002 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9d82e1f62c938efe5971a3612a871177 = L.circleMarker(
+                [39.387606, -86.489349],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_29ca3df4b19c0f08ee544a68dc83784a = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_450882c76e017c643aa92a2859ac04aa = $(`<div id="html_450882c76e017c643aa92a2859ac04aa" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU180-0003             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 84<br>                 <b>Period:</b> 2001-06-14 – 2001-10-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.10</td>                     <td>2001-10-02</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.10</td>                     <td>2001-10-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>988.00</td>                     <td>2001-10-02</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.93</td>                     <td>2001-10-02</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.37</td>                     <td>2001-10-02</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>4.30</td>                     <td>2001-10-02</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>16.00</td>                     <td>2001-10-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_29ca3df4b19c0f08ee544a68dc83784a.setContent(html_450882c76e017c643aa92a2859ac04aa);
+            
+        
+
+        circle_marker_9d82e1f62c938efe5971a3612a871177.bindPopup(popup_29ca3df4b19c0f08ee544a68dc83784a)
+        ;
+
+        
+    
+    
+            circle_marker_9d82e1f62c938efe5971a3612a871177.bindTooltip(
+                `<div>
+                     WWU180-0003 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_7a68e5b265c0497e450a631c5a1bf2ff = L.circleMarker(
+                [39.380278, -86.498611],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_2d3a36ea85077f6459ea6b8548ad9dab = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_f6cafbe93b4d5183629c4392d77903e2 = $(`<div id="html_f6cafbe93b4d5183629c4392d77903e2" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU180-0004             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 37<br>                 <b>Period:</b> 2001-09-11 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.02</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.02</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>805.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_2d3a36ea85077f6459ea6b8548ad9dab.setContent(html_f6cafbe93b4d5183629c4392d77903e2);
+            
+        
+
+        circle_marker_7a68e5b265c0497e450a631c5a1bf2ff.bindPopup(popup_2d3a36ea85077f6459ea6b8548ad9dab)
+        ;
+
+        
+    
+    
+            circle_marker_7a68e5b265c0497e450a631c5a1bf2ff.bindTooltip(
+                `<div>
+                     WWU180-0004 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_3ad434a789b131fcf26d30d5d6cd7ae8 = L.circleMarker(
+                [39.368611, -86.575833],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_b0a01922cd4d54b439604774ee831f53 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_793d6ace58a9679b7163a5e63e629b23 = $(`<div id="html_793d6ace58a9679b7163a5e63e629b23" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU180-0005             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 36<br>                 <b>Period:</b> 2001-09-11 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.02</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.02</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>807.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_b0a01922cd4d54b439604774ee831f53.setContent(html_793d6ace58a9679b7163a5e63e629b23);
+            
+        
+
+        circle_marker_3ad434a789b131fcf26d30d5d6cd7ae8.bindPopup(popup_b0a01922cd4d54b439604774ee831f53)
+        ;
+
+        
+    
+    
+            circle_marker_3ad434a789b131fcf26d30d5d6cd7ae8.bindTooltip(
+                `<div>
+                     WWU180-0005 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_48c808d56174a6f774eab8172d79fcea = L.circleMarker(
+                [39.369444, -86.576389],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_d43726a96a30a6d229e15a888542a314);
+        
+    
+        var popup_c1d77036e8658f04d126b1971cdcc76f = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_27b600f637853a71ec4b9de2d5870e0b = $(`<div id="html_27b600f637853a71ec4b9de2d5870e0b" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU180-0008             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Lower White River Outwash<br>                 <b>Alt Name:</b> Paragon Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 5<br>                 <b>Period:</b> 2021-10-05 – 2021-10-05<br>                 <br>                 <i>No parsed parameter table available.</i>             </div>         </div>         </div>`)[0];
+                popup_c1d77036e8658f04d126b1971cdcc76f.setContent(html_27b600f637853a71ec4b9de2d5870e0b);
+            
+        
+
+        circle_marker_48c808d56174a6f774eab8172d79fcea.bindPopup(popup_c1d77036e8658f04d126b1971cdcc76f)
+        ;
+
+        
+    
+    
+            circle_marker_48c808d56174a6f774eab8172d79fcea.bindTooltip(
+                `<div>
+                     WWU180-0008 | IDEM | Paragon Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_d43726a96a30a6d229e15a888542a314.addTo(map_1990435e162b97371b028de2375021aa);
+        
+    
+            var layer_control_c28e5819664e9ee7a04102e627ae96f6_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_3f20e9393e6e0f416ace7a398ab19951,
+                },
+                overlays :  {
+                    "Paragon Outwash Boundary" : geo_json_f8a9e6d8714f33d87235ec1547cab5dc,
+                    "WQ Sites \u2014 Paragon Outwash" : marker_cluster_d43726a96a30a6d229e15a888542a314,
+                },
+            };
+            let layer_control_c28e5819664e9ee7a04102e627ae96f6 = L.control.layers(
+                layer_control_c28e5819664e9ee7a04102e627ae96f6_layers.base_layers,
+                layer_control_c28e5819664e9ee7a04102e627ae96f6_layers.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_1990435e162b97371b028de2375021aa);
+
+        
+</script>
+</html>

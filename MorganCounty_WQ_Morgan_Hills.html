@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_6eae39f681134d479517bbf9ec8de561 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+        position: fixed;
+        bottom: 25px;
+        left: 25px;
+        width: 340px;
+        z-index: 9999;
+        background: white;
+        padding: 12px 14px;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+        font-family: Segoe UI, Arial;
+        font-size: 12px;">
+        <b>Morgan Hills</b><br>
+        <hr style="margin:6px 0;">
+        <b>Sites:</b> 16<br>
+        <b>Total Records:</b> 796<br>
+        <b>Sources:</b> IDEM<br>
+    </div>
+    
+    
+            <div class="folium-map" id="map_6eae39f681134d479517bbf9ec8de561" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_6eae39f681134d479517bbf9ec8de561 = L.map(
+                "map_6eae39f681134d479517bbf9ec8de561",
+                {
+                    center: [39.4980766875, -86.498846875],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_6eae39f681134d479517bbf9ec8de561);
+
+            
+
+        
+    
+            var tile_layer_bbac29d05e39bdd1db11cbe3682369cc = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_bbac29d05e39bdd1db11cbe3682369cc.addTo(map_6eae39f681134d479517bbf9ec8de561);
+        
+    
+        function geo_json_d83f0d60a830df9290551fa1ce6ed26d_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#333333", "fillColor": "#f2f2f2", "fillOpacity": 0.25, "weight": 2};
+            }
+        }
+
+        function geo_json_d83f0d60a830df9290551fa1ce6ed26d_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_d83f0d60a830df9290551fa1ce6ed26d = L.geoJson(null, {
+                onEachFeature: geo_json_d83f0d60a830df9290551fa1ce6ed26d_onEachFeature,
+            
+                style: geo_json_d83f0d60a830df9290551fa1ce6ed26d_styler,
+        });
+
+        function geo_json_d83f0d60a830df9290551fa1ce6ed26d_add (data) {
+            geo_json_d83f0d60a830df9290551fa1ce6ed26d
+                .addData(data);
+        }
+            geo_json_d83f0d60a830df9290551fa1ce6ed26d_add({"bbox": [-86.63167741147693, 39.37615923964903, -86.36959749281651, 39.57859230305495], "features": [{"bbox": [-86.63167741147693, 39.37615923964903, -86.36959749281651, 39.57859230305495], "geometry": {"coordinates": [[[-86.41627399791992, 39.57847521004664], [-86.41590010399148, 39.57650967903237], [-86.41101799493676, 39.57678713747016], [-86.40346801506311, 39.56949821517357], [-86.39858635521148, 39.5697751549906], [-86.39083446268792, 39.5693233961313], [-86.3881456834094, 39.56682991034105], [-86.37943751122947, 39.55546767086585], [-86.38010010588293, 39.55022639367686], [-86.3696336523561, 39.55131293050457], [-86.36959749281651, 39.55108332346552], [-86.37116797499488, 39.55109183107779], [-86.371207355046, 39.546729311650516], [-86.3756638941155, 39.54677366402828], [-86.37554429844516, 39.54362613005137], [-86.37872136929202, 39.543700371732434], [-86.37881311983173, 39.54169829371314], [-86.3726798229989, 39.54166535355107], [-86.37276453361962, 39.54046426959751], [-86.37158223285878, 39.54045788350618], [-86.37152278765824, 39.53885550697031], [-86.37227562368402, 39.53731473574747], [-86.37353999074293, 39.53640609640289], [-86.37583825260906, 39.53556021568729], [-86.37635291333343, 39.535849059639744], [-86.38019361507327, 39.53604125157192], [-86.38080132419094, 39.53594388509421], [-86.38046734233738, 39.53022047174047], [-86.37724773833709, 39.52877285852287], [-86.37765541590672, 39.52621222457733], [-86.37951438360385, 39.52436958214739], [-86.381091885043, 39.52351974522068], [-86.38270633918839, 39.52370713084515], [-86.38472878369514, 39.524754900665506], [-86.38574813715613, 39.52501359335907], [-86.3867314945682, 39.52520950675768], [-86.38784217403264, 39.524929278818405], [-86.3893817076034, 39.524889695526284], [-86.39097655698215, 39.5255655871049], [-86.39109385759944, 39.526233726606364], [-86.39052892808762, 39.527470455140524], [-86.39002679784035, 39.528564469166035], [-86.39162048887535, 39.52938338662482], [-86.39264533473565, 39.527653181500256], [-86.39357920965976, 39.52646604826737], [-86.39499647034656, 39.52633039204143], [-86.39566708300008, 39.52709676608916], [-86.39578153832791, 39.5280986484557], [-86.39540262253081, 39.52919332617164], [-86.39570385185378, 39.5299577778943], [-86.39692492281303, 39.53115612757537], [-86.39697288113081, 39.53272982689404], [-86.39857086375757, 39.533071868069605], [-86.399994406456, 39.53222097908633], [-86.39907864836634, 39.531310322409865], [-86.39866784153115, 39.52950349733408], [-86.39872543022172, 39.52818066560683], [-86.39960708054019, 39.52768457889626], [-86.40112964015755, 39.52783547392234], [-86.40241765014997, 39.52841426671265], [-86.4036170001366, 39.528563467191034], [-86.40398854834982, 39.52831505092829], [-86.40422492847051, 39.527672577771376], [-86.40508216929412, 39.52702533642789], [-86.40639908807223, 39.52601886066278], [-86.4079432945631, 39.525430730965766], [-86.4083371815425, 39.52435992753394], [-86.40804504563867, 39.522510824533256], [-86.40767192318411, 39.52113811189213], [-86.40606913234939, 39.519580320182776], [-86.40507640744414, 39.5186812358652], [-86.40485573250645, 39.5174880952209], [-86.40605605015116, 39.5165987354218], [-86.41045834593925, 39.51469008454249], [-86.4124000668872, 39.514378071784655], [-86.41290609451148, 39.51459519055468], [-86.41289977326801, 39.51534612624253], [-86.41261644479074, 39.5160956625505], [-86.4137220680586, 39.51638732643469], [-86.41533585109669, 39.51664577622768], [-86.41557088743268, 39.516146313047926], [-86.41571598184895, 39.51536031443305], [-86.41512000436703, 39.51485667246154], [-86.41504456500813, 39.51284179194778], [-86.41543386952634, 39.51045972441066], [-86.41640042669381, 39.50897059043814], [-86.418409773867, 39.50790784738857], [-86.42142714000043, 39.505896478725006], [-86.4240685220455, 39.50281035532361], [-86.42524043287558, 39.50090058616457], [-86.42658059365246, 39.49959121829866], [-86.42872790069974, 39.498915187716605], [-86.42955709333697, 39.49685945491518], [-86.43009879352802, 39.49382962070734], [-86.43071659298921, 39.49081922719469], [-86.43258395905312, 39.48820591526446], [-86.43512184725324, 39.486358723283345], [-86.43641823477294, 39.48584052566128], [-86.43874490257738, 39.487282202168416], [-86.4391629865409, 39.48885768404679], [-86.44254884620813, 39.48868324305918], [-86.44276122746854, 39.485203565639885], [-86.44190704611479, 39.48429353425321], [-86.4403206590233, 39.4826170819164], [-86.43970988890301, 39.47821797006421], [-86.43915422014219, 39.47520233924394], [-86.43909789884356, 39.47263922138279], [-86.44029770216443, 39.466863693760274], [-86.44243144372163, 39.4596502794989], [-86.44225840996931, 39.45609248515795], [-86.44259727918936, 39.45409150700003], [-86.4434460743268, 39.45177112136535], [-86.4440533855264, 39.450808484677324], [-86.44652263935177, 39.447709071776984], [-86.44680177209652, 39.446241822157454], [-86.44719525094524, 39.44314442081982], [-86.44813382989906, 39.44109858922999], [-86.45034575651965, 39.438725750429036], [-86.45390931795573, 39.43516644702835], [-86.45638683411585, 39.43285359314708], [-86.45916745046277, 39.43107850884149], [-86.46172538898196, 39.43039861437235], [-86.46488364469258, 39.42945956118107], [-86.46827327452372, 39.42840227658195], [-86.46974608379163, 39.42674015472558], [-86.47213918798447, 39.425320599896075], [-86.47212611711734, 39.425388218938025], [-86.47941594849397, 39.423484023355904], [-86.47960383004708, 39.42286302242885], [-86.48201197163678, 39.421443330078205], [-86.48349791693137, 39.42001949641384], [-86.48406488503355, 39.41816243874514], [-86.48500695736998, 39.41544877357187], [-86.4879700387559, 39.413745322063086], [-86.49369068448657, 39.41319818288678], [-86.49885599331914, 39.41293445989708], [-86.50218641139337, 39.41137527079386], [-86.50626030860177, 39.408960876591046], [-86.51014053336425, 39.40783292358758], [-86.51009544997953, 39.41834397753259], [-86.50985407712587, 39.419892606671226], [-86.5090639178141, 39.42298856517509], [-86.50944271165773, 39.423764985552786], [-86.5104471302187, 39.42299439453292], [-86.51076367810407, 39.42168448813068], [-86.51200772407746, 39.41960365215758], [-86.51392586272762, 39.42002889510331], [-86.5124480112532, 39.42258558574248], [-86.5132106538972, 39.423423203866236], [-86.51435961592138, 39.423964421752935], [-86.51481697408317, 39.424502745727345], [-86.51496323106831, 39.42557618649553], [-86.51588458278215, 39.425699227991984], [-86.51699874044832, 39.42535320276169], [-86.51994724375946, 39.42572301834813], [-86.52206532466674, 39.42616087236216], [-86.52354715230622, 39.425237164347344], [-86.52585646274665, 39.42467442340266], [-86.52881750854495, 39.423184490860876], [-86.53094605312823, 39.42205827543918], [-86.5310882266046, 39.42285989636632], [-86.53167571746043, 39.42326278687625], [-86.53226933435755, 39.42275021598407], [-86.53264545149557, 39.4216645913485], [-86.53213785854696, 39.42034654358399], [-86.53369424683007, 39.41926565596683], [-86.53502282515464, 39.419156538469075], [-86.53641872382265, 39.42002037554784], [-86.53767392215201, 39.4198537176257], [-86.53856291465704, 39.41928506995895], [-86.53959980341594, 39.418659783088536], [-86.53938226790332, 39.41808674445492], [-86.53895168988042, 39.41719339540612], [-86.53972556816254, 39.416362034127374], [-86.54341535775599, 39.41613816699662], [-86.54479301485759, 39.41697799177918], [-86.54524320516211, 39.41864860395092], [-86.54477363168002, 39.41995800743825], [-86.54677075705108, 39.4200850091545], [-86.5484682108473, 39.419018777321824], [-86.54748997525773, 39.415230376869644], [-86.54503676944888, 39.41436254171741], [-86.54296364038318, 39.41177961427899], [-86.54470517081694, 39.408639461907455], [-86.54668004010347, 39.407407453497534], [-86.54791231524473, 39.4093796340248], [-86.54920076701922, 39.4097422453521], [-86.55012595653201, 39.409245170484404], [-86.55188089649717, 39.40875128722167], [-86.55335146916532, 39.40947216561975], [-86.55462721118953, 39.41183729274188], [-86.55572135611398, 39.41377257806994], [-86.55728020609399, 39.41513744393377], [-86.55992848610698, 39.417271702989424], [-86.56195077973533, 39.418280646844856], [-86.56335929108785, 39.41914420885083], [-86.56403490221429, 39.419242105722034], [-86.56532643364342, 39.419151575775984], [-86.56766506729655, 39.4187311572472], [-86.56846686058897, 39.41830500084074], [-86.57055868133685, 39.41802665267894], [-86.57394633313183, 39.416942434255624], [-86.57493832396698, 39.41656699501898], [-86.57534305320458, 39.41675736944511], [-86.57868287795166, 39.41487927798801], [-86.57804612221264, 39.41293683026598], [-86.57845793155435, 39.408348972060416], [-86.57899538174117, 39.4084105201931], [-86.58029684479031, 39.40919004839596], [-86.58129564444248, 39.40919364737401], [-86.5811462618717, 39.40847788582682], [-86.57839402230144, 39.406203068584425], [-86.57878855723808, 39.40447603915943], [-86.58220195325234, 39.39894535556683], [-86.58306728150681, 39.39723392762268], [-86.58420232658085, 39.39237445544969], [-86.58624031076756, 39.39066517808873], [-86.58917641207081, 39.39296430535613], [-86.59304529672504, 39.39340703716496], [-86.60098549655893, 39.39114581432334], [-86.60446304779111, 39.3955920900288], [-86.6039374712324, 39.39072676434656], [-86.60969362850662, 39.38330785495436], [-86.6135684263761, 39.382605560172784], [-86.62538661902771, 39.378638931197806], [-86.63079356108312, 39.37615923964903], [-86.63083476732955, 39.38458233011427], [-86.6309641319741, 39.39901339690255], [-86.63116328459138, 39.41357079866675], [-86.63079122368485, 39.426572013774205], [-86.6316188132576, 39.42661518550547], [-86.63167741147693, 39.43377968039965], [-86.62245016496574, 39.43376926046785], [-86.62238768163141, 39.426552471781484], [-86.61490782167651, 39.426531599705015], [-86.6131288924273, 39.42810152525732], [-86.61286213591411, 39.44109515613482], [-86.60870132916381, 39.44105456146475], [-86.60837539472212, 39.4439954801455], [-86.60844147479088, 39.448299266776544], [-86.6085610862052, 39.45279979692627], [-86.6058414458145, 39.453235015247074], [-86.60378189356551, 39.4555370310869], [-86.58955518586986, 39.45537510603007], [-86.5895645705553, 39.45898253404128], [-86.5849087225556, 39.45902642587376], [-86.58482483328324, 39.46253250989003], [-86.57542576053059, 39.46259170022106], [-86.56389686076322, 39.469454795499956], [-86.56879925237158, 39.49125165110671], [-86.56696712139686, 39.48997768914458], [-86.56246977132366, 39.48834566744725], [-86.55778582230856, 39.48729164497427], [-86.55651016054506, 39.486771292982844], [-86.55597150376128, 39.48399614987105], [-86.55484345383925, 39.4837251694664], [-86.55472726277124, 39.48035612801301], [-86.54955657380049, 39.47942506561381], [-86.54956616073237, 39.4914661261075], [-86.54297090025099, 39.49497005645415], [-86.54665157647803, 39.49817627970815], [-86.54661227828214, 39.49940518028891], [-86.54710972758075, 39.499634715960816], [-86.54727190989625, 39.500301009282374], [-86.54937083161074, 39.50038471651745], [-86.54954771457292, 39.500532048273165], [-86.54957581197726, 39.50605308449193], [-86.55900285317254, 39.50613197939898], [-86.55893522321603, 39.52105889308431], [-86.54408383817983, 39.535505059457755], [-86.54063630552122, 39.53543326566295], [-86.540628866885, 39.54276140554091], [-86.53588404938341, 39.550032778713074], [-86.52889166329015, 39.549979927949686], [-86.52176991442772, 39.54991430043091], [-86.52121530446823, 39.54957161170317], [-86.51243218851805, 39.549988253318354], [-86.51220111234545, 39.55512302697312], [-86.50185840018925, 39.555230209116914], [-86.4983417934266, 39.55581928813668], [-86.49813904724539, 39.55687577062801], [-86.48428261256839, 39.557117213338614], [-86.48444505953664, 39.56431462121099], [-86.47397479410054, 39.564029301113614], [-86.46935842224238, 39.56353151294103], [-86.46011664013369, 39.56372734887947], [-86.44212784577151, 39.56385695082471], [-86.44133252016955, 39.573150748373294], [-86.435911033133, 39.57312455861167], [-86.4363606486082, 39.5784669030437], [-86.42305078875424, 39.57859230305495], [-86.41627399791992, 39.57847521004664]]], "type": "Polygon"}, "id": "2", "properties": {"Alt_Name": "Morgan Hills", "Id": 4, "Name": "Highland Creek Hills", "Region_Description": "This region is very hilly, with a relief of 245 ft. It is bounded by siltstone and shale hills to the east, and sandy loam and till to the west. No high-capacity wells are in this region due to most of the unconsolidated sediment being till. The west side of Brooklyn Township is on the eastern border of this region. Several karst features have developed along the transition between the Tipton Till and Morgan Hills.", "longitude": null}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_d83f0d60a830df9290551fa1ce6ed26d.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Name", "Alt_Name", "Region_Description"];
+    let aliases = ["Region:", "Alt Name:", "Description:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_d83f0d60a830df9290551fa1ce6ed26d.addTo(map_6eae39f681134d479517bbf9ec8de561);
+        
+    
+            var marker_cluster_8dc7c0f937f14b221251e68dc330622c = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var circle_marker_c8f247316b989e4bffd61743aeea5745 = L.circleMarker(
+                [39.50724, -86.45664],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_70f158c2889e9d78cc0fb5d509eeef45 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_f8166b358c98ce88fdcd4363dc3647ea = $(`<div id="html_f8166b358c98ce88fdcd4363dc3647ea" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-15-0009             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 28<br>                 <b>Period:</b> 2023-07-25 – 2023-09-19<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>3.30</td>                     <td>2023-09-19</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>6.33</td>                     <td>2023-09-19</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>380.00</td>                     <td>2023-09-19</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_70f158c2889e9d78cc0fb5d509eeef45.setContent(html_f8166b358c98ce88fdcd4363dc3647ea);
+            
+        
+
+        circle_marker_c8f247316b989e4bffd61743aeea5745.bindPopup(popup_70f158c2889e9d78cc0fb5d509eeef45)
+        ;
+
+        
+    
+    
+            circle_marker_c8f247316b989e4bffd61743aeea5745.bindTooltip(
+                `<div>
+                     WWU-15-0009 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6f78dae9cd68a7150359ead52adbb9f8 = L.circleMarker(
+                [39.5052, -86.45376],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_5b1d8375139c8a70c186682174ba607c = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_5227df7cf1d6f26969e7ccb874fa8194 = $(`<div id="html_5227df7cf1d6f26969e7ccb874fa8194" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-15-0010             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 28<br>                 <b>Period:</b> 2023-07-25 – 2023-09-19<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>5.48</td>                     <td>2023-09-19</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>6.86</td>                     <td>2023-09-19</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>366.00</td>                     <td>2023-09-19</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_5b1d8375139c8a70c186682174ba607c.setContent(html_5227df7cf1d6f26969e7ccb874fa8194);
+            
+        
+
+        circle_marker_6f78dae9cd68a7150359ead52adbb9f8.bindPopup(popup_5b1d8375139c8a70c186682174ba607c)
+        ;
+
+        
+    
+    
+            circle_marker_6f78dae9cd68a7150359ead52adbb9f8.bindTooltip(
+                `<div>
+                     WWU-15-0010 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cb3ac030453a79386429adc252d97ee6 = L.circleMarker(
+                [39.513611, -86.431944],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_581b33d844f3c4a65a86276009b434a6 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_8a4ca518fab0079fd56dc1c6c377f3fa = $(`<div id="html_8a4ca518fab0079fd56dc1c6c377f3fa" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0003             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 159<br>                 <b>Period:</b> 1996-02-23 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.70</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.75</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>579.00</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.25</td>                     <td>1996-11-15</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.05</td>                     <td>1996-11-15</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>14.00</td>                     <td>1996-11-15</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_581b33d844f3c4a65a86276009b434a6.setContent(html_8a4ca518fab0079fd56dc1c6c377f3fa);
+            
+        
+
+        circle_marker_cb3ac030453a79386429adc252d97ee6.bindPopup(popup_581b33d844f3c4a65a86276009b434a6)
+        ;
+
+        
+    
+    
+            circle_marker_cb3ac030453a79386429adc252d97ee6.bindTooltip(
+                `<div>
+                     WWU160-0003 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6c856cf4cc3142dcf92bac4d0da69bdf = L.circleMarker(
+                [39.525, -86.528889],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_ef4607ba60263967f57b4f7cda4cd333 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_0aeed84735f40dbad0a022049224fc2c = $(`<div id="html_0aeed84735f40dbad0a022049224fc2c" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0007             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 24<br>                 <b>Period:</b> 1996-08-12 – 1996-10-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.92</td>                     <td>1996-10-02</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.94</td>                     <td>1996-10-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>467.00</td>                     <td>1996-10-02</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.57</td>                     <td>1996-08-12</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.03</td>                     <td>1996-08-12</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>4.00</td>                     <td>1996-08-12</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_ef4607ba60263967f57b4f7cda4cd333.setContent(html_0aeed84735f40dbad0a022049224fc2c);
+            
+        
+
+        circle_marker_6c856cf4cc3142dcf92bac4d0da69bdf.bindPopup(popup_ef4607ba60263967f57b4f7cda4cd333)
+        ;
+
+        
+    
+    
+            circle_marker_6c856cf4cc3142dcf92bac4d0da69bdf.bindTooltip(
+                `<div>
+                     WWU160-0007 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e9731de7606736766ed6080b94a191ea = L.circleMarker(
+                [39.505929, -86.526422],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_f87e38d5f1fa9923a37de48fcbacad83 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_b351e409e425e182f3147ea2e355e8aa = $(`<div id="html_b351e409e425e182f3147ea2e355e8aa" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0009             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 108<br>                 <b>Period:</b> 2001-05-30 – 2001-09-05<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.27</td>                     <td>2001-09-05</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.78</td>                     <td>2001-09-05</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>452.00</td>                     <td>2001-09-05</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.42</td>                     <td>2001-09-05</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.05</td>                     <td>2001-09-05</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>0.12</td>                     <td>2001-09-05</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>4.00</td>                     <td>2001-09-05</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_f87e38d5f1fa9923a37de48fcbacad83.setContent(html_b351e409e425e182f3147ea2e355e8aa);
+            
+        
+
+        circle_marker_e9731de7606736766ed6080b94a191ea.bindPopup(popup_f87e38d5f1fa9923a37de48fcbacad83)
+        ;
+
+        
+    
+    
+            circle_marker_e9731de7606736766ed6080b94a191ea.bindTooltip(
+                `<div>
+                     WWU160-0009 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_ebab8531a6189e0fa717a9f00c493841 = L.circleMarker(
+                [39.469444, -86.506389],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_7538c9c4e51bff6b9023394601b609d8 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_23d8f3e5e151c66cdbc88d197aa99ca8 = $(`<div id="html_23d8f3e5e151c66cdbc88d197aa99ca8" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0013             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 12<br>                 <b>Period:</b> 2004-09-13 – 2004-09-13<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.27</td>                     <td>2004-09-13</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.75</td>                     <td>2004-09-13</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>312.00</td>                     <td>2004-09-13</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_7538c9c4e51bff6b9023394601b609d8.setContent(html_23d8f3e5e151c66cdbc88d197aa99ca8);
+            
+        
+
+        circle_marker_ebab8531a6189e0fa717a9f00c493841.bindPopup(popup_7538c9c4e51bff6b9023394601b609d8)
+        ;
+
+        
+    
+    
+            circle_marker_ebab8531a6189e0fa717a9f00c493841.bindTooltip(
+                `<div>
+                     WWU160-0013 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e2e55a22e2532aa52f3b33d5a098056d = L.circleMarker(
+                [39.550511, -86.505189],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_ef7e90a716d74185992698aeec258bdb = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_8f7e4e2e1c654c607ceed39548e83fe7 = $(`<div id="html_8f7e4e2e1c654c607ceed39548e83fe7" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0017             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 45<br>                 <b>Period:</b> 2001-06-04 – 2001-07-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>6.15</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.01</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>354.00</td>                     <td>2001-07-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_ef7e90a716d74185992698aeec258bdb.setContent(html_8f7e4e2e1c654c607ceed39548e83fe7);
+            
+        
+
+        circle_marker_e2e55a22e2532aa52f3b33d5a098056d.bindPopup(popup_ef7e90a716d74185992698aeec258bdb)
+        ;
+
+        
+    
+    
+            circle_marker_e2e55a22e2532aa52f3b33d5a098056d.bindTooltip(
+                `<div>
+                     WWU160-0017 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_e1bdb4093e50acc733f08b76fc90287f = L.circleMarker(
+                [39.537669, -86.521711],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_5ad026c082043f8fd4a8085a97fc4555 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_9086e0efdd2a7a6cc50b67067ca118ac = $(`<div id="html_9086e0efdd2a7a6cc50b67067ca118ac" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0018             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 43<br>                 <b>Period:</b> 2001-06-04 – 2001-07-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.26</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.94</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>465.00</td>                     <td>2001-07-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_5ad026c082043f8fd4a8085a97fc4555.setContent(html_9086e0efdd2a7a6cc50b67067ca118ac);
+            
+        
+
+        circle_marker_e1bdb4093e50acc733f08b76fc90287f.bindPopup(popup_5ad026c082043f8fd4a8085a97fc4555)
+        ;
+
+        
+    
+    
+            circle_marker_e1bdb4093e50acc733f08b76fc90287f.bindTooltip(
+                `<div>
+                     WWU160-0018 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_b91b0478a2f6b0c0405f5f5dfbddde47 = L.circleMarker(
+                [39.533203, -86.507428],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_d7e45abe21dc671defb2ca0c449b8250 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_b3a5fe8a3ac373e1841c3cf9329207f4 = $(`<div id="html_b3a5fe8a3ac373e1841c3cf9329207f4" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0019             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 42<br>                 <b>Period:</b> 2001-06-04 – 2001-07-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.98</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.88</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>417.00</td>                     <td>2001-07-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_d7e45abe21dc671defb2ca0c449b8250.setContent(html_b3a5fe8a3ac373e1841c3cf9329207f4);
+            
+        
+
+        circle_marker_b91b0478a2f6b0c0405f5f5dfbddde47.bindPopup(popup_d7e45abe21dc671defb2ca0c449b8250)
+        ;
+
+        
+    
+    
+            circle_marker_b91b0478a2f6b0c0405f5f5dfbddde47.bindTooltip(
+                `<div>
+                     WWU160-0019 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_39cdeafc15e6416dfa0c38d3247a7510 = L.circleMarker(
+                [39.518492, -86.530422],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_bb620528b01ba0072042449ab76d6fab = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_783269cec98a1c3c711a8aaa43eb10ec = $(`<div id="html_783269cec98a1c3c711a8aaa43eb10ec" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0020             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 43<br>                 <b>Period:</b> 2001-06-04 – 2001-07-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.54</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.03</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>501.00</td>                     <td>2001-07-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_bb620528b01ba0072042449ab76d6fab.setContent(html_783269cec98a1c3c711a8aaa43eb10ec);
+            
+        
+
+        circle_marker_39cdeafc15e6416dfa0c38d3247a7510.bindPopup(popup_bb620528b01ba0072042449ab76d6fab)
+        ;
+
+        
+    
+    
+            circle_marker_39cdeafc15e6416dfa0c38d3247a7510.bindTooltip(
+                `<div>
+                     WWU160-0020 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_94ecab27d460b4a1bb866b438536dbc0 = L.circleMarker(
+                [39.505892, -86.524514],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_217bc2812479ef16187d9aa24aef3261 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_bd7c398550857fb0623bad9e1e1d247c = $(`<div id="html_bd7c398550857fb0623bad9e1e1d247c" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0021             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 44<br>                 <b>Period:</b> 2001-06-04 – 2001-07-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.46</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.09</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>488.00</td>                     <td>2001-07-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_217bc2812479ef16187d9aa24aef3261.setContent(html_bd7c398550857fb0623bad9e1e1d247c);
+            
+        
+
+        circle_marker_94ecab27d460b4a1bb866b438536dbc0.bindPopup(popup_217bc2812479ef16187d9aa24aef3261)
+        ;
+
+        
+    
+    
+            circle_marker_94ecab27d460b4a1bb866b438536dbc0.bindTooltip(
+                `<div>
+                     WWU160-0021 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2f29b1a446ed75b3d7959c826703c5a5 = L.circleMarker(
+                [39.488389, -86.503661],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_40bdc50b8b0f7c8ec6412e9b5e456f59 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_35323c43bbe6e7f469f77b308936a3c6 = $(`<div id="html_35323c43bbe6e7f469f77b308936a3c6" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0022             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 44<br>                 <b>Period:</b> 2001-06-04 – 2001-07-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.82</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.77</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>295.00</td>                     <td>2001-07-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_40bdc50b8b0f7c8ec6412e9b5e456f59.setContent(html_35323c43bbe6e7f469f77b308936a3c6);
+            
+        
+
+        circle_marker_2f29b1a446ed75b3d7959c826703c5a5.bindPopup(popup_40bdc50b8b0f7c8ec6412e9b5e456f59)
+        ;
+
+        
+    
+    
+            circle_marker_2f29b1a446ed75b3d7959c826703c5a5.bindTooltip(
+                `<div>
+                     WWU160-0022 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_89138fc4d937e0e444fa42f45936ab28 = L.circleMarker(
+                [39.454372, -86.502822],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_02355a23b0abf940d5dd7f6907f34f57 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_8a6a93d743cdf4f05e75ec9a8fb02a13 = $(`<div id="html_8a6a93d743cdf4f05e75ec9a8fb02a13" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0023             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 44<br>                 <b>Period:</b> 2001-06-04 – 2001-07-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.94</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.78</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>338.00</td>                     <td>2001-07-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_02355a23b0abf940d5dd7f6907f34f57.setContent(html_8a6a93d743cdf4f05e75ec9a8fb02a13);
+            
+        
+
+        circle_marker_89138fc4d937e0e444fa42f45936ab28.bindPopup(popup_02355a23b0abf940d5dd7f6907f34f57)
+        ;
+
+        
+    
+    
+            circle_marker_89138fc4d937e0e444fa42f45936ab28.bindTooltip(
+                `<div>
+                     WWU160-0023 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d26cb466ad3ed042ca8f085ad54e4149 = L.circleMarker(
+                [39.454672, -86.506878],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_6d028190df46a693a021a1869cb85f89 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_2852f69f8bf97b30bd49dc254957a6c4 = $(`<div id="html_2852f69f8bf97b30bd49dc254957a6c4" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0024             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 45<br>                 <b>Period:</b> 2001-06-04 – 2001-07-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.10</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.69</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>340.00</td>                     <td>2001-07-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_6d028190df46a693a021a1869cb85f89.setContent(html_2852f69f8bf97b30bd49dc254957a6c4);
+            
+        
+
+        circle_marker_d26cb466ad3ed042ca8f085ad54e4149.bindPopup(popup_6d028190df46a693a021a1869cb85f89)
+        ;
+
+        
+    
+    
+            circle_marker_d26cb466ad3ed042ca8f085ad54e4149.bindTooltip(
+                `<div>
+                     WWU160-0024 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_fee08c238ed170b5bcfba1aa4d486cbf = L.circleMarker(
+                [39.452211, -86.493139],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_8f5660afb5f3fcf71b55c73b9e4d9e29 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_adbebdfeb7b5cbfa8e5067eb5a8ba0f3 = $(`<div id="html_adbebdfeb7b5cbfa8e5067eb5a8ba0f3" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0025             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 43<br>                 <b>Period:</b> 2001-06-04 – 2001-07-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.53</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.86</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>310.00</td>                     <td>2001-07-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_8f5660afb5f3fcf71b55c73b9e4d9e29.setContent(html_adbebdfeb7b5cbfa8e5067eb5a8ba0f3);
+            
+        
+
+        circle_marker_fee08c238ed170b5bcfba1aa4d486cbf.bindPopup(popup_8f5660afb5f3fcf71b55c73b9e4d9e29)
+        ;
+
+        
+    
+    
+            circle_marker_fee08c238ed170b5bcfba1aa4d486cbf.bindTooltip(
+                `<div>
+                     WWU160-0025 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_933c4941d4fcf1a946f1274c0ddaae41 = L.circleMarker(
+                [39.447392, -86.481742],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_8dc7c0f937f14b221251e68dc330622c);
+        
+    
+        var popup_54c6c070a950067af48c56b4ed4a57f2 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_39d85a21fa0ae647847f72d04ee96924 = $(`<div id="html_39d85a21fa0ae647847f72d04ee96924" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0026             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Highland Creek Hills<br>                 <b>Alt Name:</b> Morgan Hills<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 44<br>                 <b>Period:</b> 2001-06-04 – 2001-07-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.46</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.88</td>                     <td>2001-07-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>365.00</td>                     <td>2001-07-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_54c6c070a950067af48c56b4ed4a57f2.setContent(html_39d85a21fa0ae647847f72d04ee96924);
+            
+        
+
+        circle_marker_933c4941d4fcf1a946f1274c0ddaae41.bindPopup(popup_54c6c070a950067af48c56b4ed4a57f2)
+        ;
+
+        
+    
+    
+            circle_marker_933c4941d4fcf1a946f1274c0ddaae41.bindTooltip(
+                `<div>
+                     WWU160-0026 | IDEM | Morgan Hills
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_8dc7c0f937f14b221251e68dc330622c.addTo(map_6eae39f681134d479517bbf9ec8de561);
+        
+    
+            var layer_control_5edbb4b441bba6b8a84b7e11b37b3c98_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_bbac29d05e39bdd1db11cbe3682369cc,
+                },
+                overlays :  {
+                    "Morgan Hills Boundary" : geo_json_d83f0d60a830df9290551fa1ce6ed26d,
+                    "WQ Sites \u2014 Morgan Hills" : marker_cluster_8dc7c0f937f14b221251e68dc330622c,
+                },
+            };
+            let layer_control_5edbb4b441bba6b8a84b7e11b37b3c98 = L.control.layers(
+                layer_control_5edbb4b441bba6b8a84b7e11b37b3c98_layers.base_layers,
+                layer_control_5edbb4b441bba6b8a84b7e11b37b3c98_layers.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_6eae39f681134d479517bbf9ec8de561);
+
+        
+</script>
+</html>

@@ -1,0 +1,1262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_ea9fb6e317a11b7a9e54b84f8886c010 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+        position: fixed;
+        bottom: 25px;
+        left: 25px;
+        width: 340px;
+        z-index: 9999;
+        background: white;
+        padding: 12px 14px;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+        font-family: Segoe UI, Arial;
+        font-size: 12px;">
+        <b>Martinsville Outwash</b><br>
+        <hr style="margin:6px 0;">
+        <b>Sites:</b> 37<br>
+        <b>Total Records:</b> 19984<br>
+        <b>Sources:</b> EPA, IDEM, USGS<br>
+    </div>
+    
+    
+            <div class="folium-map" id="map_ea9fb6e317a11b7a9e54b84f8886c010" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_ea9fb6e317a11b7a9e54b84f8886c010 = L.map(
+                "map_ea9fb6e317a11b7a9e54b84f8886c010",
+                {
+                    center: [39.47029781081081, -86.40859010810811],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_ea9fb6e317a11b7a9e54b84f8886c010);
+
+            
+
+        
+    
+            var tile_layer_7e4d62842018b051601db6e2d8df1bcd = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_7e4d62842018b051601db6e2d8df1bcd.addTo(map_ea9fb6e317a11b7a9e54b84f8886c010);
+        
+    
+        function geo_json_b5aac9c5b321a1e84215cb0374863c71_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#333333", "fillColor": "#f2f2f2", "fillOpacity": 0.25, "weight": 2};
+            }
+        }
+
+        function geo_json_b5aac9c5b321a1e84215cb0374863c71_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_b5aac9c5b321a1e84215cb0374863c71 = L.geoJson(null, {
+                onEachFeature: geo_json_b5aac9c5b321a1e84215cb0374863c71_onEachFeature,
+            
+                style: geo_json_b5aac9c5b321a1e84215cb0374863c71_styler,
+        });
+
+        function geo_json_b5aac9c5b321a1e84215cb0374863c71_add (data) {
+            geo_json_b5aac9c5b321a1e84215cb0374863c71
+                .addData(data);
+        }
+            geo_json_b5aac9c5b321a1e84215cb0374863c71_add({"bbox": [-86.47216813576507, 39.3929561349693, -86.3364423564979, 39.50776277840959], "features": [{"bbox": [-86.47216813576507, 39.3929561349693, -86.3364423564979, 39.50776277840959], "geometry": {"coordinates": [[[-86.33740869395886, 39.498601715110375], [-86.33663220257478, 39.49152825183646], [-86.3364423564979, 39.47913021514135], [-86.3496699589046, 39.47920494621973], [-86.35021045411, 39.4210817225132], [-86.35307023477151, 39.42114589066875], [-86.36183656453845, 39.42089220497676], [-86.36735771405364, 39.413369660619644], [-86.37631641058582, 39.41326698075018], [-86.37677175289781, 39.405867760804526], [-86.38125128853662, 39.40574061706268], [-86.38145666758201, 39.404533273743134], [-86.382838211415, 39.402425848043286], [-86.38907240736657, 39.40200558812879], [-86.39160605456473, 39.40171675591347], [-86.39159764116638, 39.39845482859793], [-86.40873498945182, 39.39793896367902], [-86.40990945311391, 39.39718965243744], [-86.4134858267476, 39.39347466463039], [-86.41412590674952, 39.39400926479325], [-86.41730052011081, 39.39356746507126], [-86.41913830740792, 39.394263267849446], [-86.41980244112388, 39.39420936381892], [-86.42091894620178, 39.3929561349693], [-86.42312309506106, 39.3939397866793], [-86.42892800917028, 39.396486005928516], [-86.43237860322392, 39.3983910777634], [-86.43325798113065, 39.399081977769924], [-86.4345812380259, 39.39960337588423], [-86.43753027426064, 39.39971684785849], [-86.44022667105972, 39.40068348162322], [-86.44216759688082, 39.40048384867082], [-86.4424212450295, 39.40025959766884], [-86.47216813576507, 39.425209158851345], [-86.47208431478728, 39.42535315107567], [-86.46974608379163, 39.426740154725586], [-86.46827327452372, 39.42840227658198], [-86.46488364469256, 39.42945956118107], [-86.46172538898195, 39.43039861437235], [-86.45916745046277, 39.431078508841495], [-86.45638683411585, 39.4328535931471], [-86.45390931795573, 39.43516644702835], [-86.45034575651965, 39.43872575042904], [-86.44813382989906, 39.44109858922999], [-86.44719525094524, 39.44314442081985], [-86.4468017720965, 39.44624182215745], [-86.44652263935177, 39.44770907177699], [-86.4440533855264, 39.450808484677324], [-86.4434460743268, 39.45177112136533], [-86.44259727918936, 39.45409150700004], [-86.44225840996931, 39.45609248515797], [-86.44243144372163, 39.4596502794989], [-86.44029770216443, 39.46686369376028], [-86.43909789884356, 39.47263922138277], [-86.43915422014217, 39.475202339243964], [-86.43970988890301, 39.47821797006421], [-86.4403206590233, 39.48261708191642], [-86.44190704611478, 39.48429353425321], [-86.44276122746852, 39.485203565639885], [-86.44254884620813, 39.48868324305917], [-86.4391629865409, 39.4888576840468], [-86.43874490257738, 39.4872822021684], [-86.43641823477294, 39.48584052566128], [-86.43512184725323, 39.48635872328333], [-86.43258395905312, 39.488205915264466], [-86.43071659298919, 39.4908192271947], [-86.43009879352802, 39.49382962070734], [-86.42955709333697, 39.496859454915196], [-86.42872790069976, 39.49891518771662], [-86.42658059365243, 39.49959121829866], [-86.42524043287558, 39.500900586164576], [-86.4240685220455, 39.5028103553236], [-86.42142714000043, 39.50589647872503], [-86.41869593653536, 39.507717100382095], [-86.39944452908627, 39.50743736217776], [-86.37081990190443, 39.50776277840959], [-86.34744017075296, 39.50668029045836], [-86.33740869395886, 39.498601715110375]]], "type": "Polygon"}, "id": "7", "properties": {"Alt_Name": "Martinsville Outwash", "Id": 5, "Name": "Middle White River Outwash", "Region_Description": "This region is hilly, ranging from 550-950 ft of elevation with more relief to the west and more rolling hills to the east. This region has the thickest amount of unconsolidated material over bedrock, with mostly outwash, alluvium, and drift. A portion shale bedrock is exposed in the middle of this region. 43 high-capacity wells operate in the region ranging from 170 GPM in till areas to 1400 GPM in outwash along the White River. This region includes the township of Martinsville.", "longitude": null}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_b5aac9c5b321a1e84215cb0374863c71.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Name", "Alt_Name", "Region_Description"];
+    let aliases = ["Region:", "Alt Name:", "Description:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_b5aac9c5b321a1e84215cb0374863c71.addTo(map_ea9fb6e317a11b7a9e54b84f8886c010);
+        
+    
+            var marker_cluster_1fc6242c288b69be2e3c79eb3728f544 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var circle_marker_24b1bb916070d6762a0716e9b2013d13 = L.circleMarker(
+                [39.478937, -86.356659],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_cf4e34e6fab019a7e226bd0965a6917c = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_6362146a5808cdd9fa317dcbae1eb73b = $(`<div id="html_6362146a5808cdd9fa317dcbae1eb73b" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 IN033-392844086212401             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> EPA<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 1<br>                 <b>Period:</b> 1989-08-14 – 1989-08-14<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>TKN</b></td>                     <td>0.20</td>                     <td>1989-08-14</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_cf4e34e6fab019a7e226bd0965a6917c.setContent(html_6362146a5808cdd9fa317dcbae1eb73b);
+            
+        
+
+        circle_marker_24b1bb916070d6762a0716e9b2013d13.bindPopup(popup_cf4e34e6fab019a7e226bd0965a6917c)
+        ;
+
+        
+    
+    
+            circle_marker_24b1bb916070d6762a0716e9b2013d13.bindTooltip(
+                `<div>
+                     IN033-392844086212401 | EPA | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_fa979503c01c67e0c91f42516923a102 = L.circleMarker(
+                [39.497539, -86.400532],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_84e8c404206780fce06646fa96f58747 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_68a016753684d1164b899e6ced283678 = $(`<div id="html_68a016753684d1164b899e6ced283678" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-03354000             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 582<br>                 <b>Period:</b> 1964-10-30 – 2009-09-15<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.50</td>                     <td>2009-09-15</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>1320.00</td>                     <td>2009-09-15</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>1.00</td>                     <td>1995-08-17</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_84e8c404206780fce06646fa96f58747.setContent(html_68a016753684d1164b899e6ced283678);
+            
+        
+
+        circle_marker_fa979503c01c67e0c91f42516923a102.bindPopup(popup_84e8c404206780fce06646fa96f58747)
+        ;
+
+        
+    
+    
+            circle_marker_fa979503c01c67e0c91f42516923a102.bindTooltip(
+                `<div>
+                     USGS-03354000 | USGS | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_349be449062b9214abb68ecc9e37991c = L.circleMarker(
+                [39.419214, -86.455829],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_d4e9a1d2b1623a66b90dc7c8bd560b44 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_cd0adc067baaf1c222d1dbbe06c790c4 = $(`<div id="html_cd0adc067baaf1c222d1dbbe06c790c4" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392509086272101             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1979-11-02 – 1980-10-09<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>1.00</td>                     <td>1980-10-09</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>644.00</td>                     <td>1980-10-09</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_d4e9a1d2b1623a66b90dc7c8bd560b44.setContent(html_cd0adc067baaf1c222d1dbbe06c790c4);
+            
+        
+
+        circle_marker_349be449062b9214abb68ecc9e37991c.bindPopup(popup_d4e9a1d2b1623a66b90dc7c8bd560b44)
+        ;
+
+        
+    
+    
+            circle_marker_349be449062b9214abb68ecc9e37991c.bindTooltip(
+                `<div>
+                     USGS-392509086272101 | USGS | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_466dfa9b3c6976cd5344a3944034c1cb = L.circleMarker(
+                [39.428659, -86.438328],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_63b677b0b707bd204cb2661980dfc972 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_1896e34914ae51f05f8f827cffd6abfa = $(`<div id="html_1896e34914ae51f05f8f827cffd6abfa" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392543086261701             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1979-11-01 – 1979-11-01<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>2.20</td>                     <td>1979-11-01</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>725.00</td>                     <td>1979-11-01</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_63b677b0b707bd204cb2661980dfc972.setContent(html_1896e34914ae51f05f8f827cffd6abfa);
+            
+        
+
+        circle_marker_466dfa9b3c6976cd5344a3944034c1cb.bindPopup(popup_63b677b0b707bd204cb2661980dfc972)
+        ;
+
+        
+    
+    
+            circle_marker_466dfa9b3c6976cd5344a3944034c1cb.bindTooltip(
+                `<div>
+                     USGS-392543086261701 | USGS | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_628945f1f11e528cb360fd3c84ecefc4 = L.circleMarker(
+                [39.445603, -86.436939],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_d83d0cec0bc8da19559348fe475fd95a = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_5d71fb20b359c7ff8c2233a9f4b7b651 = $(`<div id="html_5d71fb20b359c7ff8c2233a9f4b7b651" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392644086261201             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1980-01-10 – 1980-01-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>1.70</td>                     <td>1980-01-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>630.00</td>                     <td>1980-01-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_d83d0cec0bc8da19559348fe475fd95a.setContent(html_5d71fb20b359c7ff8c2233a9f4b7b651);
+            
+        
+
+        circle_marker_628945f1f11e528cb360fd3c84ecefc4.bindPopup(popup_d83d0cec0bc8da19559348fe475fd95a)
+        ;
+
+        
+    
+    
+            circle_marker_628945f1f11e528cb360fd3c84ecefc4.bindTooltip(
+                `<div>
+                     USGS-392644086261201 | USGS | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_62dabeeb1cab8297d6a3a99ddbf23d88 = L.circleMarker(
+                [39.432436, -86.447261],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_28526be8851ab488b6ba0dd05b6b0cfc = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_554e0a0dd529f9c03de5a44f2be40fa8 = $(`<div id="html_554e0a0dd529f9c03de5a44f2be40fa8" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392655086255801             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1980-01-10 – 1980-01-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>0.60</td>                     <td>1980-01-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>900.00</td>                     <td>1980-01-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_28526be8851ab488b6ba0dd05b6b0cfc.setContent(html_554e0a0dd529f9c03de5a44f2be40fa8);
+            
+        
+
+        circle_marker_62dabeeb1cab8297d6a3a99ddbf23d88.bindPopup(popup_28526be8851ab488b6ba0dd05b6b0cfc)
+        ;
+
+        
+    
+    
+            circle_marker_62dabeeb1cab8297d6a3a99ddbf23d88.bindTooltip(
+                `<div>
+                     USGS-392655086255801 | USGS | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_69453ff1c653e6bbd080e538a56b3cad = L.circleMarker(
+                [39.411925, -86.437622],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_d9d18e8f3b90871541226f1a91629f1d = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_b4113aa11d06cf1cf74045800408426b = $(`<div id="html_b4113aa11d06cf1cf74045800408426b" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392713086261601             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1979-11-02 – 1980-10-07<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>0.60</td>                     <td>1980-10-07</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>605.00</td>                     <td>1980-10-07</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_d9d18e8f3b90871541226f1a91629f1d.setContent(html_b4113aa11d06cf1cf74045800408426b);
+            
+        
+
+        circle_marker_69453ff1c653e6bbd080e538a56b3cad.bindPopup(popup_d9d18e8f3b90871541226f1a91629f1d)
+        ;
+
+        
+    
+    
+            circle_marker_69453ff1c653e6bbd080e538a56b3cad.bindTooltip(
+                `<div>
+                     USGS-392713086261601 | USGS | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_53215fdfe98cd02d5128108697f025da = L.circleMarker(
+                [39.466159, -86.431661],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_d3fc930a8c79b990e19c426eb87acee4 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_220c014c829d93852f4271aa8cb25469 = $(`<div id="html_220c014c829d93852f4271aa8cb25469" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392759086255401             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1980-01-10 – 1980-01-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>0.80</td>                     <td>1980-01-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>890.00</td>                     <td>1980-01-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_d3fc930a8c79b990e19c426eb87acee4.setContent(html_220c014c829d93852f4271aa8cb25469);
+            
+        
+
+        circle_marker_53215fdfe98cd02d5128108697f025da.bindPopup(popup_d3fc930a8c79b990e19c426eb87acee4)
+        ;
+
+        
+    
+    
+            circle_marker_53215fdfe98cd02d5128108697f025da.bindTooltip(
+                `<div>
+                     USGS-392759086255401 | USGS | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_63bee67bcc9730189cdcbb88ae4b5438 = L.circleMarker(
+                [39.474214, -86.369438],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_9bc3dc929866c9c9e96cf1d85990ec54 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_bf6ea322e158691db219d327a5d5aebf = $(`<div id="html_bf6ea322e158691db219d327a5d5aebf" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392827086221000             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 1<br>                 <b>Period:</b> 1972-10-25 – 1972-10-25<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.80</td>                     <td>1972-10-25</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_9bc3dc929866c9c9e96cf1d85990ec54.setContent(html_bf6ea322e158691db219d327a5d5aebf);
+            
+        
+
+        circle_marker_63bee67bcc9730189cdcbb88ae4b5438.bindPopup(popup_9bc3dc929866c9c9e96cf1d85990ec54)
+        ;
+
+        
+    
+    
+            circle_marker_63bee67bcc9730189cdcbb88ae4b5438.bindTooltip(
+                `<div>
+                     USGS-392827086221000 | USGS | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4df6ea98a75867add4d1bd5355cf8ccd = L.circleMarker(
+                [39.478164, -86.418428],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_21b8c73566377e01a8c336a862c5d89a = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_c8521c8bc2c74c7a8e13ee4104816ee7 = $(`<div id="html_c8521c8bc2c74c7a8e13ee4104816ee7" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392841086250601             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1979-10-31 – 1980-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>3.20</td>                     <td>1980-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>545.00</td>                     <td>1980-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_21b8c73566377e01a8c336a862c5d89a.setContent(html_c8521c8bc2c74c7a8e13ee4104816ee7);
+            
+        
+
+        circle_marker_4df6ea98a75867add4d1bd5355cf8ccd.bindPopup(popup_21b8c73566377e01a8c336a862c5d89a)
+        ;
+
+        
+    
+    
+            circle_marker_4df6ea98a75867add4d1bd5355cf8ccd.bindTooltip(
+                `<div>
+                     USGS-392841086250601 | USGS | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f49358a29853492f65f89d90dc65f051 = L.circleMarker(
+                [39.480048, -86.354993],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_11e26349bd927daa1a9c83ee61ee2512 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_c60078856de4ed3c226ce0c2ccb09a19 = $(`<div id="html_c60078856de4ed3c226ce0c2ccb09a19" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392848086211201             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1979-10-31 – 1980-10-07<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>4.60</td>                     <td>1980-10-07</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>408.00</td>                     <td>1980-10-07</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_11e26349bd927daa1a9c83ee61ee2512.setContent(html_c60078856de4ed3c226ce0c2ccb09a19);
+            
+        
+
+        circle_marker_f49358a29853492f65f89d90dc65f051.bindPopup(popup_11e26349bd927daa1a9c83ee61ee2512)
+        ;
+
+        
+    
+    
+            circle_marker_f49358a29853492f65f89d90dc65f051.bindTooltip(
+                `<div>
+                     USGS-392848086211201 | USGS | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8dd80a6a70432bee52927637436ee3fd = L.circleMarker(
+                [39.496437, -86.370549],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_0b1602592f45680c0987a251dbf634f3 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_37e6e8035a8c37c631392c6ca97e6ba0 = $(`<div id="html_37e6e8035a8c37c631392c6ca97e6ba0" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392947086221301             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1979-10-31 – 1979-10-31<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>3.90</td>                     <td>1979-10-31</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>638.00</td>                     <td>1979-10-31</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_0b1602592f45680c0987a251dbf634f3.setContent(html_37e6e8035a8c37c631392c6ca97e6ba0);
+            
+        
+
+        circle_marker_8dd80a6a70432bee52927637436ee3fd.bindPopup(popup_0b1602592f45680c0987a251dbf634f3)
+        ;
+
+        
+    
+    
+            circle_marker_8dd80a6a70432bee52927637436ee3fd.bindTooltip(
+                `<div>
+                     USGS-392947086221301 | USGS | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_760dc8599dfc663897ba15a8666e0891 = L.circleMarker(
+                [39.498908, -86.400131],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_2a41abd784338eda315c5589f649cc20 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_64ad98a408950755d9ffdec1a2e99136 = $(`<div id="html_64ad98a408950755d9ffdec1a2e99136" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392953086240301             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1979-11-01 – 1979-11-01<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>5.20</td>                     <td>1979-11-01</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>585.00</td>                     <td>1979-11-01</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_2a41abd784338eda315c5589f649cc20.setContent(html_64ad98a408950755d9ffdec1a2e99136);
+            
+        
+
+        circle_marker_760dc8599dfc663897ba15a8666e0891.bindPopup(popup_2a41abd784338eda315c5589f649cc20)
+        ;
+
+        
+    
+    
+            circle_marker_760dc8599dfc663897ba15a8666e0891.bindTooltip(
+                `<div>
+                     USGS-392953086240301 | USGS | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f723b4980c28c5549bf52020b0a379af = L.circleMarker(
+                [39.49977, -86.421383],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_3d03fd6f98b856161336f184e554b804 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_d2f686ed9fd6f0ebcfc06173c1d9a54d = $(`<div id="html_d2f686ed9fd6f0ebcfc06173c1d9a54d" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392958086251601             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1979-11-01 – 1980-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>0.00</td>                     <td>1980-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>574.00</td>                     <td>1980-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_3d03fd6f98b856161336f184e554b804.setContent(html_d2f686ed9fd6f0ebcfc06173c1d9a54d);
+            
+        
+
+        circle_marker_f723b4980c28c5549bf52020b0a379af.bindPopup(popup_3d03fd6f98b856161336f184e554b804)
+        ;
+
+        
+    
+    
+            circle_marker_f723b4980c28c5549bf52020b0a379af.bindTooltip(
+                `<div>
+                     USGS-392958086251601 | USGS | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_af5aa73a680628005680b17f11c8e2b5 = L.circleMarker(
+                [39.501189, -86.355106],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_d8dc60a61fa0ededa4cb082c68169db3 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_9545df83c723f88da7626eb20680546b = $(`<div id="html_9545df83c723f88da7626eb20680546b" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-393002086212001             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 8<br>                 <b>Period:</b> 1979-10-31 – 1980-10-07<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>6.80</td>                     <td>1980-10-07</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>624.00</td>                     <td>1980-10-07</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_d8dc60a61fa0ededa4cb082c68169db3.setContent(html_9545df83c723f88da7626eb20680546b);
+            
+        
+
+        circle_marker_af5aa73a680628005680b17f11c8e2b5.bindPopup(popup_d8dc60a61fa0ededa4cb082c68169db3)
+        ;
+
+        
+    
+    
+            circle_marker_af5aa73a680628005680b17f11c8e2b5.bindTooltip(
+                `<div>
+                     USGS-393002086212001 | USGS | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_a197802d5fda45ead9c1964b459f68fc = L.circleMarker(
+                [39.47554, -86.37269],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_d8c7a27a93692d9a01ff14b73b41d789 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_c97deba26dc27e298145d9fad61de1f8 = $(`<div id="html_c97deba26dc27e298145d9fad61de1f8" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-14-0012             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 52<br>                 <b>Period:</b> 2023-07-25 – 2024-09-11<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.43</td>                     <td>2024-09-11</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.91</td>                     <td>2024-09-11</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>502.00</td>                     <td>2023-07-25</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_d8c7a27a93692d9a01ff14b73b41d789.setContent(html_c97deba26dc27e298145d9fad61de1f8);
+            
+        
+
+        circle_marker_a197802d5fda45ead9c1964b459f68fc.bindPopup(popup_d8c7a27a93692d9a01ff14b73b41d789)
+        ;
+
+        
+    
+    
+            circle_marker_a197802d5fda45ead9c1964b459f68fc.bindTooltip(
+                `<div>
+                     WWU-14-0012 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_150ad018c8cc88cdcf3cc2a364c663d5 = L.circleMarker(
+                [39.44951, -86.38241],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_7ed5d7e954ed876d2d9855cc031ee681 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_6088defcd8365aadd3bd36b7f5e84f46 = $(`<div id="html_6088defcd8365aadd3bd36b7f5e84f46" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-14-0014             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 51<br>                 <b>Period:</b> 2023-07-25 – 2024-09-11<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.92</td>                     <td>2024-09-11</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.20</td>                     <td>2024-09-11</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>505.00</td>                     <td>2023-07-25</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_7ed5d7e954ed876d2d9855cc031ee681.setContent(html_6088defcd8365aadd3bd36b7f5e84f46);
+            
+        
+
+        circle_marker_150ad018c8cc88cdcf3cc2a364c663d5.bindPopup(popup_7ed5d7e954ed876d2d9855cc031ee681)
+        ;
+
+        
+    
+    
+            circle_marker_150ad018c8cc88cdcf3cc2a364c663d5.bindTooltip(
+                `<div>
+                     WWU-14-0014 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_19abda84d1822b02af73235a095d5a3c = L.circleMarker(
+                [39.49037, -86.414086],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_5ea1ca5a97af59061d8dee8eaee3b55e = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_ad3beacbe0b4a81ae6f8d08db5a9bbe6 = $(`<div id="html_ad3beacbe0b4a81ae6f8d08db5a9bbe6" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-15-0002             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 169<br>                 <b>Period:</b> 2011-05-24 – 2011-10-19<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.74</td>                     <td>2011-10-19</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.01</td>                     <td>2011-10-19</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>993.00</td>                     <td>2011-08-16</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.81</td>                     <td>2011-10-19</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.34</td>                     <td>2011-10-19</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>4.40</td>                     <td>2011-10-19</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>6.00</td>                     <td>2011-10-19</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_5ea1ca5a97af59061d8dee8eaee3b55e.setContent(html_ad3beacbe0b4a81ae6f8d08db5a9bbe6);
+            
+        
+
+        circle_marker_19abda84d1822b02af73235a095d5a3c.bindPopup(popup_5ea1ca5a97af59061d8dee8eaee3b55e)
+        ;
+
+        
+    
+    
+            circle_marker_19abda84d1822b02af73235a095d5a3c.bindTooltip(
+                `<div>
+                     WWU-15-0002 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_f2c62b6b91389efccfa1c16526b607de = L.circleMarker(
+                [39.494638, -86.429463],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_de79b4f0fa1dac8f16e04daacb3dda4f = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_4b0fe7f0a88d0b02a29d39d2755a3c51 = $(`<div id="html_4b0fe7f0a88d0b02a29d39d2755a3c51" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-15-0003             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 140<br>                 <b>Period:</b> 2011-05-11 – 2011-08-30<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.46</td>                     <td>2011-08-30</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.07</td>                     <td>2011-08-30</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>436.00</td>                     <td>2011-08-30</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.46</td>                     <td>2011-07-13</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.05</td>                     <td>2011-07-13</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>0.49</td>                     <td>2011-07-13</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>8.00</td>                     <td>2011-07-13</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_de79b4f0fa1dac8f16e04daacb3dda4f.setContent(html_4b0fe7f0a88d0b02a29d39d2755a3c51);
+            
+        
+
+        circle_marker_f2c62b6b91389efccfa1c16526b607de.bindPopup(popup_de79b4f0fa1dac8f16e04daacb3dda4f)
+        ;
+
+        
+    
+    
+            circle_marker_f2c62b6b91389efccfa1c16526b607de.bindTooltip(
+                `<div>
+                     WWU-15-0003 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_33a71a905575f3c257eb047071aac2ca = L.circleMarker(
+                [39.493906, -86.392607],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_1d5b2dfe938f6a8b02ca06609ff54bc6 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_9e88362ba4b9d846afaa35703eab0166 = $(`<div id="html_9e88362ba4b9d846afaa35703eab0166" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-15-0006             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 163<br>                 <b>Period:</b> 2020-06-03 – 2020-11-03<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>10.31</td>                     <td>2020-11-03</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.08</td>                     <td>2020-11-03</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>752.00</td>                     <td>2020-11-03</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>1.00</td>                     <td>2020-10-20</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.18</td>                     <td>2020-10-20</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>3.70</td>                     <td>2020-10-20</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>29.00</td>                     <td>2020-10-20</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_1d5b2dfe938f6a8b02ca06609ff54bc6.setContent(html_9e88362ba4b9d846afaa35703eab0166);
+            
+        
+
+        circle_marker_33a71a905575f3c257eb047071aac2ca.bindPopup(popup_1d5b2dfe938f6a8b02ca06609ff54bc6)
+        ;
+
+        
+    
+    
+            circle_marker_33a71a905575f3c257eb047071aac2ca.bindTooltip(
+                `<div>
+                     WWU-15-0006 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_423701dcbc92c8569541dc8db92ea182 = L.circleMarker(
+                [39.434076, -86.448554],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_1bde52ec1e27809397f1e235e526a9ea = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_24276faf532efadff56ab2e420e38685 = $(`<div id="html_24276faf532efadff56ab2e420e38685" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-15-0007             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 128<br>                 <b>Period:</b> 2020-06-09 – 2020-10-19<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.66</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.20</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>725.00</td>                     <td>2020-07-06</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.81</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.16</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>3.50</td>                     <td>2020-10-19</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>9.00</td>                     <td>2020-10-19</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_1bde52ec1e27809397f1e235e526a9ea.setContent(html_24276faf532efadff56ab2e420e38685);
+            
+        
+
+        circle_marker_423701dcbc92c8569541dc8db92ea182.bindPopup(popup_1bde52ec1e27809397f1e235e526a9ea)
+        ;
+
+        
+    
+    
+            circle_marker_423701dcbc92c8569541dc8db92ea182.bindTooltip(
+                `<div>
+                     WWU-15-0007 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_daaaa6ac44082db964cb6c7a44b9fa54 = L.circleMarker(
+                [39.458238, -86.4416],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_43a09fe49ddf368103b1e82297eaa489 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_011e9897cc5a83b44c3848f86ceae342 = $(`<div id="html_011e9897cc5a83b44c3848f86ceae342" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-15-0008             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 5<br>                 <b>Period:</b> 2021-10-04 – 2021-10-04<br>                 <br>                 <i>No parsed parameter table available.</i>             </div>         </div>         </div>`)[0];
+                popup_43a09fe49ddf368103b1e82297eaa489.setContent(html_011e9897cc5a83b44c3848f86ceae342);
+            
+        
+
+        circle_marker_daaaa6ac44082db964cb6c7a44b9fa54.bindPopup(popup_43a09fe49ddf368103b1e82297eaa489)
+        ;
+
+        
+    
+    
+            circle_marker_daaaa6ac44082db964cb6c7a44b9fa54.bindTooltip(
+                `<div>
+                     WWU-15-0008 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_d7d03b4d5e8e72fb84aae76c41ef273d = L.circleMarker(
+                [39.499167, -86.355278],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_368bca60715a7a369c16c030e72d8663 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_639b901ab843f322cd3da2e3411d7711 = $(`<div id="html_639b901ab843f322cd3da2e3411d7711" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU140-0002             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 127<br>                 <b>Period:</b> 2001-07-23 – 2021-10-05<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>10.20</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.90</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>763.00</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>1.50</td>                     <td>2001-12-19</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.42</td>                     <td>2001-12-19</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>3.80</td>                     <td>2001-12-19</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>77.00</td>                     <td>2001-12-19</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_368bca60715a7a369c16c030e72d8663.setContent(html_639b901ab843f322cd3da2e3411d7711);
+            
+        
+
+        circle_marker_d7d03b4d5e8e72fb84aae76c41ef273d.bindPopup(popup_368bca60715a7a369c16c030e72d8663)
+        ;
+
+        
+    
+    
+            circle_marker_d7d03b4d5e8e72fb84aae76c41ef273d.bindTooltip(
+                `<div>
+                     WWU140-0002 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5ffd6670351bae7da6a41a202f95e71d = L.circleMarker(
+                [39.503636, -86.344789],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_eafb01299b0ae13384d29912b0edc8f9 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_722364cb2079623f0faf8a93c432ca33 = $(`<div id="html_722364cb2079623f0faf8a93c432ca33" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU140-0027             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 44<br>                 <b>Period:</b> 2001-07-23 – 2001-08-20<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.53</td>                     <td>2001-08-20</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.92</td>                     <td>2001-08-20</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>990.00</td>                     <td>2001-08-06</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_eafb01299b0ae13384d29912b0edc8f9.setContent(html_722364cb2079623f0faf8a93c432ca33);
+            
+        
+
+        circle_marker_5ffd6670351bae7da6a41a202f95e71d.bindPopup(popup_eafb01299b0ae13384d29912b0edc8f9)
+        ;
+
+        
+    
+    
+            circle_marker_5ffd6670351bae7da6a41a202f95e71d.bindTooltip(
+                `<div>
+                     WWU140-0027 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2012eefc7957fec72a5d4868898e22a5 = L.circleMarker(
+                [39.491061, -86.384056],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_30d8c2173e0118ce81a08aadc8a40f6c = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_49e407b087c640153ebf680c78b70fcd = $(`<div id="html_49e407b087c640153ebf680c78b70fcd" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU140-0028             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 46<br>                 <b>Period:</b> 2001-07-23 – 2001-08-20<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.69</td>                     <td>2001-08-20</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.94</td>                     <td>2001-08-20</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>987.00</td>                     <td>2001-08-06</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_30d8c2173e0118ce81a08aadc8a40f6c.setContent(html_49e407b087c640153ebf680c78b70fcd);
+            
+        
+
+        circle_marker_2012eefc7957fec72a5d4868898e22a5.bindPopup(popup_30d8c2173e0118ce81a08aadc8a40f6c)
+        ;
+
+        
+    
+    
+            circle_marker_2012eefc7957fec72a5d4868898e22a5.bindTooltip(
+                `<div>
+                     WWU140-0028 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_09888a5593bda1e962155a2037ead341 = L.circleMarker(
+                [39.488717, -86.383186],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_f4af229e40058d131bf712b1527ee8f2 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_53d8ea87c2cf683c292a0aa9d2b33cb7 = $(`<div id="html_53d8ea87c2cf683c292a0aa9d2b33cb7" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU140-0029             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 34<br>                 <b>Period:</b> 2001-09-11 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.41</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.86</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>407.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_f4af229e40058d131bf712b1527ee8f2.setContent(html_53d8ea87c2cf683c292a0aa9d2b33cb7);
+            
+        
+
+        circle_marker_09888a5593bda1e962155a2037ead341.bindPopup(popup_f4af229e40058d131bf712b1527ee8f2)
+        ;
+
+        
+    
+    
+            circle_marker_09888a5593bda1e962155a2037ead341.bindTooltip(
+                `<div>
+                     WWU140-0029 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_488b7bcfea627c2beb4e7fefc9380024 = L.circleMarker(
+                [39.502452, -86.34842],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_a71efe009a79d1631c4edfedd4bf8ee2 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_c2b551a8aba42c782a4b6cc55902e305 = $(`<div id="html_c2b551a8aba42c782a4b6cc55902e305" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU140-0038             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 146<br>                 <b>Period:</b> 2006-05-30 – 2006-11-14<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>10.79</td>                     <td>2006-11-14</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.82</td>                     <td>2006-11-14</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>761.00</td>                     <td>2006-11-14</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.50</td>                     <td>2006-11-14</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.33</td>                     <td>2006-11-14</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>3.10</td>                     <td>2006-11-14</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>16.00</td>                     <td>2006-11-14</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_a71efe009a79d1631c4edfedd4bf8ee2.setContent(html_c2b551a8aba42c782a4b6cc55902e305);
+            
+        
+
+        circle_marker_488b7bcfea627c2beb4e7fefc9380024.bindPopup(popup_a71efe009a79d1631c4edfedd4bf8ee2)
+        ;
+
+        
+    
+    
+            circle_marker_488b7bcfea627c2beb4e7fefc9380024.bindTooltip(
+                `<div>
+                     WWU140-0038 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cb7a6fdd622144ad9e63edf1cd654fd7 = L.circleMarker(
+                [39.496944, -86.401944],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_1cbfc1733990bca26dee128c8de75bf8 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_7f6e39c3dce65a178f4b97a73629534b = $(`<div id="html_7f6e39c3dce65a178f4b97a73629534b" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0002             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 1211<br>                 <b>Period:</b> 1996-02-23 – 2006-05-16<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.70</td>                     <td>2006-05-16</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.80</td>                     <td>2006-05-16</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>561.00</td>                     <td>2006-05-16</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>1.40</td>                     <td>2006-05-16</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.20</td>                     <td>2006-05-16</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>10.20</td>                     <td>2006-05-16</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>78.00</td>                     <td>2006-05-16</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_1cbfc1733990bca26dee128c8de75bf8.setContent(html_7f6e39c3dce65a178f4b97a73629534b);
+            
+        
+
+        circle_marker_cb7a6fdd622144ad9e63edf1cd654fd7.bindPopup(popup_1cbfc1733990bca26dee128c8de75bf8)
+        ;
+
+        
+    
+    
+            circle_marker_cb7a6fdd622144ad9e63edf1cd654fd7.bindTooltip(
+                `<div>
+                     WWU160-0002 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_dd926640b0c848b39fc0465563a614f4 = L.circleMarker(
+                [39.433796, -86.449422],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_057a652ef731efc9979eaa135f8f46e6 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_15370099399b7843043c20fa5d9d0457 = $(`<div id="html_15370099399b7843043c20fa5d9d0457" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0004             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 14631<br>                 <b>Period:</b> 1991-02-05 – 2025-12-08<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>12.35</td>                     <td>2025-12-08</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.26</td>                     <td>2025-12-08</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>979.00</td>                     <td>2025-08-21</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.60</td>                     <td>2025-11-13</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.15</td>                     <td>2025-11-13</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>5.40</td>                     <td>2025-11-13</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>10.00</td>                     <td>2025-11-13</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_057a652ef731efc9979eaa135f8f46e6.setContent(html_15370099399b7843043c20fa5d9d0457);
+            
+        
+
+        circle_marker_dd926640b0c848b39fc0465563a614f4.bindPopup(popup_057a652ef731efc9979eaa135f8f46e6)
+        ;
+
+        
+    
+    
+            circle_marker_dd926640b0c848b39fc0465563a614f4.bindTooltip(
+                `<div>
+                     WWU160-0004 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_8a56cf7a6207a169d1791db9642701f4 = L.circleMarker(
+                [39.4975, -86.400556],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_15382a955a7e358d508231798862dc53 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_df17a70a1cd319c0fc4bde1f5a3c1e41 = $(`<div id="html_df17a70a1cd319c0fc4bde1f5a3c1e41" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0016             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 2086<br>                 <b>Period:</b> 2001-03-20 – 2001-07-17<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>11.48</td>                     <td>2001-07-17</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.14</td>                     <td>2001-07-17</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>952.00</td>                     <td>2001-07-17</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_15382a955a7e358d508231798862dc53.setContent(html_df17a70a1cd319c0fc4bde1f5a3c1e41);
+            
+        
+
+        circle_marker_8a56cf7a6207a169d1791db9642701f4.bindPopup(popup_15382a955a7e358d508231798862dc53)
+        ;
+
+        
+    
+    
+            circle_marker_8a56cf7a6207a169d1791db9642701f4.bindTooltip(
+                `<div>
+                     WWU160-0016 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_6ed73d06b53d63b4fce7a931c5b68932 = L.circleMarker(
+                [39.497222, -86.401667],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_3834405abd32ee7177cd8a3f25ad1a95 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_c559ef3cbfa35c556eff0c89e99c8bfd = $(`<div id="html_c559ef3cbfa35c556eff0c89e99c8bfd" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0029             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 45<br>                 <b>Period:</b> 2001-09-11 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.72</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.02</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>754.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_3834405abd32ee7177cd8a3f25ad1a95.setContent(html_c559ef3cbfa35c556eff0c89e99c8bfd);
+            
+        
+
+        circle_marker_6ed73d06b53d63b4fce7a931c5b68932.bindPopup(popup_3834405abd32ee7177cd8a3f25ad1a95)
+        ;
+
+        
+    
+    
+            circle_marker_6ed73d06b53d63b4fce7a931c5b68932.bindTooltip(
+                `<div>
+                     WWU160-0029 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_38ccbc3d019fec571458807322bafa06 = L.circleMarker(
+                [39.484167, -86.438611],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_4449599bf2939c3ac7fec2003bd1bfb5 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_969e9f405dbc1804de75fd2525794f7e = $(`<div id="html_969e9f405dbc1804de75fd2525794f7e" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0030             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 44<br>                 <b>Period:</b> 2001-09-11 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.45</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.92</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>611.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_4449599bf2939c3ac7fec2003bd1bfb5.setContent(html_969e9f405dbc1804de75fd2525794f7e);
+            
+        
+
+        circle_marker_38ccbc3d019fec571458807322bafa06.bindPopup(popup_4449599bf2939c3ac7fec2003bd1bfb5)
+        ;
+
+        
+    
+    
+            circle_marker_38ccbc3d019fec571458807322bafa06.bindTooltip(
+                `<div>
+                     WWU160-0030 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5bd843524132749c318841307e21c386 = L.circleMarker(
+                [39.492778, -86.429722],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_8016ad40e16aefb7e68d48d099b17fad = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_dfc0a76e35f16daede5b116688993a6f = $(`<div id="html_dfc0a76e35f16daede5b116688993a6f" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0031             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 45<br>                 <b>Period:</b> 2001-09-11 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.90</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.96</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>440.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_8016ad40e16aefb7e68d48d099b17fad.setContent(html_dfc0a76e35f16daede5b116688993a6f);
+            
+        
+
+        circle_marker_5bd843524132749c318841307e21c386.bindPopup(popup_8016ad40e16aefb7e68d48d099b17fad)
+        ;
+
+        
+    
+    
+            circle_marker_5bd843524132749c318841307e21c386.bindTooltip(
+                `<div>
+                     WWU160-0031 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4b63f14723e8e05dd4f4672bc2ae1cf1 = L.circleMarker(
+                [39.458056, -86.441111],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_6d892ca6da1cdc444a0e1d53c1dd6a46 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_630fbfa7d3e04f3975ab5290760cef2a = $(`<div id="html_630fbfa7d3e04f3975ab5290760cef2a" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0032             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 38<br>                 <b>Period:</b> 2001-09-11 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.46</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.05</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>805.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_6d892ca6da1cdc444a0e1d53c1dd6a46.setContent(html_630fbfa7d3e04f3975ab5290760cef2a);
+            
+        
+
+        circle_marker_4b63f14723e8e05dd4f4672bc2ae1cf1.bindPopup(popup_6d892ca6da1cdc444a0e1d53c1dd6a46)
+        ;
+
+        
+    
+    
+            circle_marker_4b63f14723e8e05dd4f4672bc2ae1cf1.bindTooltip(
+                `<div>
+                     WWU160-0032 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_bad099d5d53a1004bb841518f1b2cd3b = L.circleMarker(
+                [39.426111, -86.4625],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_9c3cd72b6125babc46bb44041894fc8e = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_8a403fe63749d0f32bfc5febc8507d4f = $(`<div id="html_8a403fe63749d0f32bfc5febc8507d4f" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0035             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 19<br>                 <b>Period:</b> 1996-08-12 – 1996-08-12<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>15.11</td>                     <td>1996-08-12</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.48</td>                     <td>1996-08-12</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>1.70</td>                     <td>1996-08-12</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.29</td>                     <td>1996-08-12</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>24.00</td>                     <td>1996-08-12</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_9c3cd72b6125babc46bb44041894fc8e.setContent(html_8a403fe63749d0f32bfc5febc8507d4f);
+            
+        
+
+        circle_marker_bad099d5d53a1004bb841518f1b2cd3b.bindPopup(popup_9c3cd72b6125babc46bb44041894fc8e)
+        ;
+
+        
+    
+    
+            circle_marker_bad099d5d53a1004bb841518f1b2cd3b.bindTooltip(
+                `<div>
+                     WWU160-0035 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5b693bef9d38682de0eb197162060f83 = L.circleMarker(
+                [39.423915, -86.463231],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_290c6f565d0c8afa7baddbb274960d95 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_6b605d526e2ed647af0fb7075c083234 = $(`<div id="html_6b605d526e2ed647af0fb7075c083234" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU160-0039             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 67<br>                 <b>Period:</b> 2006-05-30 – 2006-06-26<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.54</td>                     <td>2006-06-26</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.05</td>                     <td>2006-06-26</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>603.00</td>                     <td>2006-06-26</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.50</td>                     <td>2006-06-07</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.34</td>                     <td>2006-06-07</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>4.30</td>                     <td>2006-06-07</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>37.00</td>                     <td>2006-06-07</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_290c6f565d0c8afa7baddbb274960d95.setContent(html_6b605d526e2ed647af0fb7075c083234);
+            
+        
+
+        circle_marker_5b693bef9d38682de0eb197162060f83.bindPopup(popup_290c6f565d0c8afa7baddbb274960d95)
+        ;
+
+        
+    
+    
+            circle_marker_5b693bef9d38682de0eb197162060f83.bindTooltip(
+                `<div>
+                     WWU160-0039 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_05d45c5c003a5eb8561c78a1d9e20724 = L.circleMarker(
+                [39.400017, -86.437072],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_1fc6242c288b69be2e3c79eb3728f544);
+        
+    
+        var popup_51862282199f7527dde2082f019ea50a = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_cbd9db6d15179155d46e0a37cbd1fcda = $(`<div id="html_cbd9db6d15179155d46e0a37cbd1fcda" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0028             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Middle White River Outwash<br>                 <b>Alt Name:</b> Martinsville Outwash<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 49<br>                 <b>Period:</b> 2001-07-25 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>6.24</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.76</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>339.00</td>                     <td>2001-08-21</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_51862282199f7527dde2082f019ea50a.setContent(html_cbd9db6d15179155d46e0a37cbd1fcda);
+            
+        
+
+        circle_marker_05d45c5c003a5eb8561c78a1d9e20724.bindPopup(popup_51862282199f7527dde2082f019ea50a)
+        ;
+
+        
+    
+    
+            circle_marker_05d45c5c003a5eb8561c78a1d9e20724.bindTooltip(
+                `<div>
+                     WWU170-0028 | IDEM | Martinsville Outwash
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_1fc6242c288b69be2e3c79eb3728f544.addTo(map_ea9fb6e317a11b7a9e54b84f8886c010);
+        
+    
+            var layer_control_fe1871f9a52e7273fa110fb4a8121b13_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_7e4d62842018b051601db6e2d8df1bcd,
+                },
+                overlays :  {
+                    "Martinsville Outwash Boundary" : geo_json_b5aac9c5b321a1e84215cb0374863c71,
+                    "WQ Sites \u2014 Martinsville Outwash" : marker_cluster_1fc6242c288b69be2e3c79eb3728f544,
+                },
+            };
+            let layer_control_fe1871f9a52e7273fa110fb4a8121b13 = L.control.layers(
+                layer_control_fe1871f9a52e7273fa110fb4a8121b13_layers.base_layers,
+                layer_control_fe1871f9a52e7273fa110fb4a8121b13_layers.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_ea9fb6e317a11b7a9e54b84f8886c010);
+
+        
+</script>
+</html>
