@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_186533901600872ed52a69228614dd45 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+        position: fixed;
+        bottom: 25px;
+        left: 25px;
+        width: 340px;
+        z-index: 9999;
+        background: white;
+        padding: 12px 14px;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+        font-family: Segoe UI, Arial;
+        font-size: 12px;">
+        <b>Scotts Creek Till Plain</b><br>
+        <hr style="margin:6px 0;">
+        <b>Sites:</b> 12<br>
+        <b>Total Records:</b> 725<br>
+        <b>Sources:</b> IDEM, USGS<br>
+    </div>
+    
+    
+            <div class="folium-map" id="map_186533901600872ed52a69228614dd45" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_186533901600872ed52a69228614dd45 = L.map(
+                "map_186533901600872ed52a69228614dd45",
+                {
+                    center: [39.47334883333334, -86.30924058333333],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_186533901600872ed52a69228614dd45);
+
+            
+
+        
+    
+            var tile_layer_cc7ae32ac91f00f4bb8c611057b98ce3 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_cc7ae32ac91f00f4bb8c611057b98ce3.addTo(map_186533901600872ed52a69228614dd45);
+        
+    
+        function geo_json_a1231cdfd3d0166923b3691f897ce85f_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#333333", "fillColor": "#f2f2f2", "fillOpacity": 0.25, "weight": 2};
+            }
+        }
+
+        function geo_json_a1231cdfd3d0166923b3691f897ce85f_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_a1231cdfd3d0166923b3691f897ce85f = L.geoJson(null, {
+                onEachFeature: geo_json_a1231cdfd3d0166923b3691f897ce85f_onEachFeature,
+            
+                style: geo_json_a1231cdfd3d0166923b3691f897ce85f_styler,
+        });
+
+        function geo_json_a1231cdfd3d0166923b3691f897ce85f_add (data) {
+            geo_json_a1231cdfd3d0166923b3691f897ce85f
+                .addData(data);
+        }
+            geo_json_a1231cdfd3d0166923b3691f897ce85f_add({"bbox": [-86.35021045411001, 39.400672976052526, -86.25021355807098, 39.56763361234652], "features": [{"bbox": [-86.35021045411001, 39.400672976052526, -86.25021355807098, 39.56763361234652], "geometry": {"coordinates": [[[-86.35021045411001, 39.42108172251317], [-86.3496699589046, 39.47920494621972], [-86.3364423564979, 39.47913021514134], [-86.33663220257478, 39.49152825183648], [-86.33742190707288, 39.4987220668945], [-86.33323126748238, 39.50034213217163], [-86.33213007778474, 39.49964921302928], [-86.3236558281601, 39.49975637826045], [-86.32229947614599, 39.50079148973072], [-86.32223290120761, 39.5076451605852], [-86.319551944074, 39.50887715705869], [-86.3169919438153, 39.51143001836587], [-86.3120887374454, 39.51427108216083], [-86.30623411515603, 39.51468944436376], [-86.30094930504879, 39.51662145035605], [-86.29622333620422, 39.52112446580725], [-86.29324288281997, 39.526544214440754], [-86.29222015587351, 39.53122056414326], [-86.28526597768888, 39.54052341561956], [-86.27462503638912, 39.54597049551217], [-86.26568942694551, 39.55381137338225], [-86.26098807106233, 39.56152955088543], [-86.2538277938927, 39.56505978306536], [-86.25056730482923, 39.56763361234652], [-86.25055215988289, 39.561296946841544], [-86.2505373170354, 39.56051295159197], [-86.25049197189131, 39.54674484353872], [-86.25048692489378, 39.54592937326023], [-86.25038240718688, 39.53198064193336], [-86.25036456208355, 39.53127321169676], [-86.25021355807098, 39.51677901632971], [-86.25151586789224, 39.51670180976426], [-86.25146777164304, 39.50539793322278], [-86.25145413856994, 39.50314523885983], [-86.25140559056331, 39.49025549486897], [-86.25137661338087, 39.48855233343311], [-86.25134102270012, 39.47546891590732], [-86.25133748030292, 39.47383349251408], [-86.25130960300201, 39.46056988217369], [-86.25130912190527, 39.459326430904746], [-86.25128275362059, 39.44463012559771], [-86.25125114550801, 39.43055547719503], [-86.25128113513837, 39.4299925115313], [-86.25128439350196, 39.4292131207658], [-86.2513837816529, 39.41564837544023], [-86.25139185417729, 39.415436679185895], [-86.25146313980356, 39.4008940728532], [-86.25146626484042, 39.400823633545805], [-86.26607672134732, 39.400672976052526], [-86.26599394486657, 39.40856963673382], [-86.27080021674021, 39.40815285207891], [-86.2707567596886, 39.412324673197], [-86.28017151324879, 39.412085303169846], [-86.27988746465282, 39.42102373957194], [-86.28392612576461, 39.4206016613389], [-86.28451308412251, 39.41956225077937], [-86.30771117513056, 39.41922320020582], [-86.30787155424103, 39.42269838709093], [-86.31429677715418, 39.422887493163906], [-86.32364767065287, 39.42264013117666], [-86.32813124848798, 39.42221295280253], [-86.33748344870139, 39.42181343186109], [-86.3441133515306, 39.42094467981585], [-86.35021045411001, 39.42108172251317]]], "type": "Polygon"}, "id": "6", "properties": {"Alt_Name": "Cope Till Plain", "Id": 6, "Name": "Scotts Creek Till Plain", "Region_Description": "This region is bounded by the White River floodplain to the north and the Morgantown Hills to the south. It exhibits high and flat till plains, with some outwash along Stotts Creek. There are no high-capacity wells or townships in this area.", "longitude": null}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_a1231cdfd3d0166923b3691f897ce85f.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Name", "Alt_Name", "Region_Description"];
+    let aliases = ["Region:", "Alt Name:", "Description:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_a1231cdfd3d0166923b3691f897ce85f.addTo(map_186533901600872ed52a69228614dd45);
+        
+    
+            var marker_cluster_fc2faf618c3bc0379339eea2a219327d = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var circle_marker_5a0072f139537023b266d8c6930b9d6d = L.circleMarker(
+                [39.499492, -86.331381],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_fc2faf618c3bc0379339eea2a219327d);
+        
+    
+        var popup_15929ca310eb36a746d27372394b7888 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_5349abace43b68940fe900e97d9800c7 = $(`<div id="html_5349abace43b68940fe900e97d9800c7" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-392958086195300             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Scotts Creek Till Plain<br>                 <b>Alt Name:</b> Cope Till Plain<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 2<br>                 <b>Period:</b> 1972-10-25 – 1972-10-25<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.20</td>                     <td>1972-10-25</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>600.00</td>                     <td>1972-10-25</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_15929ca310eb36a746d27372394b7888.setContent(html_5349abace43b68940fe900e97d9800c7);
+            
+        
+
+        circle_marker_5a0072f139537023b266d8c6930b9d6d.bindPopup(popup_15929ca310eb36a746d27372394b7888)
+        ;
+
+        
+    
+    
+            circle_marker_5a0072f139537023b266d8c6930b9d6d.bindTooltip(
+                `<div>
+                     USGS-392958086195300 | USGS | Scotts Creek Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_79f4e19a35a3246e9c2cc81eb377fa12 = L.circleMarker(
+                [39.522056, -86.261111],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "blue", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_fc2faf618c3bc0379339eea2a219327d);
+        
+    
+        var popup_fec221972395e4441b9e15877fecc802 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_5e8e10a41fd1bd387040930f885e795a = $(`<div id="html_5e8e10a41fd1bd387040930f885e795a" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 USGS-393119086154101             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Scotts Creek Till Plain<br>                 <b>Alt Name:</b> Cope Till Plain<br>                 <b>Source:</b> USGS<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 33<br>                 <b>Period:</b> 1994-07-27 – 2025-09-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>1.10</td>                     <td>2025-09-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>783.00</td>                     <td>2025-09-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_fec221972395e4441b9e15877fecc802.setContent(html_5e8e10a41fd1bd387040930f885e795a);
+            
+        
+
+        circle_marker_79f4e19a35a3246e9c2cc81eb377fa12.bindPopup(popup_fec221972395e4441b9e15877fecc802)
+        ;
+
+        
+    
+    
+            circle_marker_79f4e19a35a3246e9c2cc81eb377fa12.bindTooltip(
+                `<div>
+                     USGS-393119086154101 | USGS | Scotts Creek Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_295f7eec85de6f8dafa0d06565bf8318 = L.circleMarker(
+                [39.450016, -86.306211],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_fc2faf618c3bc0379339eea2a219327d);
+        
+    
+        var popup_7311bcab5f5c6c752900133530c74c87 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_fdd37e1c451ddbf6721c9fce72e67249 = $(`<div id="html_fdd37e1c451ddbf6721c9fce72e67249" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-14-0003             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Scotts Creek Till Plain<br>                 <b>Alt Name:</b> Cope Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 12<br>                 <b>Period:</b> 2011-07-20 – 2011-07-20<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.23</td>                     <td>2011-07-20</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.78</td>                     <td>2011-07-20</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>548.00</td>                     <td>2011-07-20</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_7311bcab5f5c6c752900133530c74c87.setContent(html_fdd37e1c451ddbf6721c9fce72e67249);
+            
+        
+
+        circle_marker_295f7eec85de6f8dafa0d06565bf8318.bindPopup(popup_7311bcab5f5c6c752900133530c74c87)
+        ;
+
+        
+    
+    
+            circle_marker_295f7eec85de6f8dafa0d06565bf8318.bindTooltip(
+                `<div>
+                     WWU-14-0003 | IDEM | Scotts Creek Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_2e8d647d68ec3c4d39f64538cfa93394 = L.circleMarker(
+                [39.446815, -86.298309],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_fc2faf618c3bc0379339eea2a219327d);
+        
+    
+        var popup_797be3ec7239fb1649fe4d3eec323676 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_61825237fd46325249f82819d0d02a65 = $(`<div id="html_61825237fd46325249f82819d0d02a65" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-14-0004             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Scotts Creek Till Plain<br>                 <b>Alt Name:</b> Cope Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 12<br>                 <b>Period:</b> 2011-07-20 – 2011-07-20<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>5.10</td>                     <td>2011-07-20</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.82</td>                     <td>2011-07-20</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>554.00</td>                     <td>2011-07-20</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_797be3ec7239fb1649fe4d3eec323676.setContent(html_61825237fd46325249f82819d0d02a65);
+            
+        
+
+        circle_marker_2e8d647d68ec3c4d39f64538cfa93394.bindPopup(popup_797be3ec7239fb1649fe4d3eec323676)
+        ;
+
+        
+    
+    
+            circle_marker_2e8d647d68ec3c4d39f64538cfa93394.bindTooltip(
+                `<div>
+                     WWU-14-0004 | IDEM | Scotts Creek Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_4bf7609e9ef113196b3c9a793a48a2cb = L.circleMarker(
+                [39.466887, -86.312621],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_fc2faf618c3bc0379339eea2a219327d);
+        
+    
+        var popup_c2e72120db63fb8f0235210db1db9291 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_78a7c8019a16426148564ecf87894220 = $(`<div id="html_78a7c8019a16426148564ecf87894220" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU-14-0005             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Scotts Creek Till Plain<br>                 <b>Alt Name:</b> Cope Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 151<br>                 <b>Period:</b> 2011-07-25 – 2019-10-02<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>5.16</td>                     <td>2019-10-02</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.96</td>                     <td>2019-10-02</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>885.00</td>                     <td>2019-10-02</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.50</td>                     <td>2019-10-02</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.20</td>                     <td>2019-10-02</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>0.10</td>                     <td>2019-10-02</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>32.00</td>                     <td>2019-10-02</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_c2e72120db63fb8f0235210db1db9291.setContent(html_78a7c8019a16426148564ecf87894220);
+            
+        
+
+        circle_marker_4bf7609e9ef113196b3c9a793a48a2cb.bindPopup(popup_c2e72120db63fb8f0235210db1db9291)
+        ;
+
+        
+    
+    
+            circle_marker_4bf7609e9ef113196b3c9a793a48a2cb.bindTooltip(
+                `<div>
+                     WWU-14-0005 | IDEM | Scotts Creek Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5e8e2248e8cb56a0a83f433b938a2d77 = L.circleMarker(
+                [39.499444, -86.331944],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_fc2faf618c3bc0379339eea2a219327d);
+        
+    
+        var popup_91ba5c2197f3969d0f4f9422bb82c637 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_6365cdfcaaccbc77ea4736d043df3bf1 = $(`<div id="html_6365cdfcaaccbc77ea4736d043df3bf1" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU140-0001             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Scotts Creek Till Plain<br>                 <b>Alt Name:</b> Cope Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 172<br>                 <b>Period:</b> 1996-02-23 – 2001-08-20<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.03</td>                     <td>2001-08-20</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.94</td>                     <td>2001-08-20</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>409.00</td>                     <td>2001-08-20</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.48</td>                     <td>1996-11-15</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.08</td>                     <td>1996-11-15</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>8.00</td>                     <td>1996-11-15</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_91ba5c2197f3969d0f4f9422bb82c637.setContent(html_6365cdfcaaccbc77ea4736d043df3bf1);
+            
+        
+
+        circle_marker_5e8e2248e8cb56a0a83f433b938a2d77.bindPopup(popup_91ba5c2197f3969d0f4f9422bb82c637)
+        ;
+
+        
+    
+    
+            circle_marker_5e8e2248e8cb56a0a83f433b938a2d77.bindTooltip(
+                `<div>
+                     WWU140-0001 | IDEM | Scotts Creek Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_c0598348fb2101e9f6e9160ff54f599f = L.circleMarker(
+                [39.449681, -86.305188],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_fc2faf618c3bc0379339eea2a219327d);
+        
+    
+        var popup_fe7dc86b932be22fe348909b97a13f45 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_7746646bf86cc31986369d737a8d00f9 = $(`<div id="html_7746646bf86cc31986369d737a8d00f9" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU140-0007             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Scotts Creek Till Plain<br>                 <b>Alt Name:</b> Cope Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 104<br>                 <b>Period:</b> 2001-05-30 – 2001-09-05<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>6.86</td>                     <td>2001-09-05</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.73</td>                     <td>2001-09-05</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>541.00</td>                     <td>2001-09-05</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.56</td>                     <td>2001-09-05</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.08</td>                     <td>2001-09-05</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>0.25</td>                     <td>2001-09-05</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>13.00</td>                     <td>2001-09-05</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_fe7dc86b932be22fe348909b97a13f45.setContent(html_7746646bf86cc31986369d737a8d00f9);
+            
+        
+
+        circle_marker_c0598348fb2101e9f6e9160ff54f599f.bindPopup(popup_fe7dc86b932be22fe348909b97a13f45)
+        ;
+
+        
+    
+    
+            circle_marker_c0598348fb2101e9f6e9160ff54f599f.bindTooltip(
+                `<div>
+                     WWU140-0007 | IDEM | Scotts Creek Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_cb62d476ec7782152c0c345a5125ca86 = L.circleMarker(
+                [39.466944, -86.3125],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_fc2faf618c3bc0379339eea2a219327d);
+        
+    
+        var popup_b14c0c636ac024abe2a6d4b28a7b0651 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_3ba6996852157fdc2d11e631311060bf = $(`<div id="html_3ba6996852157fdc2d11e631311060bf" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU140-0009             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Scotts Creek Till Plain<br>                 <b>Alt Name:</b> Cope Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 26<br>                 <b>Period:</b> 2001-09-19 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.80</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.86</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>612.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_b14c0c636ac024abe2a6d4b28a7b0651.setContent(html_3ba6996852157fdc2d11e631311060bf);
+            
+        
+
+        circle_marker_cb62d476ec7782152c0c345a5125ca86.bindPopup(popup_b14c0c636ac024abe2a6d4b28a7b0651)
+        ;
+
+        
+    
+    
+            circle_marker_cb62d476ec7782152c0c345a5125ca86.bindTooltip(
+                `<div>
+                     WWU140-0009 | IDEM | Scotts Creek Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_5d794d18c0f12372515fd73f27baa171 = L.circleMarker(
+                [39.464722, -86.317222],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_fc2faf618c3bc0379339eea2a219327d);
+        
+    
+        var popup_9682d1ae9f0825a9956a3aa97077bb9e = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_6e43a4bb421e90a5712ca7bcc160f50d = $(`<div id="html_6e43a4bb421e90a5712ca7bcc160f50d" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU140-0010             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Scotts Creek Till Plain<br>                 <b>Alt Name:</b> Cope Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 33<br>                 <b>Period:</b> 2001-09-11 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>9.62</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.82</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>658.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_9682d1ae9f0825a9956a3aa97077bb9e.setContent(html_6e43a4bb421e90a5712ca7bcc160f50d);
+            
+        
+
+        circle_marker_5d794d18c0f12372515fd73f27baa171.bindPopup(popup_9682d1ae9f0825a9956a3aa97077bb9e)
+        ;
+
+        
+    
+    
+            circle_marker_5d794d18c0f12372515fd73f27baa171.bindTooltip(
+                `<div>
+                     WWU140-0010 | IDEM | Scotts Creek Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_49ce0b055bd085eee2f8a9d8305438d5 = L.circleMarker(
+                [39.479794, -86.326692],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_fc2faf618c3bc0379339eea2a219327d);
+        
+    
+        var popup_77daad44fe8f17a8dd453011e08c6f11 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_7975c1ad21f3fa8d3dd5467cdee4cb6f = $(`<div id="html_7975c1ad21f3fa8d3dd5467cdee4cb6f" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU140-0032             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Scotts Creek Till Plain<br>                 <b>Alt Name:</b> Cope Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 33<br>                 <b>Period:</b> 2001-09-11 – 2001-10-10<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>10.57</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.78</td>                     <td>2001-10-10</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>609.00</td>                     <td>2001-10-10</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_77daad44fe8f17a8dd453011e08c6f11.setContent(html_7975c1ad21f3fa8d3dd5467cdee4cb6f);
+            
+        
+
+        circle_marker_49ce0b055bd085eee2f8a9d8305438d5.bindPopup(popup_77daad44fe8f17a8dd453011e08c6f11)
+        ;
+
+        
+    
+    
+            circle_marker_49ce0b055bd085eee2f8a9d8305438d5.bindTooltip(
+                `<div>
+                     WWU140-0032 | IDEM | Scotts Creek Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_47a90c0f2d2fac05aba19c33ed75d971 = L.circleMarker(
+                [39.464783, -86.3175],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_fc2faf618c3bc0379339eea2a219327d);
+        
+    
+        var popup_0076a097bd584c238a346fb5203bb835 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_bf82dd8922bf1b8d6e32c00e48e9d871 = $(`<div id="html_bf82dd8922bf1b8d6e32c00e48e9d871" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU140-0033             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Scotts Creek Till Plain<br>                 <b>Alt Name:</b> Cope Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 7<br>                 <b>Period:</b> 2001-09-11 – 2001-09-11<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.60</td>                     <td>2001-09-11</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.10</td>                     <td>2001-09-11</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>439.00</td>                     <td>2001-09-11</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_0076a097bd584c238a346fb5203bb835.setContent(html_bf82dd8922bf1b8d6e32c00e48e9d871);
+            
+        
+
+        circle_marker_47a90c0f2d2fac05aba19c33ed75d971.bindPopup(popup_0076a097bd584c238a346fb5203bb835)
+        ;
+
+        
+    
+    
+            circle_marker_47a90c0f2d2fac05aba19c33ed75d971.bindTooltip(
+                `<div>
+                     WWU140-0033 | IDEM | Scotts Creek Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_956d536ec808cb22d11a4d879573b669 = L.circleMarker(
+                [39.469552, -86.290208],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_fc2faf618c3bc0379339eea2a219327d);
+        
+    
+        var popup_db41cfa5b9bb035374670eff942b320b = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_97853cea9567ac7ba3758f32f8b66dea = $(`<div id="html_97853cea9567ac7ba3758f32f8b66dea" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU140-0039             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> Scotts Creek Till Plain<br>                 <b>Alt Name:</b> Cope Till Plain<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 140<br>                 <b>Period:</b> 2006-05-10 – 2006-09-13<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>8.06</td>                     <td>2006-09-13</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>8.01</td>                     <td>2006-09-13</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>552.00</td>                     <td>2006-09-13</td>                 </tr>                                  <tr>                     <td><b>TKN</b></td>                     <td>0.60</td>                     <td>2006-05-10</td>                 </tr>                                  <tr>                     <td><b>TP</b></td>                     <td>0.62</td>                     <td>2006-09-13</td>                 </tr>                                  <tr>                     <td><b>NO3NO2</b></td>                     <td>4.80</td>                     <td>2006-09-13</td>                 </tr>                                  <tr>                     <td><b>TSS</b></td>                     <td>28.00</td>                     <td>2006-09-13</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_db41cfa5b9bb035374670eff942b320b.setContent(html_97853cea9567ac7ba3758f32f8b66dea);
+            
+        
+
+        circle_marker_956d536ec808cb22d11a4d879573b669.bindPopup(popup_db41cfa5b9bb035374670eff942b320b)
+        ;
+
+        
+    
+    
+            circle_marker_956d536ec808cb22d11a4d879573b669.bindTooltip(
+                `<div>
+                     WWU140-0039 | IDEM | Scotts Creek Till Plain
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_fc2faf618c3bc0379339eea2a219327d.addTo(map_186533901600872ed52a69228614dd45);
+        
+    
+            var layer_control_7a771d6473bd72f26955f367ab453b64_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_cc7ae32ac91f00f4bb8c611057b98ce3,
+                },
+                overlays :  {
+                    "Scotts Creek Till Plain Boundary" : geo_json_a1231cdfd3d0166923b3691f897ce85f,
+                    "WQ Sites \u2014 Scotts Creek Till Plain" : marker_cluster_fc2faf618c3bc0379339eea2a219327d,
+                },
+            };
+            let layer_control_7a771d6473bd72f26955f367ab453b64 = L.control.layers(
+                layer_control_7a771d6473bd72f26955f367ab453b64_layers.base_layers,
+                layer_control_7a771d6473bd72f26955f367ab453b64_layers.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_186533901600872ed52a69228614dd45);
+
+        
+</script>
+</html>
