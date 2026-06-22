@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cd5a49d687437cdb4c9f274b73f6c03d {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+    <div style="
+        position: fixed;
+        bottom: 25px;
+        left: 25px;
+        width: 340px;
+        z-index: 9999;
+        background: white;
+        padding: 12px 14px;
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+        font-family: Segoe UI, Arial;
+        font-size: 12px;">
+        <b>South Morgan Upland</b><br>
+        <hr style="margin:6px 0;">
+        <b>Sites:</b> 4<br>
+        <b>Total Records:</b> 109<br>
+        <b>Sources:</b> EPA, IDEM<br>
+    </div>
+    
+    
+            <div class="folium-map" id="map_cd5a49d687437cdb4c9f274b73f6c03d" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_cd5a49d687437cdb4c9f274b73f6c03d = L.map(
+                "map_cd5a49d687437cdb4c9f274b73f6c03d",
+                {
+                    center: [39.359843749999996, -86.35368274999999],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 12,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+            L.control.scale().addTo(map_cd5a49d687437cdb4c9f274b73f6c03d);
+
+            
+
+        
+    
+            var tile_layer_91f834db84e65539e3e8b50f599120ec = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e", "detectRetina": false, "maxNativeZoom": 20, "maxZoom": 20, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abcd", "tms": false}
+            );
+        
+    
+            tile_layer_91f834db84e65539e3e8b50f599120ec.addTo(map_cd5a49d687437cdb4c9f274b73f6c03d);
+        
+    
+        function geo_json_5e850823842c893d49a92e7cf248f90b_styler(feature) {
+            switch(feature.id) {
+                default:
+                    return {"color": "#333333", "fillColor": "#f2f2f2", "fillOpacity": 0.25, "weight": 2};
+            }
+        }
+
+        function geo_json_5e850823842c893d49a92e7cf248f90b_onEachFeature(feature, layer) {
+            layer.on({
+            });
+        };
+        var geo_json_5e850823842c893d49a92e7cf248f90b = L.geoJson(null, {
+                onEachFeature: geo_json_5e850823842c893d49a92e7cf248f90b_onEachFeature,
+            
+                style: geo_json_5e850823842c893d49a92e7cf248f90b_styler,
+        });
+
+        function geo_json_5e850823842c893d49a92e7cf248f90b_add (data) {
+            geo_json_5e850823842c893d49a92e7cf248f90b
+                .addData(data);
+        }
+            geo_json_5e850823842c893d49a92e7cf248f90b_add({"bbox": [-86.63086730402692, 39.33824002836729, -86.25147482993289, 39.40068348162322], "features": [{"bbox": [-86.63086730402692, 39.33824002836729, -86.25147482993289, 39.40068348162322], "geometry": {"coordinates": [[[-86.25151638061354, 39.365249038186974], [-86.25147482993289, 39.35652135912394], [-86.25153442369401, 39.34182535068398], [-86.27014873427926, 39.34158764495015], [-86.27028154304442, 39.341579467013936], [-86.28886920626191, 39.341383652801866], [-86.28924278576213, 39.3413769240698], [-86.3076372868824, 39.34112286786175], [-86.30858033942518, 39.34110144186946], [-86.32634094343086, 39.34083615607979], [-86.32739541338343, 39.34084225453165], [-86.34490285102362, 39.34049157581925], [-86.34612518123267, 39.3404624063753], [-86.36236236722229, 39.3401289895852], [-86.36236228535806, 39.340137999855635], [-86.38132749661678, 39.339830365959635], [-86.38148478939075, 39.33984021266096], [-86.40019193034439, 39.33950110027514], [-86.41851199898687, 39.33911649894074], [-86.41885575090224, 39.33911821579137], [-86.4370759373083, 39.33877524669882], [-86.43752712863687, 39.33876391185087], [-86.45564505087108, 39.33839951949901], [-86.45622898635075, 39.33838422750767], [-86.46497283529293, 39.33824002836729], [-86.48300380490453, 39.3384206329609], [-86.48354458374135, 39.33845457138453], [-86.49951234059415, 39.33863696170875], [-86.50258638839085, 39.3386726662663], [-86.51260056129374, 39.33877360136812], [-86.51822700986735, 39.3388781230283], [-86.51822202607511, 39.33886458624685], [-86.52130685389427, 39.33891786254962], [-86.536669151838, 39.339115190799625], [-86.53974122127471, 39.3391273792801], [-86.55574739020014, 39.33936528231472], [-86.5587800328248, 39.33942187168778], [-86.57456553009764, 39.33971492036117], [-86.59290330888538, 39.340014783095704], [-86.59341672900113, 39.340025588475896], [-86.61191502411806, 39.34031400586973], [-86.61209783644902, 39.34030560447819], [-86.6121282719678, 39.34031021130003], [-86.63022613161644, 39.34078361017175], [-86.63086730402692, 39.34077663457216], [-86.6308127457987, 39.346423448014576], [-86.62881269247801, 39.346604419413524], [-86.62457157097771, 39.347306048517176], [-86.62161537375184, 39.3488699856334], [-86.6183741256233, 39.35200642207052], [-86.61560967903009, 39.35214037086683], [-86.61062237539535, 39.354412531788235], [-86.60628205549646, 39.35625752971005], [-86.6035170163301, 39.356462711904804], [-86.60158152024205, 39.356599148132936], [-86.60028683791464, 39.357452985321714], [-86.59916943571221, 39.359523310092605], [-86.5963943698951, 39.36144484017425], [-86.59417528398295, 39.36279605960287], [-86.5923325639068, 39.36278961908758], [-86.58775057204706, 39.35855362192727], [-86.58518488115773, 39.35618424551424], [-86.58169641661756, 39.35409759112097], [-86.57957455407221, 39.354590606681136], [-86.57597648939681, 39.35543582959232], [-86.57292761838025, 39.35685514167272], [-86.57089269242987, 39.35882080215227], [-86.56834809890103, 39.36059946602064], [-86.56588679680735, 39.361305540244864], [-86.56402374299822, 39.36457670921601], [-86.56209564076214, 39.365940325145075], [-86.55824521994259, 39.36771384390272], [-86.55632295410253, 39.36812374750994], [-86.55486478712943, 39.36799897423389], [-86.55226702725038, 39.36596252794479], [-86.55005638173505, 39.36345070141753], [-86.54859448708339, 39.36392185922482], [-86.5471360371908, 39.36385659049734], [-86.54668614105559, 39.36218597170163], [-86.54597123480256, 39.361674080844516], [-86.54482381570752, 39.36101397210696], [-86.54351937313972, 39.360889657983364], [-86.54291369985089, 39.359576027413354], [-86.54192106226556, 39.35873769045197], [-86.54092922860498, 39.35778014323482], [-86.54078387529783, 39.35652791834097], [-86.53948304549014, 39.355867151188434], [-86.53786926565706, 39.35609916411517], [-86.53717202427231, 39.357050032567635], [-86.53870121554975, 39.358009743007614], [-86.54030409879839, 39.3594465438074], [-86.54068173236675, 39.36040167359667], [-86.53998057598383, 39.36194856673822], [-86.53629599571931, 39.36181473891754], [-86.53522188893733, 39.36169124935406], [-86.52938114916093, 39.36250220955993], [-86.52853297356344, 39.36303519781109], [-86.5274342005675, 39.36360888411816], [-86.52467011348658, 39.36359762705282], [-86.52337631770276, 39.364164517937596], [-86.52272405712097, 39.365234686853015], [-86.52078621969264, 39.365655859925354], [-86.51809551415909, 39.368362614058405], [-86.51835818393151, 39.37036633835503], [-86.51879779918063, 39.37344363377231], [-86.51341740938253, 39.378570891229955], [-86.51074888782904, 39.377987520934376], [-86.50834834473407, 39.37862110652947], [-86.49913226913077, 39.37865332451674], [-86.49719751401409, 39.37857345790093], [-86.49434585391839, 39.37784587503141], [-86.49315456897185, 39.37691089849312], [-86.49224547096573, 39.37519039260075], [-86.49103301030196, 39.374008945953896], [-86.48900954668751, 39.37347557873848], [-86.48939238095178, 39.37152230694809], [-86.48712642000898, 39.370558706678715], [-86.4870876641389, 39.3674592196491], [-86.48604765286755, 39.36648366581454], [-86.48807142198615, 39.362737642417116], [-86.48916455998057, 39.360239148725746], [-86.48833785069466, 39.35779182104483], [-86.48812057958686, 39.3560027947961], [-86.48521288898763, 39.35467871727812], [-86.48265530385437, 39.3579455058078], [-86.4817137618602, 39.360683023386564], [-86.48223271568877, 39.36318862992732], [-86.48153112660444, 39.36461596096801], [-86.48034893708818, 39.36872324302219], [-86.47756786418164, 39.37405710756554], [-86.47730314896913, 39.372482421428835], [-86.47742142012535, 39.3689783432974], [-86.47707952084262, 39.36540067334446], [-86.47626951046823, 39.36282221289956], [-86.47453074528201, 39.36124087451875], [-86.4726018815824, 39.36044539891564], [-86.47057607251585, 39.36029315514133], [-86.46578089926686, 39.360843423836435], [-86.46264348857183, 39.36147268386798], [-86.46032696630908, 39.36317850926146], [-86.45827790144892, 39.36602989568236], [-86.45696691435707, 39.368741645573884], [-86.45566082284486, 39.370809698847694], [-86.4540737556162, 39.373448599154095], [-86.45461006042713, 39.37795131131966], [-86.45406814754323, 39.381267413043425], [-86.45225800817751, 39.38646573843824], [-86.45119707465714, 39.39012268430915], [-86.44814054488614, 39.39434234801587], [-86.44709824311033, 39.39559619156798], [-86.44595856044458, 39.39672558984528], [-86.4431331300352, 39.399630207670825], [-86.44216759688082, 39.40048384867082], [-86.44022667105972, 39.40068348162322], [-86.43753027426064, 39.39971684785846], [-86.4345812380259, 39.39960337588423], [-86.43325798113067, 39.399081977769924], [-86.43237860322395, 39.3983910777634], [-86.4289280091703, 39.396486005928516], [-86.42312309506106, 39.39393978667927], [-86.42091894620178, 39.39295613496927], [-86.41980244112388, 39.39420936381892], [-86.41913830740792, 39.394263267849446], [-86.41730052011081, 39.39356746507126], [-86.41412590674955, 39.39400926479325], [-86.41295422434168, 39.393030656867566], [-86.41274691860562, 39.39137029514425], [-86.41282784893896, 39.390512436732024], [-86.41121479507622, 39.38941714707034], [-86.41089810332474, 39.387617951184474], [-86.40990596108603, 39.385038121370854], [-86.41028785383814, 39.383466566600426], [-86.41176602620035, 39.383044914797566], [-86.40984150674991, 39.381747767620524], [-86.4100378653737, 39.38031831632255], [-86.40848327872871, 39.37887997660973], [-86.40757321976054, 39.377516421556706], [-86.40786417933204, 39.3758013649404], [-86.40888627896562, 39.37480524773217], [-86.40991015567683, 39.37359456299152], [-86.40932562423919, 39.37287629507498], [-86.4063061219379, 39.37251762108241], [-86.40610096726233, 39.37062838132933], [-86.4035433373685, 39.36798327271943], [-86.40341241989825, 39.36710144442361], [-86.4054540330729, 39.36539535264328], [-86.40644409048369, 39.36454213620819], [-86.40872722423737, 39.36331403461215], [-86.4094679108285, 39.36288866014803], [-86.40916923514361, 39.36188582806307], [-86.40837115816012, 39.36183409177507], [-86.40676855442398, 39.36249347737037], [-86.40584560873856, 39.36267949570658], [-86.40380732804587, 39.36400415888754], [-86.40256545674818, 39.36557128566351], [-86.40089517733338, 39.366945467185026], [-86.39978502279536, 39.36746424480388], [-86.39892464638694, 39.36750748560505], [-86.39733657935115, 39.36645027550462], [-86.39728867898413, 39.36487653227447], [-86.3981002874615, 39.36335491899442], [-86.39905967993062, 39.3623239923032], [-86.40062746325778, 39.36215327120093], [-86.4016439714222, 39.36180088937495], [-86.4028483865592, 39.36102032752825], [-86.40350242831732, 39.35995084297045], [-86.40239260729469, 39.360445807262785], [-86.40082028326077, 39.36115294823317], [-86.39953136627298, 39.361039020978446], [-86.39810978186095, 39.36028069023859], [-86.39802471168036, 39.359457740562874], [-86.39849762371821, 39.358029733935474], [-86.3988695030851, 39.35763828108762], [-86.39864409253224, 39.3570649356501], [-86.398696593329, 39.356314219414486], [-86.39851541040281, 39.35595567000765], [-86.39698552248781, 39.357092114857345], [-86.39573905264866, 39.357407501293814], [-86.39445391821506, 39.35686440193728], [-86.39414229040503, 39.35561113429803], [-86.39470213038861, 39.35479153720599], [-86.39501212530918, 39.35392057290296], [-86.39557964427634, 39.35220697794723], [-86.39570863076901, 39.3514924210464], [-86.39424091299807, 39.35076956420317], [-86.39394085735383, 39.349957411635394], [-86.39167403036029, 39.349325721917275], [-86.39180925063496, 39.347895974611276], [-86.39071796548072, 39.34626908522499], [-86.39017689991927, 39.344931160479], [-86.38757511391735, 39.34224334291709], [-86.38618601621634, 39.343094298493874], [-86.38699061412304, 39.34588792579586], [-86.38826457758954, 39.347682696632], [-86.38806038973867, 39.34997034922961], [-86.3871223580634, 39.35189652512757], [-86.38454690471845, 39.352900144862595], [-86.38116496638335, 39.35335902859757], [-86.37969230269717, 39.35320814340442], [-86.37890068109954, 39.3524410134862], [-86.37862337169844, 39.351102457445855], [-86.37893676170364, 39.35038890384117], [-86.37740836095178, 39.34960590902335], [-86.37618545305169, 39.34900333858649], [-86.37473599944758, 39.34798232290126], [-86.37305843821859, 39.346721651652196], [-86.3713622483718, 39.347546933410676], [-86.36900314077342, 39.34996943345207], [-86.36744682422481, 39.3509336926635], [-86.36451721679543, 39.348915099873636], [-86.36136879312846, 39.34666636015772], [-86.35975911823147, 39.3453987178585], [-86.35851427225612, 39.344533591464234], [-86.35660208692214, 39.34412250958197], [-86.35769324230927, 39.34567342575595], [-86.35966924405254, 39.34717198495005], [-86.360396230527, 39.34826312635442], [-86.36059227342199, 39.351010671551585], [-86.3574997600238, 39.350707549759754], [-86.35601171290907, 39.35224421282024], [-86.35363818801555, 39.35389037784128], [-86.35135835545968, 39.35336273132714], [-86.35004242982697, 39.352211029031466], [-86.34921745583968, 39.35375130552255], [-86.3425729889455, 39.354972756661375], [-86.3379511527814, 39.3558334346117], [-86.33509101709684, 39.35432946148438], [-86.33125169454797, 39.355051296520976], [-86.32800571735372, 39.355375906546016], [-86.32490931025515, 39.35547242187492], [-86.31893312350185, 39.35612421663885], [-86.31542575400869, 39.35301386954565], [-86.31299549708234, 39.35282789498646], [-86.30968317023138, 39.35240776923172], [-86.30644344697886, 39.35210241784352], [-86.30318223762696, 39.35153110218091], [-86.30047707795005, 39.353362535777805], [-86.29731833478226, 39.35447594410262], [-86.29508418183856, 39.357286572029466], [-86.28898514559698, 39.359109048554934], [-86.2873108820157, 39.360672297081194], [-86.28464353664332, 39.36022679774354], [-86.28297865638498, 39.3608602518954], [-86.2817919718109, 39.359780100554374], [-86.27958679900335, 39.35919429233898], [-86.27829261520176, 39.359615406979394], [-86.27626730165794, 39.359459784652174], [-86.27423459651683, 39.36001930327395], [-86.27147152230847, 39.35993051630169], [-86.27026940515046, 39.36035211778655], [-86.26741195558853, 39.36047720915776], [-86.26556556609995, 39.3597760972209], [-86.2643210446162, 39.35896718774569], [-86.26426294934839, 39.35747915843056], [-86.26339178103859, 39.35621485635204], [-86.26214373633535, 39.35574920782222], [-86.26084552512458, 39.35305173304866], [-86.25944473008167, 39.35310004558935], [-86.25972199707445, 39.35476112582236], [-86.26087822410331, 39.356942750682485], [-86.26255704462982, 39.35849828086411], [-86.26267497040698, 39.361302697853034], [-86.26502447196093, 39.362175826450446], [-86.26464095274801, 39.36360384676709], [-86.26308231599248, 39.364623905913845], [-86.26138947815242, 39.36438430279811], [-86.25902362540192, 39.365055874789974], [-86.2570951235369, 39.36618793277416], [-86.25459270129932, 39.36582862417673], [-86.25275610921058, 39.36524466855536], [-86.25151638061354, 39.365249038186974]]], "type": "Polygon"}, "id": "3", "properties": {"Alt_Name": "Norman Upland", "Id": 2, "Name": "South Morgan Upland", "Region_Description": "This region makes up the southern edge of the county and is bounded by the alluvial floodplains of the White River to the north. The region is distinguishable from surrounding regions by high hilly relief of 143 ft with lots of drainageways. The lithology of the area is mainly exposed Borden siltstone and shale with areas of sandy loam and terra rosa in the southwest corner of the county. No townships or high-capacity wells are in this region.", "longitude": null}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_5e850823842c893d49a92e7cf248f90b.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature=>typeof(feature)=='object' ? JSON.stringify(feature) : feature;
+    let fields = ["Name", "Alt_Name", "Region_Description"];
+    let aliases = ["Region:", "Alt Name:", "Description:"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{"className": "foliumtooltip", "sticky": true});
+                     
+    
+            geo_json_5e850823842c893d49a92e7cf248f90b.addTo(map_cd5a49d687437cdb4c9f274b73f6c03d);
+        
+    
+            var marker_cluster_60367b80ab4e00735d8da6e8a05958c2 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var circle_marker_dd205ddfe0f5389007228b8d4a3e82b6 = L.circleMarker(
+                [39.364214, -86.437495],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "green", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_60367b80ab4e00735d8da6e8a05958c2);
+        
+    
+        var popup_1047081fadb29a144bb6b0ac636f4438 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_e212fc26ad620c3562bf58d831d8a4de = $(`<div id="html_e212fc26ad620c3562bf58d831d8a4de" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 IN033-392151086261501             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> South Morgan Upland<br>                 <b>Alt Name:</b> Norman Upland<br>                 <b>Source:</b> EPA<br>                 <b>Type:</b> Well<br>                 <b>Records:</b> 1<br>                 <b>Period:</b> 1989-08-15 – 1989-08-15<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>TKN</b></td>                     <td>0.20</td>                     <td>1989-08-15</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_1047081fadb29a144bb6b0ac636f4438.setContent(html_e212fc26ad620c3562bf58d831d8a4de);
+            
+        
+
+        circle_marker_dd205ddfe0f5389007228b8d4a3e82b6.bindPopup(popup_1047081fadb29a144bb6b0ac636f4438)
+        ;
+
+        
+    
+    
+            circle_marker_dd205ddfe0f5389007228b8d4a3e82b6.bindTooltip(
+                `<div>
+                     IN033-392151086261501 | EPA | South Morgan Upland
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_9cbbb4948d12149d4eaab630117e038d = L.circleMarker(
+                [39.353333, -86.261111],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_60367b80ab4e00735d8da6e8a05958c2);
+        
+    
+        var popup_2f32d94b9d9720fd85ae8ba43eeaddb9 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_7bea525cc42799808e76c90d110b6b2b = $(`<div id="html_7bea525cc42799808e76c90d110b6b2b" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0004             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> South Morgan Upland<br>                 <b>Alt Name:</b> Norman Upland<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 40<br>                 <b>Period:</b> 2001-07-25 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.15</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.67</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>386.00</td>                     <td>2001-08-21</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_2f32d94b9d9720fd85ae8ba43eeaddb9.setContent(html_7bea525cc42799808e76c90d110b6b2b);
+            
+        
+
+        circle_marker_9cbbb4948d12149d4eaab630117e038d.bindPopup(popup_2f32d94b9d9720fd85ae8ba43eeaddb9)
+        ;
+
+        
+    
+    
+            circle_marker_9cbbb4948d12149d4eaab630117e038d.bindTooltip(
+                `<div>
+                     WWU170-0004 | IDEM | South Morgan Upland
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_830a04e09633faf9b7173f8ef438a0ae = L.circleMarker(
+                [39.354492, -86.317444],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_60367b80ab4e00735d8da6e8a05958c2);
+        
+    
+        var popup_d42097d2f18a6db03f50b44d1c3e046c = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_474857308406e831114c77b17cb68c83 = $(`<div id="html_474857308406e831114c77b17cb68c83" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0021             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> South Morgan Upland<br>                 <b>Alt Name:</b> Norman Upland<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 48<br>                 <b>Period:</b> 2001-07-25 – 2001-08-21<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>6.60</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.65</td>                     <td>2001-08-21</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>441.00</td>                     <td>2001-08-21</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_d42097d2f18a6db03f50b44d1c3e046c.setContent(html_474857308406e831114c77b17cb68c83);
+            
+        
+
+        circle_marker_830a04e09633faf9b7173f8ef438a0ae.bindPopup(popup_d42097d2f18a6db03f50b44d1c3e046c)
+        ;
+
+        
+    
+    
+            circle_marker_830a04e09633faf9b7173f8ef438a0ae.bindTooltip(
+                `<div>
+                     WWU170-0021 | IDEM | South Morgan Upland
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            var circle_marker_1c7fe169d53d108e8855e143c5ea477a = L.circleMarker(
+                [39.367336, -86.398681],
+                {"bubblingMouseEvents": true, "color": "white", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "red", "fillOpacity": 0.85, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 5, "stroke": true, "weight": 1.2}
+            ).addTo(marker_cluster_60367b80ab4e00735d8da6e8a05958c2);
+        
+    
+        var popup_1f6f39332b774aed030b973e462a1857 = L.popup({"maxWidth": 380});
+
+        
+            
+                var html_002f5e0f670d81df2ed13382df3d3faa = $(`<div id="html_002f5e0f670d81df2ed13382df3d3faa" style="width: 100.0%; height: 100.0%;">         <div style="font-family:Segoe UI, Arial; min-width:260px; max-width:340px; font-size:12px;">             <div style="background:#333; color:white; padding:6px 10px; border-radius:4px 4px 0 0; font-weight:bold;">                 WWU170-0026             </div>              <div style="padding:8px 10px;">                 <b>Hydrogeologic Region:</b> South Morgan Upland<br>                 <b>Alt Name:</b> Norman Upland<br>                 <b>Source:</b> IDEM<br>                 <b>Type:</b> Stream<br>                 <b>Records:</b> 20<br>                 <b>Period:</b> 2001-07-25 – 2001-07-30<br>                 <br>                              <table style='width:100%; border-collapse:collapse; font-size:11px;'>             <tr style='background:#f0f0f0;'>                 <th>Param</th><th>Latest</th><th>Date</th>             </tr>                              <tr>                     <td><b>DO</b></td>                     <td>7.86</td>                     <td>2001-07-30</td>                 </tr>                                  <tr>                     <td><b>pH</b></td>                     <td>7.80</td>                     <td>2001-07-30</td>                 </tr>                                  <tr>                     <td><b>SpCond</b></td>                     <td>330.00</td>                     <td>2001-07-30</td>                 </tr>                 </table>             </div>         </div>         </div>`)[0];
+                popup_1f6f39332b774aed030b973e462a1857.setContent(html_002f5e0f670d81df2ed13382df3d3faa);
+            
+        
+
+        circle_marker_1c7fe169d53d108e8855e143c5ea477a.bindPopup(popup_1f6f39332b774aed030b973e462a1857)
+        ;
+
+        
+    
+    
+            circle_marker_1c7fe169d53d108e8855e143c5ea477a.bindTooltip(
+                `<div>
+                     WWU170-0026 | IDEM | South Morgan Upland
+                 </div>`,
+                {"sticky": true}
+            );
+        
+    
+            marker_cluster_60367b80ab4e00735d8da6e8a05958c2.addTo(map_cd5a49d687437cdb4c9f274b73f6c03d);
+        
+    
+            var layer_control_a38ca917f4d9cc1134447ec814da7d70_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_91f834db84e65539e3e8b50f599120ec,
+                },
+                overlays :  {
+                    "South Morgan Upland Boundary" : geo_json_5e850823842c893d49a92e7cf248f90b,
+                    "WQ Sites \u2014 South Morgan Upland" : marker_cluster_60367b80ab4e00735d8da6e8a05958c2,
+                },
+            };
+            let layer_control_a38ca917f4d9cc1134447ec814da7d70 = L.control.layers(
+                layer_control_a38ca917f4d9cc1134447ec814da7d70_layers.base_layers,
+                layer_control_a38ca917f4d9cc1134447ec814da7d70_layers.overlays,
+                {"autoZIndex": true, "collapsed": false, "position": "topright"}
+            ).addTo(map_cd5a49d687437cdb4c9f274b73f6c03d);
+
+        
+</script>
+</html>
